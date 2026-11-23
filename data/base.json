@@ -1,0 +1,983 @@
+{
+  "_lisez_moi": "Base commune du rétroplanning MTLCI 2026-27. Modifiez ce fichier puis publiez (commit) : le site et le calendrier d'abonnement se mettent à jour pour toute la promo.",
+  "promo": "MSc MTLCI 2026-27",
+  "items": [
+    {
+      "id": "mem-j1",
+      "category": "memoire",
+      "order": 1,
+      "title": "Jalon 1 — Trouver un tuteur et un sujet",
+      "description": "1ère formulation de la problématique (ou a minima une thématique) et choix du tuteur mémoire sur la plateforme.",
+      "date": "2026-11-07",
+      "startDate": "2026-10-01",
+      "yearInferred": true,
+      "dateNote": "Au plus tard le 7 novembre · ouverture le 1er octobre",
+      "checklist": [
+        {
+          "t": "Formuler une 1ère problématique (question managériale liée aux missions)"
+        },
+        {
+          "t": "Choisir un tuteur mémoire sur memoires.kedgebs.com"
+        },
+        {
+          "t": "Valider sujet et faisabilité (accès au terrain) avec le tuteur entreprise et le tuteur mémoire"
+        }
+      ],
+      "links": [
+        {
+          "label": "Plateforme mémoire",
+          "url": "https://memoires.kedgebs.com"
+        }
+      ],
+      "source": "Cahier des charges du mémoire de recherche professionnel M2 MSc-MTLCI 2026-27 (KEDGE, oct. 2026), p. 9, 16-19",
+      "en": {
+        "title": "Milestone 1 — Find a supervisor and a topic",
+        "description": "First formulation of the research problem (or at least a theme) and choice of a thesis supervisor on the platform.",
+        "dateNote": "By 7 November at the latest · opens 1 October",
+        "checklist": [
+          "Formulate a first research problem (managerial question linked to your assignments)",
+          "Choose a thesis supervisor on memoires.kedgebs.com",
+          "Validate the topic and its feasibility (field access) with your company supervisor and thesis supervisor"
+        ]
+      },
+      "official": true
+    },
+    {
+      "id": "mem-j2",
+      "category": "memoire",
+      "order": 2,
+      "title": "Jalon 2 — Projet de recherche + 1ères références bibliographiques",
+      "description": "Synthèse organisée du travail de mémoire, environ 5 pages.",
+      "date": "2027-01-22",
+      "yearInferred": true,
+      "dateNote": "Au plus tard le 22 janvier",
+      "checklist": [
+        {
+          "t": "Intérêt du sujet, objectifs et contexte"
+        },
+        {
+          "t": "Définition du sujet : mots clés, périmètre"
+        },
+        {
+          "t": "Problématique : question centrale et sous-questions"
+        },
+        {
+          "t": "1ère bibliographie (références, intérêt, synthèse)"
+        },
+        {
+          "t": "Plan du mémoire (1ère ébauche)"
+        }
+      ],
+      "links": [
+        {
+          "label": "Plateforme mémoire",
+          "url": "https://memoires.kedgebs.com"
+        }
+      ],
+      "source": "Cahier des charges du mémoire de recherche professionnel M2 MSc-MTLCI 2026-27 (KEDGE, oct. 2026), p. 9, 20-21",
+      "en": {
+        "title": "Milestone 2 — Research project + first references",
+        "description": "Organised summary of your thesis work, about 5 pages.",
+        "dateNote": "By 22 January at the latest",
+        "checklist": [
+          "Relevance of the topic, objectives and context",
+          "Definition of the topic: key words, scope",
+          "Research problem: central question and sub-questions",
+          "First bibliography (references, relevance, summary)",
+          "Thesis outline (first draft)"
+        ]
+      },
+      "official": true
+    },
+    {
+      "id": "mem-j3",
+      "category": "memoire",
+      "order": 3,
+      "title": "Jalon 3 — Revue de littérature",
+      "description": "Synthèse de ce qui est connu sur le sujet (état de l'art en logique d'entonnoir).",
+      "date": "2027-03-26",
+      "yearInferred": true,
+      "dateNote": "Au plus tard le 26 mars · malus de 2 points en cas de retard",
+      "checklist": [
+        {
+          "t": "Au moins 10 références"
+        },
+        {
+          "t": "Dont 4 à 5 articles académiques"
+        },
+        {
+          "t": "Dont 4 à 5 ouvrages de management"
+        },
+        {
+          "t": "Littérature professionnelle si possible"
+        },
+        {
+          "t": "Citations aux normes APA"
+        }
+      ],
+      "links": [
+        {
+          "label": "Plateforme mémoire",
+          "url": "https://memoires.kedgebs.com"
+        }
+      ],
+      "source": "Cahier des charges du mémoire de recherche professionnel M2 MSc-MTLCI 2026-27 (KEDGE, oct. 2026), p. 9, 22-25",
+      "en": {
+        "title": "Milestone 3 — Literature review",
+        "description": "Summary of what is known about the topic (state of the art, funnel logic).",
+        "dateNote": "By 26 March at the latest · 2-point penalty if late",
+        "checklist": [
+          "At least 10 references",
+          "Including 4 to 5 academic articles",
+          "Including 4 to 5 management books",
+          "Professional literature if possible",
+          "APA citations"
+        ]
+      },
+      "official": true
+    },
+    {
+      "id": "mem-j4",
+      "category": "memoire",
+      "order": 4,
+      "title": "Jalon 4 — Méthodologie terrain",
+      "description": "Méthode de l'étude empirique pour produire et analyser des données terrain.",
+      "date": "2027-05-28",
+      "yearInferred": true,
+      "dateNote": "Au plus tard le 28 mai · malus de 2 points en cas de retard",
+      "checklist": [
+        {
+          "t": "Rappel des objectifs de l'étude terrain"
+        },
+        {
+          "t": "Méthode employée et justification (qualitative / quantitative)"
+        },
+        {
+          "t": "Échantillon : sélection et typologie des acteurs"
+        },
+        {
+          "t": "Outil de collecte (guide d'entretien ou questionnaire)"
+        },
+        {
+          "t": "Méthode d'analyse des données"
+        },
+        {
+          "t": "Phasage dans le temps"
+        }
+      ],
+      "links": [
+        {
+          "label": "Plateforme mémoire",
+          "url": "https://memoires.kedgebs.com"
+        }
+      ],
+      "source": "Cahier des charges du mémoire de recherche professionnel M2 MSc-MTLCI 2026-27 (KEDGE, oct. 2026), p. 9, 26-28",
+      "en": {
+        "title": "Milestone 4 — Field methodology",
+        "description": "Method of the empirical study to produce and analyse field data.",
+        "dateNote": "By 28 May at the latest · 2-point penalty if late",
+        "checklist": [
+          "Reminder of the field study objectives",
+          "Method used and justification (qualitative / quantitative)",
+          "Sample: selection and types of stakeholders",
+          "Data collection tool (interview guide or questionnaire)",
+          "Data analysis method",
+          "Timeline"
+        ]
+      },
+      "official": true
+    },
+    {
+      "id": "mem-j5",
+      "category": "memoire",
+      "order": 5,
+      "title": "Jalon 5 — Dépôt du mémoire",
+      "description": "Mémoire complet déposé sur la plateforme. Sans dépôt, la soutenance est impossible.",
+      "date": "2027-10-11",
+      "yearInferred": true,
+      "dateConfidence": "provisoire",
+      "dateNote": "Au plus tard le 11 octobre — ⚠ la version anglaise du cahier indique « By August 31st (By 11 October at the latest) » : objectif 31 août, limite 11 oct. (la version FR ne cite que le 11 oct.)",
+      "checklist": [
+        {
+          "t": "Rédaction des parties : étude terrain, analyse des résultats, recommandations et plan d'action, limites"
+        },
+        {
+          "t": "Première version relue par le tuteur mémoire"
+        },
+        {
+          "t": "Intégration des corrections"
+        },
+        {
+          "t": "Validation du contenu par le tuteur entreprise (avant envoi au tuteur école)"
+        },
+        {
+          "t": "Synthèse managériale (≈ 1 page), introduction et conclusion (3 pages mini chacune)"
+        },
+        {
+          "t": "≈ 50 pages mini hors annexes · Times New Roman 12 · interligne 1,5 · marges 2,5 cm"
+        },
+        {
+          "t": "Page de garde conforme au modèle"
+        },
+        {
+          "t": "Bibliographie APA complète"
+        },
+        {
+          "t": "Contrôle anti-plagiat (Compilatio) : moins de 10 %"
+        }
+      ],
+      "links": [
+        {
+          "label": "Plateforme mémoire",
+          "url": "https://memoires.kedgebs.com"
+        },
+        {
+          "label": "Dossier MÉMOIRE (Drive)",
+          "url": "https://drive.google.com/drive/folders/1JnIbAfT4Zo3wMOoxqIGLzDAcydH04K0m"
+        },
+        {
+          "label": "Cahier des charges (FR)",
+          "url": "https://drive.google.com/file/d/1CQVVBJQ-LcaIx2aq9cEReIMKGdDeT6_g/view"
+        },
+        {
+          "label": "Cahier des charges (EN)",
+          "url": "https://drive.google.com/file/d/12_xqD9CRutgMA1mkp2iQCuoNN7BsQ04g/view"
+        },
+        {
+          "label": "Règles plagiat / IA 2026-27",
+          "url": "https://drive.google.com/file/d/11Tck3xdD86jW4d2HJSQYHw3xBBbcqUsD/view"
+        }
+      ],
+      "source": "Cahier des charges du mémoire de recherche professionnel M2 MSc-MTLCI 2026-27 (KEDGE, oct. 2026), p. 9, 29-41",
+      "en": {
+        "title": "Milestone 5 — Thesis submission",
+        "description": "Full thesis submitted on the platform. Without submission, the defence is not possible.",
+        "dateNote": "By 11 October at the latest — ⚠ the English specifications say “By August 31st (By 11 October at the latest)”: target 31 August, deadline 11 October",
+        "checklist": [
+          "Write the parts: field study, analysis of results, recommendations and action plan, limitations",
+          "First version reviewed by the thesis supervisor",
+          "Integrate the corrections",
+          "Content validated by the company supervisor (before sending to the school supervisor)",
+          "Executive summary (≈ 1 page), introduction and conclusion (3 pages min. each)",
+          "≈ 50 pages min. excluding appendices · Times New Roman 12 · 1.5 spacing · 2.5 cm margins",
+          "Cover page following the template",
+          "Complete APA bibliography",
+          "Plagiarism check (Compilatio): under 10%"
+        ]
+      },
+      "official": true
+    },
+    {
+      "id": "mem-sout",
+      "category": "memoire",
+      "order": 6,
+      "title": "Soutenance orale",
+      "description": "Présentation PowerPoint de 20 min puis questions/réponses, en distanciel avec le tuteur mémoire. Compte pour 40 % de la note.",
+      "date": "2027-10-29",
+      "yearInferred": true,
+      "dateConfidence": "provisoire",
+      "dateNote": "Le 29 octobre au plus tard — ⚠ la version anglaise indique « By September 10th (By 29 October at the latest) » · date exacte à fixer avec le tuteur mémoire",
+      "checklist": [
+        {
+          "t": "Planifier la soutenance avec le tuteur mémoire"
+        },
+        {
+          "t": "Préparer le support PPT (20 min)"
+        },
+        {
+          "t": "Faire une simulation minutée"
+        }
+      ],
+      "links": [
+        {
+          "label": "Plateforme mémoire",
+          "url": "https://memoires.kedgebs.com"
+        }
+      ],
+      "source": "Cahier des charges du mémoire de recherche professionnel M2 MSc-MTLCI 2026-27 (KEDGE, oct. 2026), p. 9-11",
+      "en": {
+        "title": "Oral defence",
+        "description": "20-minute PowerPoint presentation followed by questions, remotely with the thesis supervisor. Counts for 40% of the thesis grade.",
+        "dateNote": "By 29 October at the latest — ⚠ the English version says “By September 10th (By 29 October at the latest)” · exact date to be set with the thesis supervisor",
+        "checklist": [
+          "Schedule the defence with the thesis supervisor",
+          "Prepare the slides (20 min)",
+          "Do a timed rehearsal"
+        ]
+      },
+      "official": true
+    },
+    {
+      "id": "par-s1-inttransport",
+      "category": "partiels",
+      "order": 1,
+      "title": "International Transport",
+      "date": "2026-12-16",
+      "timeStart": "13:00",
+      "timeEnd": "16:00",
+      "room": "Amphithéâtre 8.113, Salle de classe 9.208",
+      "examFormat": "Examen surveillé digital",
+      "examType": "Écrit",
+      "semester": "Semestre 1",
+      "source": "Planning des examens semestre 1 (capture EDT KEDGE transmise le 20/11/2026)",
+      "links": [
+        {
+          "label": "Dossier de cours (Drive)",
+          "url": "https://drive.google.com/drive/folders/11ZVEnsd4r5_LHS7h8OaDxV6nb_v0aCok"
+        },
+        {
+          "label": "Session 1 Course Introduction",
+          "url": "https://drive.google.com/file/d/1Y3-gojvSjpgULBspk4NyGYtp7sNnQzCg/view"
+        },
+        {
+          "label": "Session 1-2 Features of different transport modes",
+          "url": "https://drive.google.com/file/d/1yIyUDa8NbMNCB1za2K3_A_4ZQ1qnKxaj/view"
+        },
+        {
+          "label": "Session 3-4 Introduction to maritime transport",
+          "url": "https://drive.google.com/file/d/1MlXC5vgiiheYjHaXmsMFIoKgyfw9TaJ1/view"
+        },
+        {
+          "label": "Session 4-5 Pricing Quotations Incoterms",
+          "url": "https://drive.google.com/file/d/1YV1fpcz-ECylLFuHVgM2zaKO6xtGa5cy/view"
+        },
+        {
+          "label": "Session 8 Advanced notions in maritime",
+          "url": "https://drive.google.com/file/d/1rOCYqsq4YfY5dTYYAjhphiL-VXq8Z9tU/view"
+        }
+      ],
+      "en": {
+        "examFormat": "Supervised digital exam",
+        "evaluation": "3 parts, each worth 25 to 35 points: 1) Quotations; 2) Incoterms; 3) Comparison of transport modes (qualitative), features and shipping market."
+      },
+      "evaluation": "3 parties notées chacune entre 25 et 35 points : 1) Quotations (cotations) ; 2) Incoterms ; 3) Comparaison des modes de transport (qualitatif), caractéristiques et marché du shipping.",
+      "official": true
+    },
+    {
+      "id": "par-s1-humanai",
+      "category": "partiels",
+      "order": 2,
+      "title": "Human & AI Collaboration",
+      "date": "2026-12-17",
+      "timeStart": "08:30",
+      "timeEnd": "11:30",
+      "room": "Salles de classe 0.001, 0.002",
+      "examFormat": "Examen surveillé",
+      "examType": "Écrit",
+      "semester": "Semestre 1",
+      "source": "Planning des examens semestre 1 (capture EDT KEDGE transmise le 20/11/2026)",
+      "links": [
+        {
+          "label": "Dossier de cours (Drive)",
+          "url": "https://drive.google.com/drive/folders/1MwaSHum09zmkvfvswkbu5ZDYxdvbP2WS"
+        },
+        {
+          "label": "Recap 1 — AI Fluency 4D Framework",
+          "url": "https://drive.google.com/file/d/1VfkAWhj4lzB8r2k2U5dYQqJ_XlBUMsjn/view"
+        },
+        {
+          "label": "Recap 2 — Diligence Prompting MultiLLM",
+          "url": "https://drive.google.com/file/d/1bk37RNx9xqegzR9l5KqmL69PHxMmnC61/view"
+        },
+        {
+          "label": "Human-AI Collab Logistics — Students Hands-On v02",
+          "url": "https://drive.google.com/file/d/1M1LjX2L0CtpPp1nuhY8918zm3IDamx-3/view"
+        },
+        {
+          "label": "Capstone Menu (23/09/2026)",
+          "url": "https://drive.google.com/file/d/1jqr2hUd_A-NAJEemw5oQAJKegLXZlKQw/view"
+        }
+      ],
+      "en": {
+        "examFormat": "Supervised exam"
+      },
+      "official": true
+    },
+    {
+      "id": "par-s1-customs-1",
+      "category": "partiels",
+      "order": 3,
+      "title": "Customs Operations / Taxation — créneau 1",
+      "date": "2026-12-17",
+      "timeStart": "13:30",
+      "timeEnd": "14:30",
+      "room": "Amphithéâtres 5.021, 9.209",
+      "examFormat": "Examen surveillé",
+      "examType": "Écrit",
+      "semester": "Semestre 1",
+      "source": "Planning des examens semestre 1 (capture EDT KEDGE transmise le 20/11/2026)",
+      "links": [
+        {
+          "label": "Dossier de cours (Drive)",
+          "url": "https://drive.google.com/drive/folders/17XhTPiW81y1OhBSm6pBTeE-XtzIg-4ZT"
+        },
+        {
+          "label": "Customs Management — Sessions 1 & 2",
+          "url": "https://drive.google.com/file/d/10QuBkvTEAY9MXjg5EHsY-GzPRZE2dCpO/view"
+        },
+        {
+          "label": "Customs Management — Sessions 1 à 5",
+          "url": "https://drive.google.com/file/d/1Iu9eBdb8wespWnk4RwCnlxA9AhbLAxmK/view"
+        }
+      ],
+      "en": {
+        "examFormat": "Supervised exam",
+        "title": "Customs Operations / Taxation — slot 1",
+        "dateNote": "2 slots on the same day for this course — to be confirmed"
+      },
+      "dateNote": "2 créneaux le même jour pour cette matière — à confirmer",
+      "official": true
+    },
+    {
+      "id": "par-s1-customs-2",
+      "category": "partiels",
+      "order": 4,
+      "title": "Customs Operations / Taxation — créneau 2",
+      "date": "2026-12-17",
+      "timeStart": "15:30",
+      "timeEnd": "18:30",
+      "room": "Amphithéâtres 5.021, 9.209",
+      "examFormat": "Examen surveillé",
+      "examType": "Écrit",
+      "semester": "Semestre 1",
+      "source": "Planning des examens semestre 1 (capture EDT KEDGE transmise le 20/11/2026)",
+      "links": [
+        {
+          "label": "Dossier de cours (Drive)",
+          "url": "https://drive.google.com/drive/folders/17XhTPiW81y1OhBSm6pBTeE-XtzIg-4ZT"
+        },
+        {
+          "label": "Customs Management — Sessions 1 & 2",
+          "url": "https://drive.google.com/file/d/10QuBkvTEAY9MXjg5EHsY-GzPRZE2dCpO/view"
+        },
+        {
+          "label": "Customs Management — Sessions 1 à 5",
+          "url": "https://drive.google.com/file/d/1Iu9eBdb8wespWnk4RwCnlxA9AhbLAxmK/view"
+        }
+      ],
+      "en": {
+        "examFormat": "Supervised exam",
+        "title": "Customs Operations / Taxation — slot 2",
+        "dateNote": "2 slots on the same day for this course — to be confirmed"
+      },
+      "dateNote": "2 créneaux le même jour pour cette matière — à confirmer",
+      "official": true
+    },
+    {
+      "id": "par-s1-contracts",
+      "category": "partiels",
+      "order": 5,
+      "title": "International Contracts & Risks Management",
+      "date": "2026-12-18",
+      "timeStart": "08:30",
+      "timeEnd": "11:30",
+      "room": "Salles de classe 6.001, 6.002, 6.003",
+      "examFormat": "Examen surveillé",
+      "examType": "Écrit",
+      "semester": "Semestre 1",
+      "source": "Planning des examens semestre 1 (capture EDT KEDGE transmise le 20/11/2026)",
+      "links": [
+        {
+          "label": "Dossier de cours (Drive)",
+          "url": "https://drive.google.com/drive/folders/1x1umPZ0IStjX2yjZrWlTL_rTDhb5FpK3"
+        },
+        {
+          "label": "International means of payment (L. Fedi 2026)",
+          "url": "https://drive.google.com/file/d/1B80uDJmZraxK3pPs5lFQxcxTe-3zt0wH/view"
+        },
+        {
+          "label": "International techniques of payment (L. Fedi 2026)",
+          "url": "https://drive.google.com/file/d/1vBjHyMznHz2dmv6wYrzIlN-1o80i91j-/view"
+        },
+        {
+          "label": "Synthesis international payments Part I (L. Fedi)",
+          "url": "https://drive.google.com/file/d/1f9Jht4Ax1-RkUD_U6j3G9IeFxYLHvFWZ/view"
+        },
+        {
+          "label": "Documentary credit (L. Fedi 2026)",
+          "url": "https://drive.google.com/file/d/14OtRFD9idNBZ5IZX0YvfcKmvxllwp-4o/view"
+        },
+        {
+          "label": "UCP 600 Documentary Credits",
+          "url": "https://drive.google.com/file/d/1qqA3s6606m2d-UlsWCoTU7mYrUHWsTqN/view"
+        },
+        {
+          "label": "URC 522 Documentary Collection",
+          "url": "https://drive.google.com/file/d/1XKA6MC-YbAmgUSqyVGOboGcTBSLJv8uK/view"
+        },
+        {
+          "label": "eURC Supplement URC522",
+          "url": "https://drive.google.com/file/d/16vdohN0vL-lOkYyc0UKXymIlCU0fZy_5/view"
+        },
+        {
+          "label": "Case Study Documentary Remittance",
+          "url": "https://drive.google.com/file/d/1XwqFqNZ4TJAiu13cZxTbT6RQNMUc8PV5/view"
+        },
+        {
+          "label": "International SBLC (L. Fedi 2026)",
+          "url": "https://drive.google.com/file/d/1zCYuM_RHRQeU2cv2K8no_YDo_m5Hbegn/view"
+        },
+        {
+          "label": "Exchange Rate Risk Management (L. Fedi 2026)",
+          "url": "https://drive.google.com/file/d/1ZaPQP-R5-9aezUfgXdaXZsxdl_jZeSVa/view"
+        },
+        {
+          "label": "ESG risk",
+          "url": "https://drive.google.com/file/d/1iL32XZ51javDkD47AXSNzHQq0NrV9Bzv/view"
+        },
+        {
+          "label": "Fedi et al. 2025 — Global Strategic Alliances in container liner shipping",
+          "url": "https://drive.google.com/file/d/1fDE2-HYVmJ2ag59_RHoPItL0QqPlRiAD/view"
+        },
+        {
+          "label": "Shipping lines create a trinity",
+          "url": "https://drive.google.com/file/d/1lUDRr37UD6rkCZDxySl4mIDdezyN9GKv/view"
+        },
+        {
+          "label": "Will carriers control shipping's digitalisation",
+          "url": "https://drive.google.com/file/d/1VUD1Qayru606DuhZU5H04QFKKYC1dS9x/view"
+        },
+        {
+          "label": "Agreement 201277-000 SCA CMA Maersk",
+          "url": "https://drive.google.com/file/d/1BGKJRvpomrCajHECJD2-0JRpnaQqJhPg/view"
+        },
+        {
+          "label": "OCEAN Alliance amended Agreement 012426-007",
+          "url": "https://drive.google.com/file/d/1OyYJ5b9q5otxwc2e9mIFEk1okZM5fWRR/view"
+        },
+        {
+          "label": "Gemini amended Agreement-MK 201429-001",
+          "url": "https://drive.google.com/file/d/1YB7h8JzEzClo73HBj2jv-aFf_GYdVe3N/view"
+        },
+        {
+          "label": "Premier Alliance Agreement CWA",
+          "url": "https://drive.google.com/file/d/1PPZkDU0BXCF3nBn7IftKc9sqKe2NNh6M/view"
+        },
+        {
+          "label": "GSBN Agreement 201344-000",
+          "url": "https://drive.google.com/file/d/1PE6ozOxl4JGATJkBWu7OZIkO9v2oATb1/view"
+        },
+        {
+          "label": "DCSAA Agreement 201288-005",
+          "url": "https://drive.google.com/file/d/11l1LIG4lqvL2WQZVDEe-aSCVSKGVlUy4/view"
+        }
+      ],
+      "en": {
+        "examFormat": "Supervised exam"
+      },
+      "official": true
+    },
+    {
+      "id": "par-s1-warehouse",
+      "category": "partiels",
+      "order": 6,
+      "title": "Warehouse Management and Dry Ports",
+      "date": "2026-12-18",
+      "timeStart": "13:30",
+      "timeEnd": "16:30",
+      "room": "Amphithéâtre 8.113, Salle de classe 9.208",
+      "examFormat": "Examen surveillé digital",
+      "examType": "Écrit",
+      "semester": "Semestre 1",
+      "source": "Planning des examens semestre 1 (capture EDT KEDGE transmise le 20/11/2026)",
+      "links": [
+        {
+          "label": "Dossier de cours (Drive)",
+          "url": "https://drive.google.com/drive/folders/1TcTsIKnDUs7s_z5jXfGo03LCX-JZQHoB"
+        },
+        {
+          "label": "M2 - ITL - Sessions 01 & 02",
+          "url": "https://drive.google.com/file/d/1In3myIewF91eaafFnfJ81w0se_K8069H/view"
+        },
+        {
+          "label": "M2 - ITL - Alt - Session 4",
+          "url": "https://drive.google.com/file/d/1SQ1q0RaVlaAjbvMVvLHYywdIET3fpM7Y/view"
+        },
+        {
+          "label": "M2 - ITL - Sessions 5-6",
+          "url": "https://drive.google.com/file/d/1fg2CgHwiQRN6n-4QKJJlSZpKSWvgGyAX/view"
+        },
+        {
+          "label": "Case 04 - WGP Chemical",
+          "url": "https://drive.google.com/file/d/12VYV6eZ3XhQh_VUNUoylLiyhMm7p4-9r/view"
+        },
+        {
+          "label": "Ducoll inc. (cas)",
+          "url": "https://drive.google.com/file/d/1EK-azpa6oRcpnhWRYyWITetwISeINNfn/view"
+        },
+        {
+          "label": "Parameters for Ducoll26 for students (xlsx)",
+          "url": "https://drive.google.com/file/d/1bdG5cZ__i_-ZzEWS5j4kWXza2YMIX063/view"
+        },
+        {
+          "label": "Calcul heuristique 3 (xlsx)",
+          "url": "https://drive.google.com/file/d/15C4k4MyNZ5aXGM-Si70TrFu6TKOMzfW-/view"
+        },
+        {
+          "label": "Calcul quick CASE (xlsx)",
+          "url": "https://drive.google.com/file/d/1vNsICzbf8AESZGRX7-4W6pcact448wqo/view"
+        },
+        {
+          "label": "Fiches de tâches Cotamatic",
+          "url": "https://drive.google.com/file/d/1tDR_Bhb4NRXnGyl_Hq7arlaLNPpxpQfn/view"
+        }
+      ],
+      "en": {
+        "examFormat": "Supervised digital exam"
+      },
+      "official": true
+    },
+    {
+      "id": "bloc-ecf1-rendu",
+      "category": "blocs",
+      "order": 1,
+      "title": "ECF1 · International Trade — Rendu Word + PPT (cas Kaiirous)",
+      "description": "Cas « La Fabbrique de Kaiirous » en groupe de 4. Documents Word et PPT en anglais, format professionnel, répondant précisément aux exigences du cas.",
+      "date": "2027-01-07",
+      "yearInferred": true,
+      "dateConfidence": "provisoire",
+      "dateNote": "Jeudi 7 janvier « before 12:00 AM » — heure ambiguë (minuit ou midi ?), à confirmer",
+      "checklist": [
+        {
+          "t": "Document Word en anglais"
+        },
+        {
+          "t": "Présentation PPT en anglais"
+        },
+        {
+          "t": "Annexes : factsheet, appendix…"
+        },
+        {
+          "t": "Dépôt sur le lien Compilatio"
+        },
+        {
+          "t": "Envoi à Cherifa"
+        }
+      ],
+      "links": [
+        {
+          "label": "Dossier ECF1 (Drive)",
+          "url": "https://drive.google.com/drive/folders/1nAOVf7ayxwfp6NJeoh2LimCfeEPIKSzQ"
+        },
+        {
+          "label": "Cas — La Fabbrique de Kaiirous",
+          "url": "https://drive.google.com/file/d/1g7meJuC2cFSTdUZfiAh2XCLhOMSG4uJa/view"
+        },
+        {
+          "label": "Mails d'E. Jouannaux (consignes)",
+          "url": "https://docs.google.com/document/d/1zfmTSlSI3pbMNoDSF7fPp__cPEZY-_tR62xi6Ahg3Zs/edit"
+        },
+        {
+          "label": "Lien de dépôt Compilatio",
+          "url": "https://app.compilatio.net/app/document-submission/929-DB9-56D"
+        }
+      ],
+      "source": "Mails d'Elisabeth Jouannaux du 02/11/2026 et du 08/11/2026 (Drive > BLOC > ECF1 > « Mail : Elisabeth JOUANNAUX »)",
+      "en": {
+        "title": "ECF1 · International Trade — Word + PPT submission (Kaiirous case)",
+        "description": "“La Fabbrique de Kaiirous” case in groups of 4. Word and PPT documents in English, professional format, answering the case requirements precisely.",
+        "dateNote": "Thursday 7 January “before 12:00 AM” — ambiguous time (midnight or noon?), to be confirmed",
+        "checklist": [
+          "Word document in English",
+          "PPT presentation in English",
+          "Appendices: factsheet, appendix…",
+          "Upload on the Compilatio link",
+          "Send to Cherifa"
+        ]
+      },
+      "official": true
+    },
+    {
+      "id": "bloc-ecf1-exam",
+      "category": "blocs",
+      "order": 2,
+      "title": "ECF1 · International Trade — Examen individuel (3h30)",
+      "description": "Examen individuel de 3h30 sur le cas « La Fabbrique de Kaiirous » (questions complémentaires, discussion…) pour valider le bloc de compétences. Ni documents ni ordinateur autorisés.",
+      "date": "2027-01-08",
+      "yearInferred": true,
+      "dateNote": "Vendredi 8 janvier · horaire et salle non communiqués",
+      "links": [
+        {
+          "label": "Dossier ECF1 (Drive)",
+          "url": "https://drive.google.com/drive/folders/1nAOVf7ayxwfp6NJeoh2LimCfeEPIKSzQ"
+        },
+        {
+          "label": "Cas — La Fabbrique de Kaiirous",
+          "url": "https://drive.google.com/file/d/1g7meJuC2cFSTdUZfiAh2XCLhOMSG4uJa/view"
+        },
+        {
+          "label": "Mails d'E. Jouannaux (consignes)",
+          "url": "https://docs.google.com/document/d/1zfmTSlSI3pbMNoDSF7fPp__cPEZY-_tR62xi6Ahg3Zs/edit"
+        }
+      ],
+      "source": "Mails d'Elisabeth Jouannaux du 02/11/2026 et du 08/11/2026 (Drive > BLOC > ECF1 > « Mail : Elisabeth JOUANNAUX »)",
+      "en": {
+        "title": "ECF1 · International Trade — Individual exam (3h30)",
+        "description": "Individual 3h30 exam on the “La Fabbrique de Kaiirous” case (additional questions, discussion…) to validate the skill block. No documents or computers allowed.",
+        "dateNote": "Friday 8 January · time and room not yet announced"
+      },
+      "official": true
+    },
+    {
+      "id": "bloc-ecf1-soutenance",
+      "category": "blocs",
+      "order": 3,
+      "title": "ECF1 · International Trade — Soutenance de groupe (cas Kaiirous)",
+      "description": "Présentation de 20 min + 30 min de questions/réponses, en groupe de 4. Critères du jury : contenu général et qualité de la présentation ; analyse de la situation ; cohérence et pertinence des informations ; qualité de l'argumentation ; pertinence des solutions et recommandations ; culture générale.",
+      "date": "2027-01-11",
+      "yearInferred": true,
+      "dateNote": "Lundi 11 janvier · horaire et salle à venir (envoyés par Cherifa)",
+      "links": [
+        {
+          "label": "Dossier ECF1 (Drive)",
+          "url": "https://drive.google.com/drive/folders/1nAOVf7ayxwfp6NJeoh2LimCfeEPIKSzQ"
+        },
+        {
+          "label": "Cas — La Fabbrique de Kaiirous",
+          "url": "https://drive.google.com/file/d/1g7meJuC2cFSTdUZfiAh2XCLhOMSG4uJa/view"
+        },
+        {
+          "label": "Mails d'E. Jouannaux (consignes)",
+          "url": "https://docs.google.com/document/d/1zfmTSlSI3pbMNoDSF7fPp__cPEZY-_tR62xi6Ahg3Zs/edit"
+        }
+      ],
+      "source": "Mails d'Elisabeth Jouannaux du 02/11/2026 et du 08/11/2026 (Drive > BLOC > ECF1 > « Mail : Elisabeth JOUANNAUX »)",
+      "en": {
+        "title": "ECF1 · International Trade — Group defence (Kaiirous case)",
+        "description": "20-minute presentation + 30 minutes of Q&A, in groups of 4. Jury criteria: overall content and quality of the presentation; analysis of the situation; coherence and relevance of information; quality of argument; relevance of solutions and recommendations; general knowledge.",
+        "dateNote": "Monday 11 January · time and room to come (sent by Cherifa)"
+      },
+      "official": true
+    },
+    {
+      "id": "bloc-ecf2",
+      "category": "blocs",
+      "order": 4,
+      "title": "ECF2 · International Transport",
+      "description": "Évaluation ECF du bloc 2 (International Transport). Compte pour 10 % de la note finale du diplôme. Modalités détaillées à venir.",
+      "date": "2027-05-07",
+      "yearInferred": true,
+      "dateNote": "Écrit ou oral : à confirmer",
+      "links": [
+        {
+          "label": "Dossier ECF2 (Drive)",
+          "url": "https://drive.google.com/drive/folders/1XdkBUgNB2FQkxne0cp-NVvLMxeu54XnH"
+        },
+        {
+          "label": "Tableau des évaluations (image)",
+          "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
+        }
+      ],
+      "source": "Tableau des évaluations MTLCI (capture IMG_1067, Drive > BLOC > ECF2 et ECF3)",
+      "en": {
+        "description": "ECF assessment of block 2 (International Transport). Counts for 10% of the final degree grade. Details to come.",
+        "dateNote": "Written or oral: to be confirmed"
+      },
+      "official": true
+    },
+    {
+      "id": "bloc-ms2",
+      "category": "blocs",
+      "order": 5,
+      "title": "MS2 · International Transport",
+      "description": "Évaluation MS du bloc 2 (International Transport). Modalités détaillées à venir.",
+      "date": "2027-05-10",
+      "yearInferred": true,
+      "dateNote": "Écrit ou oral : à confirmer",
+      "links": [
+        {
+          "label": "Dossier ECF2 (Drive)",
+          "url": "https://drive.google.com/drive/folders/1XdkBUgNB2FQkxne0cp-NVvLMxeu54XnH"
+        },
+        {
+          "label": "Tableau des évaluations (image)",
+          "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
+        }
+      ],
+      "source": "Tableau des évaluations MTLCI (capture IMG_1067, Drive > BLOC > ECF2 et ECF3)",
+      "en": {
+        "description": "MS assessment of block 2 (International Transport). Details to come.",
+        "dateNote": "Written or oral: to be confirmed"
+      },
+      "official": true
+    },
+    {
+      "id": "bloc-ecf3",
+      "category": "blocs",
+      "order": 6,
+      "title": "ECF3 · Global Logistics",
+      "description": "Évaluation ECF du bloc 3 (Global Logistics). Compte pour 10 % de la note finale du diplôme. Modalités détaillées à venir.",
+      "date": "2027-06-25",
+      "yearInferred": true,
+      "dateNote": "Écrit ou oral : à confirmer",
+      "links": [
+        {
+          "label": "Dossier ECF3 (Drive)",
+          "url": "https://drive.google.com/drive/folders/1oDEDOr_R6yBfHxmnsOFaktXlkhGItbbz"
+        },
+        {
+          "label": "Tableau des évaluations (image)",
+          "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
+        }
+      ],
+      "source": "Tableau des évaluations MTLCI (capture IMG_1067, Drive > BLOC > ECF2 et ECF3)",
+      "en": {
+        "description": "ECF assessment of block 3 (Global Logistics). Counts for 10% of the final degree grade. Details to come.",
+        "dateNote": "Written or oral: to be confirmed"
+      },
+      "official": true
+    },
+    {
+      "id": "bloc-ms3",
+      "category": "blocs",
+      "order": 7,
+      "title": "MS3 · Global Logistics",
+      "description": "Évaluation MS du bloc 3 (Global Logistics). Modalités détaillées à venir.",
+      "date": "2027-06-28",
+      "yearInferred": true,
+      "dateNote": "Écrit ou oral : à confirmer",
+      "links": [
+        {
+          "label": "Dossier ECF3 (Drive)",
+          "url": "https://drive.google.com/drive/folders/1oDEDOr_R6yBfHxmnsOFaktXlkhGItbbz"
+        },
+        {
+          "label": "Tableau des évaluations (image)",
+          "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
+        }
+      ],
+      "source": "Tableau des évaluations MTLCI (capture IMG_1067, Drive > BLOC > ECF2 et ECF3)",
+      "en": {
+        "description": "MS assessment of block 3 (Global Logistics). Details to come.",
+        "dateNote": "Written or oral: to be confirmed"
+      },
+      "official": true
+    },
+    {
+      "id": "cas-final",
+      "category": "casfinal",
+      "order": 1,
+      "title": "Cas final — Performance (bloc 5, 5 compétences)",
+      "description": "Cas final de performance management : les 4 compétences des blocs précédents sont évaluées sous l'angle de la gestion de la performance. Rapport écrit à rendre, puis présentation individuelle d'au moins 1h15 devant un jury de professionnels. Compte pour 40 % de la note finale du diplôme.",
+      "date": "2027-09-09",
+      "startDate": "2027-09-07",
+      "dateNote": "7, 8 et 9 septembre 2027 · date de remise du rapport écrit non communiquée",
+      "checklist": [
+        {
+          "t": "Rapport écrit"
+        },
+        {
+          "t": "Présentation individuelle (1h15 minimum) devant un jury de professionnels"
+        }
+      ],
+      "links": [
+        {
+          "label": "Dossier FINAL CASE (Drive)",
+          "url": "https://drive.google.com/drive/folders/1wy0cM-P0_6_1rinZ3FgvWD3NdHoWilGP"
+        },
+        {
+          "label": "Tableau des évaluations (image)",
+          "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
+        }
+      ],
+      "source": "Tableau des évaluations MTLCI (capture IMG_1067, Drive > BLOC > ECF2 et ECF3)",
+      "en": {
+        "title": "Final case — Performance (block 5, 5 competencies)",
+        "description": "Performance management final case: the 4 competencies of the previous blocks are assessed from a performance management perspective. Written report, then an individual presentation of at least 1h15 before a panel of professionals. Counts for 40% of the final degree grade.",
+        "dateNote": "7, 8 and 9 September 2027 · written report deadline not yet announced",
+        "checklist": [
+          "Written report",
+          "Individual presentation (1h15 minimum) before a panel of professionals"
+        ]
+      },
+      "official": true
+    }
+  ],
+  "categories": {
+    "blocs": {
+      "intro": "Les blocs de compétences sont validés par des ECF (évaluations en cours de formation). Chaque ECF peut comprendre un rendu de groupe, un examen individuel et une soutenance.",
+      "notes": "Bloc 1 — International Trade : ECF1 (cas « La Fabbrique de Kaiirous »), voir les échéances de janvier\nBloc 2 — International Transport : ECF2 le vendredi 7 mai, MS2 le lundi 10 mai 2027\nBloc 3 — Global Logistics : ECF3 le vendredi 25 juin, MS3 le lundi 28 juin 2027\nBloc 5 — Performance : évalué par le cas final (7-8-9 septembre 2027)\nNote finale du diplôme : blocs 1 à 4 = 40 % (10 % chacun) · bloc 5 / cas final = 40 % · mémoire = 20 %",
+      "links": [
+        {
+          "label": "Dossier BLOC (Drive)",
+          "url": "https://drive.google.com/drive/folders/1tZ3z8WfQSWCbQMIeDqqMB4yBR2-ZTfG-"
+        },
+        {
+          "label": "Tableau des évaluations (image)",
+          "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
+        }
+      ],
+      "source": "Mails d'E. Jouannaux (02/11 et 08/11/2026) + Tableau des évaluations MTLCI (capture IMG_1067, Drive > BLOC > ECF2 et ECF3)",
+      "en": {
+        "intro": "Skill blocks are validated through ECF assessments (in-course evaluations). Each block can include a group submission, an individual exam and a defence.",
+        "notes": "Block 1 — International Trade: ECF1 (“La Fabbrique de Kaiirous” case), see the January deadlines\nBlock 2 — International Transport: ECF2 on Friday 7 May, MS2 on Monday 10 May 2027\nBlock 3 — Global Logistics: ECF3 on Friday 25 June, MS3 on Monday 28 June 2027\nBlock 5 — Performance: assessed through the final case (7-8-9 September 2027)\nFinal degree grade: blocks 1 to 4 = 40% (10% each) · block 5 / final case = 40% · thesis = 20%"
+      }
+    },
+    "partiels": {
+      "intro": "Les examens écrits du semestre : date, horaire, salle, format, notation et dossier de cours de chaque matière. Cliquez sur « Marquer passé » après l'épreuve pour suivre votre avancement.",
+      "notes": "Semestre 1 : session d'examens du mercredi 16 au vendredi 18 décembre 2026\n5 matières, 6 créneaux d'examen surveillé (dont 2 sur ordinateur : International Transport, Warehouse Management)",
+      "links": [
+        {
+          "label": "Drive — Cours Semester 1",
+          "url": "https://drive.google.com/drive/folders/15vdoUGWbXYJexZFDpUVsWcRoS7j3CDrW"
+        }
+      ],
+      "source": "Planning des examens semestre 1 (capture EDT KEDGE transmise le 20/11/2026)",
+      "en": {
+        "intro": "The semester's written exams: date, time, room, format, grading and course folder for each course. Click “Mark taken” after the exam to track your progress.",
+        "notes": "Semester 1: exam session from Wednesday 16 to Friday 18 December 2026\n5 courses, 6 supervised exam slots (2 on computer: International Transport, Warehouse Management)"
+      }
+    },
+    "memoire": {
+      "intro": "Le mémoire de recherche professionnel se construit sur toute l'année : 5 jalons obligatoires à déposer sur la plateforme mémoire, puis une soutenance. Chaque jalon liste ce qu'il faut rendre. Vous pouvez ajouter vos propres échéances avec « ＋ Ajouter une échéance » : elles ne seront visibles que par vous.",
+      "notes": "5 jalons obligatoires + une soutenance, déposés sur la plateforme mémoire\nÉvaluation : 60 % écrit / 40 % oral — 10/20 minimum\nSoutenance : 20 min de PPT + questions, en distanciel avec le tuteur mémoire\nRendez-vous avec le tuteur mémoire environ 1 fois par mois\nRetard aux jalons 3 et 4 : malus de 2 points\nPas de dépôt du mémoire = pas de soutenance\nMémoire : ≈ 50 pages mini hors annexes, en français ou en anglais\nCours Méthodes de recherche + accompagnement mémoire (pass/fail)\nPlagiat (Compilatio) : 10–20 % = décision du tuteur ; ≥ 20 % = 0/20, report de diplôme, conseil de discipline possible\nIA détectée : ≤ 10 % toléré ; 10–30 % = examen approfondi ; ≥ 30 % = fraude\nDates visées (version EN) : dépôt avant le 31 août, soutenance avant le 10 septembre",
+      "links": [
+        {
+          "label": "Plateforme mémoire KEDGE",
+          "url": "https://memoires.kedgebs.com"
+        },
+        {
+          "label": "Dossier MÉMOIRE (Drive)",
+          "url": "https://drive.google.com/drive/folders/1JnIbAfT4Zo3wMOoxqIGLzDAcydH04K0m"
+        },
+        {
+          "label": "Règles plagiat / IA 2026-27",
+          "url": "https://drive.google.com/file/d/11Tck3xdD86jW4d2HJSQYHw3xBBbcqUsD/view"
+        }
+      ],
+      "source": "Cahier des charges du mémoire M2 MSc-MTLCI 2026-27, versions FR et EN (oct. 2026) + « Gestion plagiat IA programmes 26-27 » (Thesis Lab)",
+      "en": {
+        "intro": "The professional research thesis is built over the whole year: 5 mandatory milestones submitted on the thesis platform, then an oral defence. Each milestone lists what to submit. You can add your own deadlines with “＋ Add a deadline”: only you will see them.",
+        "notes": "5 mandatory milestones + an oral defence, submitted on the thesis platform\nAssessment: 60% written / 40% oral — 10/20 minimum\nDefence: 20-min PPT + questions, remotely with the thesis supervisor\nMeet your thesis supervisor about once a month\nLate milestones 3 and 4: 2-point penalty\nNo thesis submitted = no defence\nThesis: ≈ 50 pages minimum excluding appendices, in French or English\nResearch Methods course + thesis support (pass/fail)\nPlagiarism (Compilatio): 10–20% = supervisor's decision; ≥ 20% = 0/20, degree postponed, possible disciplinary board\nAI detected: ≤ 10% tolerated; 10–30% = closer review; ≥ 30% = fraud\nTarget dates (English version): submission by 31 August, defence by 10 September"
+      }
+    },
+    "rapport": {
+      "intro": "Le rapport d'alternance : étapes de réalisation, livrables intermédiaires et date de remise finale. Informations à venir.",
+      "notes": "",
+      "links": [],
+      "en": {
+        "intro": "The work-study report: steps, intermediate deliverables and final submission date. Information coming soon."
+      }
+    },
+    "casfinal": {
+      "intro": "Le cas final de l'année : lancement, remise, soutenance et deadlines intermédiaires.",
+      "notes": "Cas final = bloc 5 « Performance » : 5 compétences évaluées\nDates : 7, 8 et 9 septembre 2027\nRapport écrit + présentation individuelle d'au moins 1h15 devant un jury de professionnels\nCompte pour 40 % de la note finale du diplôme",
+      "links": [
+        {
+          "label": "Dossier FINAL CASE (Drive)",
+          "url": "https://drive.google.com/drive/folders/1wy0cM-P0_6_1rinZ3FgvWD3NdHoWilGP"
+        },
+        {
+          "label": "Tableau des évaluations (image)",
+          "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
+        }
+      ],
+      "source": "Tableau des évaluations MTLCI (capture IMG_1067, Drive > BLOC > ECF2 et ECF3)",
+      "en": {
+        "intro": "The final case of the year: launch, submission, defence and intermediate deadlines.",
+        "notes": "Final case = block 5 “Performance”: 5 competencies assessed\nDates: 7, 8 and 9 September 2027\nWritten report + individual presentation of at least 1h15 before a panel of professionals\nCounts for 40% of the final degree grade"
+      }
+    }
+  },
+  "groups": []
+}

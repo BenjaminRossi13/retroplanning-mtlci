@@ -1,0 +1,605 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MTLCI//Retroplanning//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:MTLCI 2026-27 · Échéances
+X-WR-TIMEZONE:Europe/Paris
+X-WR-CALDESC:Partiels\, blocs\, mémoire et cas final de la promo MSc MTLC
+ I 2026-27 (mis à jour automatiquement)
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VTIMEZONE
+TZID:Europe/Paris
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:mem-j1@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:8803
+SUMMARY:[Mémoire] Jalon 1 — Trouver un tuteur et un sujet
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261108
+TRANSP:TRANSPARENT
+DESCRIPTION:1ère formulation de la problématique (ou a minima une théma
+ tique) et choix du tuteur mémoire sur la plateforme.\n\nNote : Au plus t
+ ard le 7 novembre · ouverture le 1er octobre\n\nEN: Milestone 1 — Find
+  a supervisor and a topic\n\nDocuments :\n- Plateforme mémoire https://m
+ emoires.kedgebs.com
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Jalon 1 — Trouver un tuteur et un sujet
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Jalon 1 — Trouver un tuteur et un sujet
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:mem-j2@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:29543
+SUMMARY:[Mémoire] Jalon 2 — Projet de recherche + 1ères références b
+ ibliographiques
+DTSTART;VALUE=DATE:20270122
+DTEND;VALUE=DATE:20270123
+TRANSP:TRANSPARENT
+DESCRIPTION:Synthèse organisée du travail de mémoire\, environ 5 pages.
+ \n\nNote : Au plus tard le 22 janvier\n\nEN: Milestone 2 — Research pro
+ ject + first references\n\nDocuments :\n- Plateforme mémoire https://mem
+ oires.kedgebs.com
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Jalon 2 — Projet de recherche + 1ères références bibliogr
+ aphiques
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Jalon 2 — Projet de recherche + 1ères références bibliogr
+ aphiques
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:mem-j3@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:53089
+SUMMARY:[Mémoire] Jalon 3 — Revue de littérature
+DTSTART;VALUE=DATE:20270326
+DTEND;VALUE=DATE:20270327
+TRANSP:TRANSPARENT
+DESCRIPTION:Synthèse de ce qui est connu sur le sujet (état de l'art en 
+ logique d'entonnoir).\n\nNote : Au plus tard le 26 mars · malus de 2 poi
+ nts en cas de retard\n\nEN: Milestone 3 — Literature review\n\nDocument
+ s :\n- Plateforme mémoire https://memoires.kedgebs.com
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Jalon 3 — Revue de littérature
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Jalon 3 — Revue de littérature
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:mem-j4@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:94436
+SUMMARY:[Mémoire] Jalon 4 — Méthodologie terrain
+DTSTART;VALUE=DATE:20270528
+DTEND;VALUE=DATE:20270529
+TRANSP:TRANSPARENT
+DESCRIPTION:Méthode de l'étude empirique pour produire et analyser des d
+ onnées terrain.\n\nNote : Au plus tard le 28 mai · malus de 2 points en
+  cas de retard\n\nEN: Milestone 4 — Field methodology\n\nDocuments :\n-
+  Plateforme mémoire https://memoires.kedgebs.com
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Jalon 4 — Méthodologie terrain
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Jalon 4 — Méthodologie terrain
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:mem-j5@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:39077
+SUMMARY:[Mémoire] Jalon 5 — Dépôt du mémoire
+DTSTART;VALUE=DATE:20271011
+DTEND;VALUE=DATE:20271012
+TRANSP:TRANSPARENT
+DESCRIPTION:Mémoire complet déposé sur la plateforme. Sans dépôt\, la
+  soutenance est impossible.\n\nNote : Au plus tard le 11 octobre — ⚠ 
+ la version anglaise du cahier indique « By August 31st (By 11 October at
+  the latest) » : objectif 31 août\, limite 11 oct. (la version FR ne ci
+ te que le 11 oct.)\n\nEN: Milestone 5 — Thesis submission\n\nDocuments 
+ :\n- Plateforme mémoire https://memoires.kedgebs.com\n- Dossier MÉMOIRE
+  (Drive) https://drive.google.com/drive/folders/1JnIbAfT4Zo3wMOoxqIGLzDAc
+ ydH04K0m\n- Cahier des charges (FR) https://drive.google.com/file/d/1CQVV
+ BJQ-LcaIx2aq9cEReIMKGdDeT6_g/view\n- Cahier des charges (EN) https://driv
+ e.google.com/file/d/12_xqD9CRutgMA1mkp2iQCuoNN7BsQ04g/view\n- Règles pla
+ giat / IA 2026-27 https://drive.google.com/file/d/11Tck3xdD86jW4d2HJSQYHw
+ 3xBBbcqUsD/view
+STATUS:TENTATIVE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Jalon 5 — Dépôt du mémoire
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Jalon 5 — Dépôt du mémoire
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:mem-sout@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:1315
+SUMMARY:[Mémoire] Soutenance orale
+DTSTART;VALUE=DATE:20271029
+DTEND;VALUE=DATE:20271030
+TRANSP:TRANSPARENT
+DESCRIPTION:Présentation PowerPoint de 20 min puis questions/réponses\, 
+ en distanciel avec le tuteur mémoire. Compte pour 40 % de la note.\n\nNo
+ te : Le 29 octobre au plus tard — ⚠ la version anglaise indique « By
+  September 10th (By 29 October at the latest) » · date exacte à fixer 
+ avec le tuteur mémoire\n\nEN: Oral defence\n\nDocuments :\n- Plateforme 
+ mémoire https://memoires.kedgebs.com
+STATUS:TENTATIVE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Soutenance orale
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Soutenance orale
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:par-s1-inttransport@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:15576
+SUMMARY:[Partiel] International Transport
+DTSTART;TZID=Europe/Paris:20261216T130000
+DTEND;TZID=Europe/Paris:20261216T160000
+LOCATION:Amphithéâtre 8.113\, Salle de classe 9.208
+DESCRIPTION:Notation : 3 parties notées chacune entre 25 et 35 points : 1
+ ) Quotations (cotations) \; 2) Incoterms \; 3) Comparaison des modes de t
+ ransport (qualitatif)\, caractéristiques et marché du shipping.\n\nSall
+ e : Amphithéâtre 8.113\, Salle de classe 9.208\n\nDocuments :\n- Dossie
+ r de cours (Drive) https://drive.google.com/drive/folders/11ZVEnsd4r5_LHS
+ 7h8OaDxV6nb_v0aCok\n- Session 1 Course Introduction https://drive.google.
+ com/file/d/1Y3-gojvSjpgULBspk4NyGYtp7sNnQzCg/view\n- Session 1-2 Features
+  of different transport modes https://drive.google.com/file/d/1yIyUDa8NbM
+ NCB1za2K3_A_4ZQ1qnKxaj/view\n- Session 3-4 Introduction to maritime trans
+ port https://drive.google.com/file/d/1MlXC5vgiiheYjHaXmsMFIoKgyfw9TaJ1/vi
+ ew\n- Session 4-5 Pricing Quotations Incoterms https://drive.google.com/f
+ ile/d/1YV1fpcz-ECylLFuHVgM2zaKO6xtGa5cy/view\n- Session 8 Advanced notion
+ s in maritime https://drive.google.com/file/d/1rOCYqsq4YfY5dTYYAjhphiL-VX
+ q8Z9tU/view
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:International Transport
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:International Transport
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:par-s1-humanai@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:47576
+SUMMARY:[Partiel] Human & AI Collaboration
+DTSTART;TZID=Europe/Paris:20261217T083000
+DTEND;TZID=Europe/Paris:20261217T113000
+LOCATION:Salles de classe 0.001\, 0.002
+DESCRIPTION:Salle : Salles de classe 0.001\, 0.002\n\nDocuments :\n- Dossi
+ er de cours (Drive) https://drive.google.com/drive/folders/1MwaSHum09zmkv
+ fvswkbu5ZDYxdvbP2WS\n- Recap 1 — AI Fluency 4D Framework https://drive.
+ google.com/file/d/1VfkAWhj4lzB8r2k2U5dYQqJ_XlBUMsjn/view\n- Recap 2 — D
+ iligence Prompting MultiLLM https://drive.google.com/file/d/1bk37RNx9xqeg
+ zR9l5KqmL69PHxMmnC61/view\n- Human-AI Collab Logistics — Students Hands
+ -On v02 https://drive.google.com/file/d/1M1LjX2L0CtpPp1nuhY8918zm3IDamx-3
+ /view\n- Capstone Menu (23/09/2026) https://drive.google.com/file/d/1jqr2
+ hUd_A-NAJEemw5oQAJKegLXZlKQw/view
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Human & AI Collaboration
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Human & AI Collaboration
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:par-s1-customs-1@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:27291
+SUMMARY:[Partiel] Customs Operations / Taxation — créneau 1
+DTSTART;TZID=Europe/Paris:20261217T133000
+DTEND;TZID=Europe/Paris:20261217T143000
+LOCATION:Amphithéâtres 5.021\, 9.209
+DESCRIPTION:Note : 2 créneaux le même jour pour cette matière — à co
+ nfirmer\n\nSalle : Amphithéâtres 5.021\, 9.209\n\nEN: Customs Operation
+ s / Taxation — slot 1\n\nDocuments :\n- Dossier de cours (Drive) https:
+ //drive.google.com/drive/folders/17XhTPiW81y1OhBSm6pBTeE-XtzIg-4ZT\n- Cus
+ toms Management — Sessions 1 & 2 https://drive.google.com/file/d/10QuBk
+ vTEAY9MXjg5EHsY-GzPRZE2dCpO/view\n- Customs Management — Sessions 1 à 
+ 5 https://drive.google.com/file/d/1Iu9eBdb8wespWnk4RwCnlxA9AhbLAxmK/view
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Customs Operations / Taxation — créneau 1
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Customs Operations / Taxation — créneau 1
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:par-s1-customs-2@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:37927
+SUMMARY:[Partiel] Customs Operations / Taxation — créneau 2
+DTSTART;TZID=Europe/Paris:20261217T153000
+DTEND;TZID=Europe/Paris:20261217T183000
+LOCATION:Amphithéâtres 5.021\, 9.209
+DESCRIPTION:Note : 2 créneaux le même jour pour cette matière — à co
+ nfirmer\n\nSalle : Amphithéâtres 5.021\, 9.209\n\nEN: Customs Operation
+ s / Taxation — slot 2\n\nDocuments :\n- Dossier de cours (Drive) https:
+ //drive.google.com/drive/folders/17XhTPiW81y1OhBSm6pBTeE-XtzIg-4ZT\n- Cus
+ toms Management — Sessions 1 & 2 https://drive.google.com/file/d/10QuBk
+ vTEAY9MXjg5EHsY-GzPRZE2dCpO/view\n- Customs Management — Sessions 1 à 
+ 5 https://drive.google.com/file/d/1Iu9eBdb8wespWnk4RwCnlxA9AhbLAxmK/view
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Customs Operations / Taxation — créneau 2
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Customs Operations / Taxation — créneau 2
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:par-s1-contracts@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:84360
+SUMMARY:[Partiel] International Contracts & Risks Management
+DTSTART;TZID=Europe/Paris:20261218T083000
+DTEND;TZID=Europe/Paris:20261218T113000
+LOCATION:Salles de classe 6.001\, 6.002\, 6.003
+DESCRIPTION:Salle : Salles de classe 6.001\, 6.002\, 6.003\n\nDocuments :\
+ n- Dossier de cours (Drive) https://drive.google.com/drive/folders/1x1umP
+ Z0IStjX2yjZrWlTL_rTDhb5FpK3\n- International means of payment (L. Fedi 20
+ 26) https://drive.google.com/file/d/1B80uDJmZraxK3pPs5lFQxcxTe-3zt0wH/vie
+ w\n- International techniques of payment (L. Fedi 2026) https://drive.goo
+ gle.com/file/d/1vBjHyMznHz2dmv6wYrzIlN-1o80i91j-/view\n- Synthesis intern
+ ational payments Part I (L. Fedi) https://drive.google.com/file/d/1f9Jht4
+ Ax1-RkUD_U6j3G9IeFxYLHvFWZ/view\n- Documentary credit (L. Fedi 2026) http
+ s://drive.google.com/file/d/14OtRFD9idNBZ5IZX0YvfcKmvxllwp-4o/view\n- UCP
+  600 Documentary Credits https://drive.google.com/file/d/1qqA3s6606m2d-Ul
+ sWCoTU7mYrUHWsTqN/view\n- URC 522 Documentary Collection https://drive.go
+ ogle.com/file/d/1XKA6MC-YbAmgUSqyVGOboGcTBSLJv8uK/view\n- eURC Supplement
+  URC522 https://drive.google.com/file/d/16vdohN0vL-lOkYyc0UKXymIlCU0fZy_5
+ /view
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:International Contracts & Risks Management
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:International Contracts & Risks Management
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:par-s1-warehouse@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:25154
+SUMMARY:[Partiel] Warehouse Management and Dry Ports
+DTSTART;TZID=Europe/Paris:20261218T133000
+DTEND;TZID=Europe/Paris:20261218T163000
+LOCATION:Amphithéâtre 8.113\, Salle de classe 9.208
+DESCRIPTION:Salle : Amphithéâtre 8.113\, Salle de classe 9.208\n\nDocume
+ nts :\n- Dossier de cours (Drive) https://drive.google.com/drive/folders/
+ 1TcTsIKnDUs7s_z5jXfGo03LCX-JZQHoB\n- M2 - ITL - Sessions 01 & 02 https://
+ drive.google.com/file/d/1In3myIewF91eaafFnfJ81w0se_K8069H/view\n- M2 - IT
+ L - Alt - Session 4 https://drive.google.com/file/d/1SQ1q0RaVlaAjbvMVvLHY
+ ywdIET3fpM7Y/view\n- M2 - ITL - Sessions 5-6 https://drive.google.com/fil
+ e/d/1fg2CgHwiQRN6n-4QKJJlSZpKSWvgGyAX/view\n- Case 04 - WGP Chemical http
+ s://drive.google.com/file/d/12VYV6eZ3XhQh_VUNUoylLiyhMm7p4-9r/view\n- Duc
+ oll inc. (cas) https://drive.google.com/file/d/1EK-azpa6oRcpnhWRYyWITetwI
+ SeINNfn/view\n- Parameters for Ducoll26 for students (xlsx) https://drive
+ .google.com/file/d/1bdG5cZ__i_-ZzEWS5j4kWXza2YMIX063/view\n- Calcul heuri
+ stique 3 (xlsx) https://drive.google.com/file/d/15C4k4MyNZ5aXGM-Si70TrFu6
+ TKOMzfW-/view
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Warehouse Management and Dry Ports
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Warehouse Management and Dry Ports
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bloc-ecf1-rendu@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:58012
+SUMMARY:[Bloc] ECF1 · International Trade — Rendu Word + PPT (cas Kaiir
+ ous)
+DTSTART;VALUE=DATE:20270107
+DTEND;VALUE=DATE:20270108
+TRANSP:TRANSPARENT
+DESCRIPTION:Cas « La Fabbrique de Kaiirous » en groupe de 4. Documents W
+ ord et PPT en anglais\, format professionnel\, répondant précisément a
+ ux exigences du cas.\n\nNote : Jeudi 7 janvier « before 12:00 AM » — 
+ heure ambiguë (minuit ou midi ?)\, à confirmer\n\nEN: ECF1 · Internati
+ onal Trade — Word + PPT submission (Kaiirous case)\n\nDocuments :\n- Do
+ ssier ECF1 (Drive) https://drive.google.com/drive/folders/1nAOVf7ayxwfp6N
+ Jeoh2LimCfeEPIKSzQ\n- Cas — La Fabbrique de Kaiirous https://drive.goog
+ le.com/file/d/1g7meJuC2cFSTdUZfiAh2XCLhOMSG4uJa/view\n- Mails d'E. Jouann
+ aux (consignes) https://docs.google.com/document/d/1zfmTSlSI3pbMNoDSF7fPp
+ __cPEZY-_tR62xi6Ahg3Zs/edit\n- Lien de dépôt Compilatio https://app.com
+ pilatio.net/app/document-submission/929-DB9-56D
+STATUS:TENTATIVE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ECF1 · International Trade — Rendu Word + PPT (cas Kaiirous
+ )
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ECF1 · International Trade — Rendu Word + PPT (cas Kaiirous
+ )
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bloc-ecf1-exam@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:58566
+SUMMARY:[Bloc] ECF1 · International Trade — Examen individuel (3h30)
+DTSTART;VALUE=DATE:20270108
+DTEND;VALUE=DATE:20270109
+TRANSP:TRANSPARENT
+DESCRIPTION:Examen individuel de 3h30 sur le cas « La Fabbrique de Kaiiro
+ us » (questions complémentaires\, discussion…) pour valider le bloc d
+ e compétences. Ni documents ni ordinateur autorisés.\n\nNote : Vendredi
+  8 janvier · horaire et salle non communiqués\n\nEN: ECF1 · Internatio
+ nal Trade — Individual exam (3h30)\n\nDocuments :\n- Dossier ECF1 (Driv
+ e) https://drive.google.com/drive/folders/1nAOVf7ayxwfp6NJeoh2LimCfeEPIKS
+ zQ\n- Cas — La Fabbrique de Kaiirous https://drive.google.com/file/d/1g
+ 7meJuC2cFSTdUZfiAh2XCLhOMSG4uJa/view\n- Mails d'E. Jouannaux (consignes) 
+ https://docs.google.com/document/d/1zfmTSlSI3pbMNoDSF7fPp__cPEZY-_tR62xi6
+ Ahg3Zs/edit
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ECF1 · International Trade — Examen individuel (3h30)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ECF1 · International Trade — Examen individuel (3h30)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bloc-ecf1-soutenance@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:91663
+SUMMARY:[Bloc] ECF1 · International Trade — Soutenance de groupe (cas K
+ aiirous)
+DTSTART;VALUE=DATE:20270111
+DTEND;VALUE=DATE:20270112
+TRANSP:TRANSPARENT
+DESCRIPTION:Présentation de 20 min + 30 min de questions/réponses\, en g
+ roupe de 4. Critères du jury : contenu général et qualité de la prés
+ entation \; analyse de la situation \; cohérence et pertinence des infor
+ mations \; qualité de l'argumentation \; pertinence des solutions et rec
+ ommandations \; culture générale.\n\nNote : Lundi 11 janvier · horaire
+  et salle à venir (envoyés par Cherifa)\n\nEN: ECF1 · International Tr
+ ade — Group defence (Kaiirous case)\n\nDocuments :\n- Dossier ECF1 (Dri
+ ve) https://drive.google.com/drive/folders/1nAOVf7ayxwfp6NJeoh2LimCfeEPIK
+ SzQ\n- Cas — La Fabbrique de Kaiirous https://drive.google.com/file/d/1
+ g7meJuC2cFSTdUZfiAh2XCLhOMSG4uJa/view\n- Mails d'E. Jouannaux (consignes)
+  https://docs.google.com/document/d/1zfmTSlSI3pbMNoDSF7fPp__cPEZY-_tR62xi
+ 6Ahg3Zs/edit
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ECF1 · International Trade — Soutenance de groupe (cas Kaii
+ rous)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ECF1 · International Trade — Soutenance de groupe (cas Kaii
+ rous)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bloc-ecf2@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:91064
+SUMMARY:[Bloc] ECF2 · International Transport
+DTSTART;VALUE=DATE:20270507
+DTEND;VALUE=DATE:20270508
+TRANSP:TRANSPARENT
+DESCRIPTION:Évaluation ECF du bloc 2 (International Transport). Compte po
+ ur 10 % de la note finale du diplôme. Modalités détaillées à venir.\
+ n\nNote : Écrit ou oral : à confirmer\n\nDocuments :\n- Dossier ECF2 (D
+ rive) https://drive.google.com/drive/folders/1XdkBUgNB2FQkxne0cp-NVvLMxeu
+ 54XnH\n- Tableau des évaluations (image) https://drive.google.com/file/d
+ /1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ECF2 · International Transport
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ECF2 · International Transport
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bloc-ms2@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:94225
+SUMMARY:[Bloc] MS2 · International Transport
+DTSTART;VALUE=DATE:20270510
+DTEND;VALUE=DATE:20270511
+TRANSP:TRANSPARENT
+DESCRIPTION:Évaluation MS du bloc 2 (International Transport). Modalités
+  détaillées à venir.\n\nNote : Écrit ou oral : à confirmer\n\nDocume
+ nts :\n- Dossier ECF2 (Drive) https://drive.google.com/drive/folders/1Xdk
+ BUgNB2FQkxne0cp-NVvLMxeu54XnH\n- Tableau des évaluations (image) https:/
+ /drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:MS2 · International Transport
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:MS2 · International Transport
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bloc-ecf3@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:71110
+SUMMARY:[Bloc] ECF3 · Global Logistics
+DTSTART;VALUE=DATE:20270625
+DTEND;VALUE=DATE:20270626
+TRANSP:TRANSPARENT
+DESCRIPTION:Évaluation ECF du bloc 3 (Global Logistics). Compte pour 10 %
+  de la note finale du diplôme. Modalités détaillées à venir.\n\nNote
+  : Écrit ou oral : à confirmer\n\nDocuments :\n- Dossier ECF3 (Drive) h
+ ttps://drive.google.com/drive/folders/1oDEDOr_R6yBfHxmnsOFaktXlkhGItbbz\n
+ - Tableau des évaluations (image) https://drive.google.com/file/d/1J_bP8
+ QPbfsDRB00UrDws9_XQqg76iUwl/view
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ECF3 · Global Logistics
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ECF3 · Global Logistics
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bloc-ms3@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:85381
+SUMMARY:[Bloc] MS3 · Global Logistics
+DTSTART;VALUE=DATE:20270628
+DTEND;VALUE=DATE:20270629
+TRANSP:TRANSPARENT
+DESCRIPTION:Évaluation MS du bloc 3 (Global Logistics). Modalités détai
+ llées à venir.\n\nNote : Écrit ou oral : à confirmer\n\nDocuments :\n
+ - Dossier ECF3 (Drive) https://drive.google.com/drive/folders/1oDEDOr_R6y
+ BfHxmnsOFaktXlkhGItbbz\n- Tableau des évaluations (image) https://drive.
+ google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:MS3 · Global Logistics
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:MS3 · Global Logistics
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cas-final@mtlci-retroplanning
+DTSTAMP:20261123T165133Z
+LAST-MODIFIED:20261123T165133Z
+SEQUENCE:98961
+SUMMARY:[Cas final] Cas final — Performance (bloc 5\, 5 compétences)
+DTSTART;VALUE=DATE:20270907
+DTEND;VALUE=DATE:20270910
+TRANSP:TRANSPARENT
+DESCRIPTION:Cas final de performance management : les 4 compétences des b
+ locs précédents sont évaluées sous l'angle de la gestion de la perfor
+ mance. Rapport écrit à rendre\, puis présentation individuelle d'au mo
+ ins 1h15 devant un jury de professionnels. Compte pour 40 % de la note fi
+ nale du diplôme.\n\nNote : 7\, 8 et 9 septembre 2027 · date de remise d
+ u rapport écrit non communiquée\n\nEN: Final case — Performance (bloc
+ k 5\, 5 competencies)\n\nDocuments :\n- Dossier FINAL CASE (Drive) https:
+ //drive.google.com/drive/folders/1wy0cM-P0_6_1rinZ3FgvWD3NdHoWilGP\n- Tab
+ leau des évaluations (image) https://drive.google.com/file/d/1J_bP8QPbfs
+ DRB00UrDws9_XQqg76iUwl/view
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Cas final — Performance (bloc 5\, 5 compétences)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Cas final — Performance (bloc 5\, 5 compétences)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

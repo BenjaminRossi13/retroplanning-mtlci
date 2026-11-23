@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rétroplanning MTLCI 2026-27</title>
+<meta name="description" content="Rétroplanning de la promo MSc MTLCI 2026-27 : partiels, blocs, mémoire, cas final.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📅</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side" id="side"></aside>
+  <main class="main">
+    <div class="top">
+      <button class="btn ghost burger" data-a="burger" aria-label="Menu">☰</button>
+      <div style="min-width:0"><h1 id="ttl"></h1><div class="sub" id="sub"></div></div>
+      <div class="search"><span class="ic">🔎</span><input id="q" type="search" autocomplete="off"><div class="qres" id="qres" hidden></div></div>
+      <button class="btn pri topnew" data-a="new" id="btnNew"></button>
+    </div>
+    <div class="content" id="view"></div>
+  </main>
+</div>
+<nav class="bnav" id="bnav"></nav>
+<div class="scrim" id="scrim" data-a="close"></div>
+<aside class="drawer" id="drawer"></aside>
+<div class="modal" id="modal"><div class="mbox" id="mbox"></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
