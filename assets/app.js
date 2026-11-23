@@ -21,6 +21,7 @@ fr:{
   unhide:'👁 Réafficher {n} échéance(s) retirée(s)', agenda_all:'📅 Tout ajouter à mon agenda', lang:'Langue',
   sub_tl:'Toutes les échéances, par ordre chronologique', sub_gantt:'Toutes les catégories', sub_cal:'Vue mensuelle', sub_cat:'Catégorie',
   loading:'Chargement…',
+  drive_t:'Drive de la promo', drive_s:'Cours, supports et consignes de chaque partiel, bloc et du mémoire', drive_btn:'Ouvrir le Drive',
   welcome_t:'👋 Bienvenue sur le rétroplanning de la promo MTLCI 2026-27', hide:'Masquer',
   welcome_p:"Retrouvez toutes les échéances de l'année : partiels, blocs, mémoire, rapport d'alternance et cas final, avec les dates, consignes et dossiers de cours. Validez vos étapes ✓, ajoutez vos notes, vos dates ou vos propres échéances : <b>vos modifications ne sont visibles que par vous</b> et n'affectent personne d'autre.",
   welcome_fav:"💡 <b>Pour garder vos modifications :</b> ajoutez cette page à vos <b>favoris</b> et revenez-y toujours depuis le <b>même navigateur, sur le même appareil</b>. Vos validations et notes sont enregistrées dans ce navigateur : elles ne suivent pas sur un autre appareil, ne sont pas conservées en navigation privée et disparaissent si vous effacez les données du site.",
@@ -72,6 +73,7 @@ en:{
   unhide:'👁 Show {n} removed deadline(s)', agenda_all:'📅 Add all to my calendar', lang:'Language',
   sub_tl:'All deadlines in chronological order', sub_gantt:'All categories', sub_cal:'Monthly view', sub_cat:'Category',
   loading:'Loading…',
+  drive_t:'Class Drive', drive_s:'Courses, slides and instructions for every exam, block and the thesis', drive_btn:'Open the Drive',
   welcome_t:'👋 Welcome to the MTLCI 2026-27 class planner', hide:'Hide',
   welcome_p:'Find every deadline of the year: exams, skill blocks, thesis, work-study report and final case, with dates, instructions and course folders. Tick off your steps ✓, add notes, dates or your own deadlines: <b>your changes are only visible to you</b> and never affect anyone else.',
   welcome_fav:'💡 <b>To keep your changes:</b> bookmark this page and always come back from the <b>same browser on the same device</b>. Your ticks and notes are stored in this browser: they don’t follow you to another device, aren’t kept in private browsing, and are lost if you clear the site’s data.',
@@ -412,6 +414,7 @@ function liRow(it,opts){
 }
 
 /* ---- Dashboard ---- */
+const DRIVE_URL='https://drive.google.com/drive/folders/15vdoUGWbXYJexZFDpUVsWcRoS7j3CDrW?usp=share_link';
 function viewDashboard(){
   if(!S.loaded) return `<div class="empty">${esc(t('loading'))}</div>`;
   const items=allItems();
@@ -448,7 +451,8 @@ function viewDashboard(){
       <div class="d">${esc(fmt(next.date,FULL))}${timeTxt(next)?' · '+esc(timeTxt(next)):''}</div>
       <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap"><span class="tag" style="background:${c.hex}1a;color:${c.hex}">${esc(cname(c.key))}</span><span class="pill ${u.cls}"><i></i>${esc(u.label)}</span>${next.dateConfidence==='provisoire'?`<span class="flag">${esc(t('provisional'))}</span>`:''}</div></div></div>`;
   } else nextHtml=`<div class="card next"><div class="d">${esc(t('next_none'))}</div></div>`;
-  return `${welcome}
+  const driveHtml=DRIVE_URL?`<a class="card drivebar" href="${esc(DRIVE_URL)}" target="_blank" rel="noopener"><span class="di">📁</span><span style="flex:1;min-width:0"><b>${esc(t('drive_t'))}</b><span class="ds">${esc(t('drive_s'))}</span></span><span class="btn sm pri">${esc(t('drive_btn'))} ↗</span></a>`:'';
+  return `${welcome}${driveHtml}
   <div class="card panel" style="margin-bottom:14px"><h3>${esc(t('soon_t'))}<span class="sp"></span><a href="#timeline" class="btn ghost sm">${esc(t('see_all'))}</a></h3>${soonHtml}</div>
   ${updHtml||pastHtml?`<div class="grid row2" style="margin:0 0 14px">${updHtml||'<div></div>'}${pastHtml||'<div></div>'}</div>`:''}
   <div class="grid kpis">${kpi(t('k_total'),items.length)}${kpi(t('k_done'),done,'var(--green)')}${kpi(t('k_doing'),doing,'var(--blue)')}${kpi(t('k_up'),upcoming.length,'var(--orange)')}${kpi(t('k_past'),past.length,'#d97706')}</div>
@@ -794,7 +798,7 @@ function outlookUrl(it,work){
 }
 const ICS_OK=()=>!downloads; // claude.ai n'autorise pas le téléchargement de fichiers .ics
 /* Abonnement : fichier calendrier publié avec le site (généré par tools/build_calendar.py) */
-const SITE_URL=''; // ex. 'https://benjaminrossi13.github.io/retroplanning-mtlci/' (sert à la version claude.ai)
+const SITE_URL='https://benjaminrossi13.github.io/retroplanning-mtlci/'; // ex. 'https://benjaminrossi13.github.io/retroplanning-mtlci/' (sert à la version claude.ai)
 const CAL_FILE='calendar/mtlci-2026-27.ics';
 function calUrl(){ try{ if(!downloads&&/^https?:/.test(location.protocol)) return new URL(CAL_FILE,location.href).href; if(SITE_URL) return new URL(CAL_FILE,SITE_URL).href; }catch(e){} return ''; }
 function subscribeDialog(){
