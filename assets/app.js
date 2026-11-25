@@ -37,6 +37,7 @@ fr:{
   leg_urgent:'Urgent (≤ 7 j)', leg_soon:'Proche (≤ 30 j)', leg_past:'Passé, à valider', leg_doing:'En cours', leg_done:'Terminé', leg_tbd:'À définir',
   empty_t:"Aucune échéance pour l'instant", empty_p:'Ajoutez une échéance pour commencer.',
   hide_done:'Masquer terminées', month_now:'Mois en cours', empty_filter:'Modifiez les filtres ou ajoutez une échéance.', no_items:'Aucune échéance',
+  alt_show:'Afficher les jours de cours', alt_hide:'Jours de cours affichés', alt_ecole:'École', alt_eval:'Évaluation', alt_casfinal:'Cas final', alt_mixte:'École si rattrapage', alt_ent:'Entreprise', alt_ent_s:'Entr.', alt_ferie:'Férié', alt_plus_eval:'+ session d’évaluation (« Ecole » encadré)', alt_count:'{n} jour(s) à l’école ce mois-ci', alt_src:'Jours de cours : calendrier de formation en alternance KEDGE ITL 24 M2 (mis à jour le 12/05/2026, sous réserve de modification). Le « + » indique une session d’évaluation / e-learning en plus des cours.', alt_src_s:'calendrier d’alternance KEDGE du 12/05/2026',
   cal_prev:'Mois précédent', cal_next:'Mois suivant', this_month:'Ce mois-ci', none_month:'Aucune échéance ce mois-ci.', next_month_btn:'Prochaine échéance : {d} →',
   cat_what:'ℹ️ À quoi sert cette catégorie ?', keyinfo:'Infos clés', source:'Source', cat_empty_t:"Rien pour l'instant", cat_empty_p:'Les informations de cette catégorie arriveront bientôt.',
   tab_list:'☰ Échéances', tab_exams:'☰ Épreuves', tab_gantt:'▤ Gantt', tab_groups:'👥 Groupes',
@@ -89,6 +90,7 @@ en:{
   leg_urgent:'Urgent (≤ 7 d)', leg_soon:'Soon (≤ 30 d)', leg_past:'Past, to confirm', leg_doing:'In progress', leg_done:'Done', leg_tbd:'TBD',
   empty_t:'No deadlines yet', empty_p:'Add a deadline to get started.',
   hide_done:'Hide done', month_now:'This month', empty_filter:'Change the filters or add a deadline.', no_items:'No deadlines',
+  alt_show:'Show school days', alt_hide:'School days shown', alt_ecole:'School', alt_eval:'Assessment', alt_casfinal:'Final case', alt_mixte:'School if make-up', alt_ent:'Company', alt_ent_s:'Co.', alt_ferie:'Holiday', alt_plus_eval:'+ assessment session (boxed “Ecole”)', alt_count:'{n} school day(s) this month', alt_src:'School days: KEDGE ITL 24 M2 work-study calendar (updated 12/05/2026, subject to change). “+” means an assessment / e-learning session on top of classes.', alt_src_s:'KEDGE work-study calendar, 12/05/2026',
   cal_prev:'Previous month', cal_next:'Next month', this_month:'This month', none_month:'No deadlines this month.', next_month_btn:'Next deadline: {d} →',
   cat_what:'ℹ️ What is this category for?', keyinfo:'Key information', source:'Source', cat_empty_t:'Nothing yet', cat_empty_p:'Information for this category is coming soon.',
   tab_list:'☰ Deadlines', tab_exams:'☰ Exams', tab_gantt:'▤ Gantt', tab_groups:'👥 Groups',
@@ -138,7 +140,7 @@ const S = {
   view:'dashboard', filters:new Set(CATEGORIES.map(c=>c.key)), hideDone:false, calMonth:null,
   openId:null, dEdit:false, gq:'', q:'',
   zoom:'week', showEst:true, collapsed:new Set(), catTab:{}, gScroll:{},
-  seen:null, myGroup:{},
+  seen:null, myGroup:{}, alt:null, showAlt:true,
 };
 let db=null, downloads=null;
 
@@ -336,6 +338,7 @@ async function initData(){
       render(true);
     }, ()=>{ settled=true; clearTimeout(timer); S.stale=true; render(); });
     db.collection('categories').onSnapshot(snap=>{ const o={}; snap.docs.forEach(d=>{ const v=d.data(); if(v) o[d.id]=v; }); S.cats=o; render(true); },()=>{});
+    db.collection('config').onSnapshot(snap=>{ snap.docs.forEach(d=>{ if(d.id==='alternance') S.alt=d.data()||null; }); render(true); },()=>{});
     db.collection('groups').onSnapshot(snap=>{ S.groups=snap.docs.map(d=>({id:d.id,...(d.data()||{})})).sort((a,b)=>(a.order||0)-(b.order||0)); render(true); },()=>{});
   }
   if(!gotDb){
@@ -343,7 +346,7 @@ async function initData(){
     let data=null;
     try{ const r=await fetch('data/base.json',{cache:'no-cache'}); if(r.ok) data=await r.json(); }catch(e){}
     if(!data) data=lsGet(LS_KEY,null);
-    if(data){ (data.items||[]).forEach(i=>{ const n=normalize(i); S.shared.set(n.id,n); }); S.cats=data.categories||data.cats||{}; S.groups=data.groups||[]; }
+    if(data){ (data.items||[]).forEach(i=>{ const n=normalize(i); S.shared.set(n.id,n); }); S.cats=data.categories||data.cats||{}; S.groups=data.groups||[]; S.alt=data.alternance||null; }
     recompute(); S.loaded=true; trackChanges(); render();
   }
 }
@@ -517,6 +520,15 @@ function tlItem(it){
 }
 
 /* ---- Calendar ---- */
+function altDay(k){
+  const A=S.alt; if(!A||!A.days) return null;
+  if(!A._m){ A._m={}; A.days.forEach(x=>A._m[x.d]=x); }
+  if(A._m[k]) return A._m[k];
+  if(k<A.from||k>A.to) return null; const wd=parseD(k).getDay(); if(wd===0||wd===6) return null;
+  return {d:k,k:'ent'};
+}
+function altShort(a){ if(a.k==='ferie') return t('alt_ferie'); if(a.k==='ent') return t('alt_ent_s'); return (a.l||t('alt_'+a.k))+(a.e?' +':''); }
+function altTitle(a){ let s=a.k==='ent'?t('alt_ent'):t('alt_'+a.k); if(a.l) s+=' — '+a.l; if(a.e) s+=' '+t('alt_plus_eval'); return s+' · '+t('alt_src_s'); }
 function viewCalendar(){
   if(!S.calMonth){ const d=today0(); S.calMonth=new Date(d.getFullYear(),d.getMonth(),1); }
   const m=S.calMonth, y=m.getFullYear(), mo=m.getMonth();
@@ -529,15 +541,25 @@ function viewCalendar(){
   for(let i=0;i<cells;i++){
     const d=addDays(start,i), k=iso(d);
     const evs=(byDay[k]||[]).map(it=>{ const c=CAT[it.category]; return `<div class="evc ${it.status==='done'?'done':''}" data-open="${esc(it.id)}" title="${esc((timeTxt(it)?timeTxt(it)+' · ':'')+L(it,'title'))}" style="background:${c.hex}14;border-color:${c.hex};color:${c.hex}">${it.timeStart?`<b>${esc(it.timeStart)}</b> `:''}${esc(L(it,'title'))}</div>`; }).join('');
-    g+=`<div class="cell ${d.getMonth()!==mo?'out':''} ${k===tIso?'today':''}"><span class="n">${d.getDate()}</span>${evs}</div>`;
+    const a=S.showAlt?altDay(k):null;
+    const at=a?`<span class="alt a-${a.k}" title="${esc(altTitle(a))}">${esc(altShort(a))}</span>`:'';
+    g+=`<div class="cell ${d.getMonth()!==mo?'out':''} ${k===tIso?'today':''} ${a?'ac-'+a.k:''}"><div class="ch"><span class="n">${d.getDate()}</span>${at}</div>${evs}</div>`;
   }
   const monthItems=items.filter(i=>{ const d=parseD(i.date); return d.getFullYear()===y&&d.getMonth()===mo; });
+  let altHtml='';
+  if(S.alt&&S.alt.days){
+    const key0=`${y}-${String(mo+1).padStart(2,'0')}`, md=S.alt.days.filter(x=>x.d.slice(0,7)===key0&&x.k!=='ferie');
+    altHtml=`<div class="altbar"><button class="btn sm ${S.showAlt?'pri':''}" data-a="togalt">🎓 ${esc(t(S.showAlt?'alt_hide':'alt_show'))}</button>
+      ${S.showAlt?`<span class="altleg"><span class="alt a-ecole">${esc(t('alt_ecole'))}</span><span class="alt a-eval">${esc(t('alt_eval'))}</span><span class="alt a-casfinal">${esc(t('alt_casfinal'))}</span><span class="alt a-mixte">${esc(t('alt_mixte'))}</span><span class="alt a-ent">${esc(t('alt_ent'))}</span><span class="alt a-ferie">${esc(t('alt_ferie'))}</span></span>
+      <span class="altn">${esc(t('alt_count',{n:md.length}))}</span>`:''}</div>
+      ${S.showAlt?`<div class="hint" style="margin:-4px 0 10px">${esc(t('alt_src'))}</div>`:''}`;
+  }
   const key=`${y}-${String(mo+1).padStart(2,'0')}`, nx=allItems().find(i=>i.date&&i.date.slice(0,7)>key&&S.filters.has(i.category));
   return `${filterBar()}
   <div class="calhead"><h2>${esc(first.toLocaleDateString(LOC(),{month:'long',year:'numeric'}))}</h2>
     <button class="btn sm" data-a="calprev" aria-label="${esc(t('cal_prev'))}">‹</button><button class="btn sm" data-a="caltoday">${esc(t('d_today'))}</button><button class="btn sm" data-a="calnext" aria-label="${esc(t('cal_next'))}">›</button>
     <span style="flex:1"></span>${nx?`<button class="btn ghost sm" data-a="calgo" data-k="${nx.date.slice(0,7)}">${esc(t('next_month_btn',{d:fmt(nx.date,{month:'short',year:'numeric'})}))}</button>`:''}</div>
-  <div class="cal">${g}</div>
+  ${altHtml}<div class="cal">${g}</div>
   <div class="card panel" style="margin-top:14px"><h3>${esc(t('this_month'))} <span class="pill u-neutral">${monthItems.length}</span></h3><div class="list">${monthItems.map(i=>liRow(i)).join('')||`<div class="mm" style="color:var(--muted)">${esc(t('none_month'))}</div>`}</div></div>`;
 }
 
@@ -885,6 +907,7 @@ document.addEventListener('click',async e=>{
     if(act==='filt'){ const k=a.dataset.k; if(S.filters.has(k)&&S.filters.size===CATEGORIES.length) S.filters=new Set([k]); else if(S.filters.has(k)){ S.filters.delete(k); if(!S.filters.size) S.filters=new Set(CATEGORIES.map(c=>c.key)); } else S.filters.add(k); render(); return; }
     if(act==='hidedone'){ S.hideDone=!S.hideDone; render(); return; }
     if(act==='jump'){ const el=document.getElementById('m-'+a.dataset.k); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); return; }
+    if(act==='togalt'){ S.showAlt=!S.showAlt; lsSet('rp-showalt',S.showAlt); render(); return; }
     if(act==='calprev'||act==='calnext'){ const m=S.calMonth; S.calMonth=new Date(m.getFullYear(),m.getMonth()+(act==='calnext'?1:-1),1); render(); return; }
     if(act==='caltoday'){ S.calMonth=null; render(); return; }
     if(act==='calgo'){ const [y,m]=a.dataset.k.split('-').map(Number); S.calMonth=new Date(y,m-1,1); render(); return; }
@@ -948,6 +971,6 @@ document.addEventListener('keydown',e=>{
 document.getElementById('modal').addEventListener('click',e=>{ if(e.target.id==='modal') closeModal(); });
 window.addEventListener('hashchange',route);
 
-S.catTab=lsGet('rp-cattab',{})||{};
+S.catTab=lsGet('rp-cattab',{})||{}; S.showAlt=lsGet('rp-showalt',true)!==false;
 route();
 initData();

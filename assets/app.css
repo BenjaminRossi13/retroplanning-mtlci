@@ -119,7 +119,7 @@ a:hover{text-decoration:underline}
 .todayline:before{content:"";width:20px;height:2px;background:var(--blue)}
 .todayline:after{content:"";flex:1;height:1px;background:#bfdbfe}
 /* Calendar */
-.calhead{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.calhead{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
 .calhead h2{font-size:18px;margin:0 8px 0 0;text-transform:capitalize;font-weight:650;min-width:170px}
 .cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-left:1px solid var(--line);border-top:1px solid var(--line);background:var(--panel);border-radius:var(--r);overflow:hidden}
 .cal .dow{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;padding:8px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--side)}
@@ -340,3 +340,10 @@ details.more>summary{cursor:pointer;font-size:13px;color:var(--muted);margin:14p
 .drivebar{display:flex;align-items:center;gap:12px;padding:12px 16px;margin-bottom:14px;text-decoration:none;color:inherit;border-color:#bbf7d0;background:#f6fef9}
 .drivebar:hover{border-color:#86efac}.drivebar .di{font-size:22px}.drivebar b{display:block;font-size:14px;font-weight:600}.drivebar .ds{display:block;font-size:12px;color:var(--muted)}
 @media (max-width:600px){.drivebar .ds{display:none}}
+.cal .ch{display:flex;align-items:center;gap:4px;min-width:0}
+.alt{font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:999px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;line-height:16px}
+.a-ecole{background:#ccfbf1;color:#0f766e}.a-eval{background:#a5f3fc;color:#0e7490}.a-casfinal{background:#0891b2;color:#fff}.a-mixte{background:linear-gradient(90deg,#ccfbf1,#fed7aa);color:#7c2d12}
+.a-ent{background:transparent;color:#c2410c;opacity:.6;font-weight:500}.a-ferie{background:#fee2e2;color:#b91c1c}
+.cal .cell.ac-ecole{background:#f0fdfa}.cal .cell.ac-eval,.cal .cell.ac-casfinal{background:#ecfeff}.cal .cell.ac-mixte{background:#fffbeb}.cal .cell.ac-ferie{background:#fdf6f6}
+.altbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 10px}.altleg{display:flex;gap:6px;flex-wrap:wrap}.altleg .alt{border:1px solid #0000000d}.altn{font-size:12px;color:var(--muted);margin-left:auto}
+@media (max-width:600px){.cal .alt{font-size:0;padding:0;width:8px;height:8px;border-radius:50%}.cal .a-ent{display:none}.altn{margin-left:0}}
