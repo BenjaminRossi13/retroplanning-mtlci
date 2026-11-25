@@ -230,22 +230,6 @@
     {
      "label": "Plateforme mémoire",
      "url": "https://memoires.kedgebs.com"
-    },
-    {
-     "label": "Dossier MÉMOIRE (Drive)",
-     "url": "https://drive.google.com/drive/folders/1JnIbAfT4Zo3wMOoxqIGLzDAcydH04K0m"
-    },
-    {
-     "label": "Cahier des charges (FR)",
-     "url": "https://drive.google.com/file/d/1CQVVBJQ-LcaIx2aq9cEReIMKGdDeT6_g/view"
-    },
-    {
-     "label": "Cahier des charges (EN)",
-     "url": "https://drive.google.com/file/d/12_xqD9CRutgMA1mkp2iQCuoNN7BsQ04g/view"
-    },
-    {
-     "label": "Règles plagiat / IA 2026-27",
-     "url": "https://drive.google.com/file/d/11Tck3xdD86jW4d2HJSQYHw3xBBbcqUsD/view"
     }
    ],
    "source": "Cahier des charges du mémoire de recherche professionnel M2 MSc-MTLCI 2026-27 (KEDGE, oct. 2026), p. 9, 29-41",
@@ -317,32 +301,7 @@
    "examType": "Écrit",
    "semester": "Semestre 1",
    "source": "Planning des examens semestre 1 (capture EDT KEDGE transmise le 20/11/2026)",
-   "links": [
-    {
-     "label": "Dossier de cours (Drive)",
-     "url": "https://drive.google.com/drive/folders/11ZVEnsd4r5_LHS7h8OaDxV6nb_v0aCok"
-    },
-    {
-     "label": "Session 1 Course Introduction",
-     "url": "https://drive.google.com/file/d/1Y3-gojvSjpgULBspk4NyGYtp7sNnQzCg/view"
-    },
-    {
-     "label": "Session 1-2 Features of different transport modes",
-     "url": "https://drive.google.com/file/d/1yIyUDa8NbMNCB1za2K3_A_4ZQ1qnKxaj/view"
-    },
-    {
-     "label": "Session 3-4 Introduction to maritime transport",
-     "url": "https://drive.google.com/file/d/1MlXC5vgiiheYjHaXmsMFIoKgyfw9TaJ1/view"
-    },
-    {
-     "label": "Session 4-5 Pricing Quotations Incoterms",
-     "url": "https://drive.google.com/file/d/1YV1fpcz-ECylLFuHVgM2zaKO6xtGa5cy/view"
-    },
-    {
-     "label": "Session 8 Advanced notions in maritime",
-     "url": "https://drive.google.com/file/d/1rOCYqsq4YfY5dTYYAjhphiL-VXq8Z9tU/view"
-    }
-   ],
+   "links": [],
    "en": {
     "examFormat": "Supervised digital exam",
     "evaluation": "3 parts, each worth 25 to 35 points: 1) Quotations; 2) Incoterms; 3) Comparison of transport modes (qualitative), features and shipping market."
@@ -360,28 +319,7 @@
    "examType": "Écrit",
    "semester": "Semestre 1",
    "source": "Planning des examens semestre 1 (capture EDT KEDGE transmise le 20/11/2026)",
-   "links": [
-    {
-     "label": "Dossier de cours (Drive)",
-     "url": "https://drive.google.com/drive/folders/1MwaSHum09zmkvfvswkbu5ZDYxdvbP2WS"
-    },
-    {
-     "label": "Recap 1 — AI Fluency 4D Framework",
-     "url": "https://drive.google.com/file/d/1VfkAWhj4lzB8r2k2U5dYQqJ_XlBUMsjn/view"
-    },
-    {
-     "label": "Recap 2 — Diligence Prompting MultiLLM",
-     "url": "https://drive.google.com/file/d/1bk37RNx9xqegzR9l5KqmL69PHxMmnC61/view"
-    },
-    {
-     "label": "Human-AI Collab Logistics — Students Hands-On v02",
-     "url": "https://drive.google.com/file/d/1M1LjX2L0CtpPp1nuhY8918zm3IDamx-3/view"
-    },
-    {
-     "label": "Capstone Menu (23/09/2026)",
-     "url": "https://drive.google.com/file/d/1jqr2hUd_A-NAJEemw5oQAJKegLXZlKQw/view"
-    }
-   ],
+   "links": [],
    "en": {
     "examFormat": "Supervised exam"
    },
@@ -397,20 +335,7 @@
    "examType": "Écrit",
    "semester": "Semestre 1",
    "source": "Planning des examens semestre 1 (capture EDT KEDGE transmise le 20/11/2026)",
-   "links": [
-    {
-     "label": "Dossier de cours (Drive)",
-     "url": "https://drive.google.com/drive/folders/17XhTPiW81y1OhBSm6pBTeE-XtzIg-4ZT"
-    },
-    {
-     "label": "Customs Management — Sessions 1 & 2",
-     "url": "https://drive.google.com/file/d/10QuBkvTEAY9MXjg5EHsY-GzPRZE2dCpO/view"
-    },
-    {
-     "label": "Customs Management — Sessions 1 à 5",
-     "url": "https://drive.google.com/file/d/1Iu9eBdb8wespWnk4RwCnlxA9AhbLAxmK/view"
-    }
-   ],
+   "links": [],
    "en": {
     "examFormat": "Supervised exam",
     "title": "Customs Operations / Taxation — slot 1",
@@ -429,20 +354,7 @@
    "examType": "Écrit",
    "semester": "Semestre 1",
    "source": "Planning des examens semestre 1 (capture EDT KEDGE transmise le 20/11/2026)",
-   "links": [
-    {
-     "label": "Dossier de cours (Drive)",
-     "url": "https://drive.google.com/drive/folders/17XhTPiW81y1OhBSm6pBTeE-XtzIg-4ZT"
-    },
-    {
-     "label": "Customs Management — Sessions 1 & 2",
-     "url": "https://drive.google.com/file/d/10QuBkvTEAY9MXjg5EHsY-GzPRZE2dCpO/view"
-    },
-    {
-     "label": "Customs Management — Sessions 1 à 5",
-     "url": "https://drive.google.com/file/d/1Iu9eBdb8wespWnk4RwCnlxA9AhbLAxmK/view"
-    }
-   ],
+   "links": [],
    "en": {
     "examFormat": "Supervised exam",
     "title": "Customs Operations / Taxation — slot 2",
@@ -461,92 +373,7 @@
    "examType": "Écrit",
    "semester": "Semestre 1",
    "source": "Planning des examens semestre 1 (capture EDT KEDGE transmise le 20/11/2026)",
-   "links": [
-    {
-     "label": "Dossier de cours (Drive)",
-     "url": "https://drive.google.com/drive/folders/1x1umPZ0IStjX2yjZrWlTL_rTDhb5FpK3"
-    },
-    {
-     "label": "International means of payment (L. Fedi 2026)",
-     "url": "https://drive.google.com/file/d/1B80uDJmZraxK3pPs5lFQxcxTe-3zt0wH/view"
-    },
-    {
-     "label": "International techniques of payment (L. Fedi 2026)",
-     "url": "https://drive.google.com/file/d/1vBjHyMznHz2dmv6wYrzIlN-1o80i91j-/view"
-    },
-    {
-     "label": "Synthesis international payments Part I (L. Fedi)",
-     "url": "https://drive.google.com/file/d/1f9Jht4Ax1-RkUD_U6j3G9IeFxYLHvFWZ/view"
-    },
-    {
-     "label": "Documentary credit (L. Fedi 2026)",
-     "url": "https://drive.google.com/file/d/14OtRFD9idNBZ5IZX0YvfcKmvxllwp-4o/view"
-    },
-    {
-     "label": "UCP 600 Documentary Credits",
-     "url": "https://drive.google.com/file/d/1qqA3s6606m2d-UlsWCoTU7mYrUHWsTqN/view"
-    },
-    {
-     "label": "URC 522 Documentary Collection",
-     "url": "https://drive.google.com/file/d/1XKA6MC-YbAmgUSqyVGOboGcTBSLJv8uK/view"
-    },
-    {
-     "label": "eURC Supplement URC522",
-     "url": "https://drive.google.com/file/d/16vdohN0vL-lOkYyc0UKXymIlCU0fZy_5/view"
-    },
-    {
-     "label": "Case Study Documentary Remittance",
-     "url": "https://drive.google.com/file/d/1XwqFqNZ4TJAiu13cZxTbT6RQNMUc8PV5/view"
-    },
-    {
-     "label": "International SBLC (L. Fedi 2026)",
-     "url": "https://drive.google.com/file/d/1zCYuM_RHRQeU2cv2K8no_YDo_m5Hbegn/view"
-    },
-    {
-     "label": "Exchange Rate Risk Management (L. Fedi 2026)",
-     "url": "https://drive.google.com/file/d/1ZaPQP-R5-9aezUfgXdaXZsxdl_jZeSVa/view"
-    },
-    {
-     "label": "ESG risk",
-     "url": "https://drive.google.com/file/d/1iL32XZ51javDkD47AXSNzHQq0NrV9Bzv/view"
-    },
-    {
-     "label": "Fedi et al. 2025 — Global Strategic Alliances in container liner shipping",
-     "url": "https://drive.google.com/file/d/1fDE2-HYVmJ2ag59_RHoPItL0QqPlRiAD/view"
-    },
-    {
-     "label": "Shipping lines create a trinity",
-     "url": "https://drive.google.com/file/d/1lUDRr37UD6rkCZDxySl4mIDdezyN9GKv/view"
-    },
-    {
-     "label": "Will carriers control shipping's digitalisation",
-     "url": "https://drive.google.com/file/d/1VUD1Qayru606DuhZU5H04QFKKYC1dS9x/view"
-    },
-    {
-     "label": "Agreement 201277-000 SCA CMA Maersk",
-     "url": "https://drive.google.com/file/d/1BGKJRvpomrCajHECJD2-0JRpnaQqJhPg/view"
-    },
-    {
-     "label": "OCEAN Alliance amended Agreement 012426-007",
-     "url": "https://drive.google.com/file/d/1OyYJ5b9q5otxwc2e9mIFEk1okZM5fWRR/view"
-    },
-    {
-     "label": "Gemini amended Agreement-MK 201429-001",
-     "url": "https://drive.google.com/file/d/1YB7h8JzEzClo73HBj2jv-aFf_GYdVe3N/view"
-    },
-    {
-     "label": "Premier Alliance Agreement CWA",
-     "url": "https://drive.google.com/file/d/1PPZkDU0BXCF3nBn7IftKc9sqKe2NNh6M/view"
-    },
-    {
-     "label": "GSBN Agreement 201344-000",
-     "url": "https://drive.google.com/file/d/1PE6ozOxl4JGATJkBWu7OZIkO9v2oATb1/view"
-    },
-    {
-     "label": "DCSAA Agreement 201288-005",
-     "url": "https://drive.google.com/file/d/11l1LIG4lqvL2WQZVDEe-aSCVSKGVlUy4/view"
-    }
-   ],
+   "links": [],
    "en": {
     "examFormat": "Supervised exam"
    },
@@ -562,48 +389,7 @@
    "examType": "Écrit",
    "semester": "Semestre 1",
    "source": "Planning des examens semestre 1 (capture EDT KEDGE transmise le 20/11/2026)",
-   "links": [
-    {
-     "label": "Dossier de cours (Drive)",
-     "url": "https://drive.google.com/drive/folders/1TcTsIKnDUs7s_z5jXfGo03LCX-JZQHoB"
-    },
-    {
-     "label": "M2 - ITL - Sessions 01 & 02",
-     "url": "https://drive.google.com/file/d/1In3myIewF91eaafFnfJ81w0se_K8069H/view"
-    },
-    {
-     "label": "M2 - ITL - Alt - Session 4",
-     "url": "https://drive.google.com/file/d/1SQ1q0RaVlaAjbvMVvLHYywdIET3fpM7Y/view"
-    },
-    {
-     "label": "M2 - ITL - Sessions 5-6",
-     "url": "https://drive.google.com/file/d/1fg2CgHwiQRN6n-4QKJJlSZpKSWvgGyAX/view"
-    },
-    {
-     "label": "Case 04 - WGP Chemical",
-     "url": "https://drive.google.com/file/d/12VYV6eZ3XhQh_VUNUoylLiyhMm7p4-9r/view"
-    },
-    {
-     "label": "Ducoll inc. (cas)",
-     "url": "https://drive.google.com/file/d/1EK-azpa6oRcpnhWRYyWITetwISeINNfn/view"
-    },
-    {
-     "label": "Parameters for Ducoll26 for students (xlsx)",
-     "url": "https://drive.google.com/file/d/1bdG5cZ__i_-ZzEWS5j4kWXza2YMIX063/view"
-    },
-    {
-     "label": "Calcul heuristique 3 (xlsx)",
-     "url": "https://drive.google.com/file/d/15C4k4MyNZ5aXGM-Si70TrFu6TKOMzfW-/view"
-    },
-    {
-     "label": "Calcul quick CASE (xlsx)",
-     "url": "https://drive.google.com/file/d/1vNsICzbf8AESZGRX7-4W6pcact448wqo/view"
-    },
-    {
-     "label": "Fiches de tâches Cotamatic",
-     "url": "https://drive.google.com/file/d/1tDR_Bhb4NRXnGyl_Hq7arlaLNPpxpQfn/view"
-    }
-   ],
+   "links": [],
    "en": {
     "examFormat": "Supervised digital exam"
    },
@@ -638,18 +424,6 @@
    ],
    "links": [
     {
-     "label": "Dossier ECF1 (Drive)",
-     "url": "https://drive.google.com/drive/folders/1nAOVf7ayxwfp6NJeoh2LimCfeEPIKSzQ"
-    },
-    {
-     "label": "Cas — La Fabbrique de Kaiirous",
-     "url": "https://drive.google.com/file/d/1g7meJuC2cFSTdUZfiAh2XCLhOMSG4uJa/view"
-    },
-    {
-     "label": "Mails d'E. Jouannaux (consignes)",
-     "url": "https://docs.google.com/document/d/1zfmTSlSI3pbMNoDSF7fPp__cPEZY-_tR62xi6Ahg3Zs/edit"
-    },
-    {
      "label": "Lien de dépôt Compilatio",
      "url": "https://app.compilatio.net/app/document-submission/929-DB9-56D"
     }
@@ -678,20 +452,7 @@
    "date": "2027-01-08",
    "yearInferred": true,
    "dateNote": "ECF = épreuve écrite",
-   "links": [
-    {
-     "label": "Dossier ECF1 (Drive)",
-     "url": "https://drive.google.com/drive/folders/1nAOVf7ayxwfp6NJeoh2LimCfeEPIKSzQ"
-    },
-    {
-     "label": "Cas — La Fabbrique de Kaiirous",
-     "url": "https://drive.google.com/file/d/1g7meJuC2cFSTdUZfiAh2XCLhOMSG4uJa/view"
-    },
-    {
-     "label": "Mails d'E. Jouannaux (consignes)",
-     "url": "https://docs.google.com/document/d/1zfmTSlSI3pbMNoDSF7fPp__cPEZY-_tR62xi6Ahg3Zs/edit"
-    }
-   ],
+   "links": [],
    "source": "Mails d'Elisabeth Jouannaux du 02/11/2026 et du 08/11/2026 (Drive > BLOC > ECF1 > « Mail : Elisabeth JOUANNAUX ») ; Tableau des évaluations MTLCI — mise à jour de la directrice (photo IMG_1164, 25/11/2026)",
    "en": {
     "title": "ECF1 · International Trade — Individual written exam (3h30)",
@@ -710,20 +471,7 @@
    "date": "2027-01-11",
    "yearInferred": true,
    "dateNote": "MS = épreuve orale",
-   "links": [
-    {
-     "label": "Dossier ECF1 (Drive)",
-     "url": "https://drive.google.com/drive/folders/1nAOVf7ayxwfp6NJeoh2LimCfeEPIKSzQ"
-    },
-    {
-     "label": "Cas — La Fabbrique de Kaiirous",
-     "url": "https://drive.google.com/file/d/1g7meJuC2cFSTdUZfiAh2XCLhOMSG4uJa/view"
-    },
-    {
-     "label": "Mails d'E. Jouannaux (consignes)",
-     "url": "https://docs.google.com/document/d/1zfmTSlSI3pbMNoDSF7fPp__cPEZY-_tR62xi6Ahg3Zs/edit"
-    }
-   ],
+   "links": [],
    "source": "Mails d'Elisabeth Jouannaux du 02/11/2026 et du 08/11/2026 (Drive > BLOC > ECF1 > « Mail : Elisabeth JOUANNAUX ») ; Tableau des évaluations MTLCI — mise à jour de la directrice (photo IMG_1164, 25/11/2026)",
    "en": {
     "title": "MS1 · International Trade — Oral group defence (Kaiirous case)",
@@ -742,16 +490,7 @@
    "date": "2027-05-10",
    "yearInferred": true,
    "dateNote": "ECF = épreuve écrite",
-   "links": [
-    {
-     "label": "Dossier ECF2 (Drive)",
-     "url": "https://drive.google.com/drive/folders/1XdkBUgNB2FQkxne0cp-NVvLMxeu54XnH"
-    },
-    {
-     "label": "Tableau des évaluations (image)",
-     "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
-    }
-   ],
+   "links": [],
    "source": "Tableau des évaluations MTLCI — mise à jour de la directrice (photo IMG_1164, 25/11/2026)",
    "en": {
     "description": "Written exam (ECF) of block 2 (International Transport). The block counts for 10% of the final degree grade. Details to come.",
@@ -769,16 +508,7 @@
    "date": "2027-05-11",
    "yearInferred": true,
    "dateNote": "MS = épreuve orale",
-   "links": [
-    {
-     "label": "Dossier ECF2 (Drive)",
-     "url": "https://drive.google.com/drive/folders/1XdkBUgNB2FQkxne0cp-NVvLMxeu54XnH"
-    },
-    {
-     "label": "Tableau des évaluations (image)",
-     "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
-    }
-   ],
+   "links": [],
    "source": "Tableau des évaluations MTLCI — mise à jour de la directrice (photo IMG_1164, 25/11/2026)",
    "en": {
     "description": "Oral exam (MS) of block 2 (International Transport). Details to come.",
@@ -796,16 +526,7 @@
    "date": "2027-06-25",
    "yearInferred": true,
    "dateNote": "ECF = épreuve écrite",
-   "links": [
-    {
-     "label": "Dossier ECF3 (Drive)",
-     "url": "https://drive.google.com/drive/folders/1oDEDOr_R6yBfHxmnsOFaktXlkhGItbbz"
-    },
-    {
-     "label": "Tableau des évaluations (image)",
-     "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
-    }
-   ],
+   "links": [],
    "source": "Tableau des évaluations MTLCI — mise à jour de la directrice (photo IMG_1164, 25/11/2026)",
    "en": {
     "description": "Written exam (ECF) of block 3 (Global Logistics). The block counts for 10% of the final degree grade. Details to come.",
@@ -823,16 +544,7 @@
    "date": "2027-06-28",
    "yearInferred": true,
    "dateNote": "MS = épreuve orale",
-   "links": [
-    {
-     "label": "Dossier ECF3 (Drive)",
-     "url": "https://drive.google.com/drive/folders/1oDEDOr_R6yBfHxmnsOFaktXlkhGItbbz"
-    },
-    {
-     "label": "Tableau des évaluations (image)",
-     "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
-    }
-   ],
+   "links": [],
    "source": "Tableau des évaluations MTLCI — mise à jour de la directrice (photo IMG_1164, 25/11/2026)",
    "en": {
     "description": "Oral exam (MS) of block 3 (Global Logistics). Details to come.",
@@ -858,16 +570,7 @@
      "t": "Présentation individuelle (1h15 minimum) devant un jury de professionnels"
     }
    ],
-   "links": [
-    {
-     "label": "Dossier FINAL CASE (Drive)",
-     "url": "https://drive.google.com/drive/folders/1wy0cM-P0_6_1rinZ3FgvWD3NdHoWilGP"
-    },
-    {
-     "label": "Tableau des évaluations (image)",
-     "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
-    }
-   ],
+   "links": [],
    "source": "Tableau des évaluations MTLCI (capture IMG_1067, Drive > BLOC > ECF2 et ECF3)",
    "en": {
     "title": "Final case — Performance (block 5, 5 competencies)",
@@ -885,16 +588,7 @@
   "blocs": {
    "intro": "Les blocs de compétences sont validés par deux épreuves : l'ECF (épreuve écrite) et le MS (épreuve orale).",
    "notes": "ECF = épreuve écrite · MS = épreuve orale\nBloc 1 — International Trade : ECF1 le vendredi 8 janvier, MS1 le lundi 11 janvier 2027 (cas « La Fabbrique de Kaiirous »)\nBloc 2 — International Transport : ECF2 le lundi 10 mai, MS2 le mardi 11 mai 2027\nBloc 3 — Global Logistics : ECF3 le vendredi 25 juin, MS3 le lundi 28 juin 2027\nBloc 5 — Performance : évalué par le cas final (7-8-9 septembre 2027)\nNote finale du diplôme : blocs 1 à 4 = 40 % (10 % chacun) · bloc 5 / cas final = 40 % · mémoire = 20 %",
-   "links": [
-    {
-     "label": "Dossier BLOC (Drive)",
-     "url": "https://drive.google.com/drive/folders/1tZ3z8WfQSWCbQMIeDqqMB4yBR2-ZTfG-"
-    },
-    {
-     "label": "Tableau des évaluations (image)",
-     "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
-    }
-   ],
+   "links": [],
    "source": "Mails d'E. Jouannaux (02/11 et 08/11/2026) + Tableau des évaluations MTLCI, mise à jour de la directrice (IMG_1164, 25/11/2026)",
    "en": {
     "intro": "Skill blocks are validated through two exams: the ECF (written exam) and the MS (oral exam).",
@@ -902,17 +596,12 @@
    }
   },
   "partiels": {
-   "intro": "Les examens écrits du semestre : date, format, notation et dossier de cours de chaque matière. Cliquez sur « Marquer passé » après l'épreuve pour suivre votre avancement.",
+   "intro": "Les examens écrits du semestre : date, format et notation de chaque matière. Cliquez sur « Marquer passé » après l'épreuve pour suivre votre avancement.",
    "notes": "Semestre 1 : session d'examens du mercredi 16 au vendredi 18 décembre 2026\n5 matières, 6 créneaux d'examen surveillé (dont 2 sur ordinateur : International Transport, Warehouse Management)",
-   "links": [
-    {
-     "label": "Drive — Cours Semester 1",
-     "url": "https://drive.google.com/drive/folders/15vdoUGWbXYJexZFDpUVsWcRoS7j3CDrW"
-    }
-   ],
+   "links": [],
    "source": "Planning des examens semestre 1 (capture EDT KEDGE transmise le 20/11/2026)",
    "en": {
-    "intro": "The semester's written exams: date, format, grading and course folder for each course. Click “Mark taken” after the exam to track your progress.",
+    "intro": "The semester's written exams: date, format and grading for each course. Click “Mark taken” after the exam to track your progress.",
     "notes": "Semester 1: exam session from Wednesday 16 to Friday 18 December 2026\n5 courses, 6 supervised exam slots (2 on computer: International Transport, Warehouse Management)"
    }
   },
@@ -923,14 +612,6 @@
     {
      "label": "Plateforme mémoire KEDGE",
      "url": "https://memoires.kedgebs.com"
-    },
-    {
-     "label": "Dossier MÉMOIRE (Drive)",
-     "url": "https://drive.google.com/drive/folders/1JnIbAfT4Zo3wMOoxqIGLzDAcydH04K0m"
-    },
-    {
-     "label": "Règles plagiat / IA 2026-27",
-     "url": "https://drive.google.com/file/d/11Tck3xdD86jW4d2HJSQYHw3xBBbcqUsD/view"
     }
    ],
    "source": "Cahier des charges du mémoire M2 MSc-MTLCI 2026-27, versions FR et EN (oct. 2026) + « Gestion plagiat IA programmes 26-27 » (Thesis Lab)",
@@ -955,16 +636,7 @@
   "casfinal": {
    "intro": "Le cas final de l'année : lancement, remise, soutenance et deadlines intermédiaires.",
    "notes": "Cas final = bloc 5 « Performance » : 5 compétences évaluées\nDates : 7, 8 et 9 septembre 2027\nRapport écrit + présentation individuelle d'au moins 1h15 devant un jury de professionnels\nCompte pour 40 % de la note finale du diplôme",
-   "links": [
-    {
-     "label": "Dossier FINAL CASE (Drive)",
-     "url": "https://drive.google.com/drive/folders/1wy0cM-P0_6_1rinZ3FgvWD3NdHoWilGP"
-    },
-    {
-     "label": "Tableau des évaluations (image)",
-     "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
-    }
-   ],
+   "links": [],
    "source": "Tableau des évaluations MTLCI (capture IMG_1067, Drive > BLOC > ECF2 et ECF3)",
    "en": {
     "intro": "The final case of the year: launch, submission, defence and intermediate deadlines.",

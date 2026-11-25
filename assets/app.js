@@ -26,7 +26,7 @@ fr:{
   warn_s:"Les mails de <b>Mme Jouannaux</b> et <b>Mme Meguenni</b> sont prioritaires : vérifiez-les pour toute mise à jour de date ou de deadline. Cet outil aide au suivi mais ne remplace pas les informations officielles.",
   drive_t:'Drive de la promo', drive_s:'Cours, supports et consignes de chaque partiel, bloc et du mémoire', drive_btn:'Ouvrir le Drive',
   welcome_t:'👋 Bienvenue sur le rétroplanning de la promo MTLCI 2026-27', hide:'Masquer',
-  welcome_p:"Retrouvez toutes les échéances de l'année : partiels, blocs, mémoire, rapport d'alternance et cas final, avec les dates, consignes et dossiers de cours. Validez vos étapes ✓, ajoutez vos notes, vos dates ou vos propres échéances : <b>vos modifications ne sont visibles que par vous</b> et n'affectent personne d'autre.",
+  welcome_p:"Retrouvez toutes les échéances de l'année : partiels, blocs, mémoire, rapport d'alternance et cas final, avec les dates et les consignes. Validez vos étapes ✓, ajoutez vos notes, vos dates ou vos propres échéances : <b>vos modifications ne sont visibles que par vous</b> et n'affectent personne d'autre.",
   welcome_fav:"💡 <b>Pour garder vos modifications :</b> ajoutez cette page à vos <b>favoris</b> et revenez-y toujours depuis le <b>même navigateur, sur le même appareil</b>. Vos validations et notes sont enregistrées dans ce navigateur : elles ne suivent pas sur un autre appareil, ne sont pas conservées en navigation privée et disparaissent si vous effacez les données du site.",
   welcome_hint:'📅 Astuce : ajoutez les échéances à votre agenda (Google, iPhone, Outlook) pour recevoir des rappels.',
   soon_t:'📆 Les 15 prochains jours', soon_none:'Rien dans les 15 prochains jours.', soon_next:'Prochaine échéance : <b>{t}</b> le {d} ({n}).',
@@ -82,7 +82,7 @@ en:{
   warn_s:"Emails from <b>Ms Jouannaux</b> and <b>Ms Meguenni</b> take priority: check them for any date or deadline update. This tool helps you keep track but does not replace official information.",
   drive_t:'Class Drive', drive_s:'Courses, slides and instructions for every exam, block and the thesis', drive_btn:'Open the Drive',
   welcome_t:'👋 Welcome to the MTLCI 2026-27 class planner', hide:'Hide',
-  welcome_p:'Find every deadline of the year: exams, skill blocks, thesis, work-study report and final case, with dates, instructions and course folders. Tick off your steps ✓, add notes, dates or your own deadlines: <b>your changes are only visible to you</b> and never affect anyone else.',
+  welcome_p:'Find every deadline of the year: exams, skill blocks, thesis, work-study report and final case, with dates and instructions. Tick off your steps ✓, add notes, dates or your own deadlines: <b>your changes are only visible to you</b> and never affect anyone else.',
   welcome_fav:'💡 <b>To keep your changes:</b> bookmark this page and always come back from the <b>same browser on the same device</b>. Your ticks and notes are stored in this browser: they don’t follow you to another device, aren’t kept in private browsing, and are lost if you clear the site’s data.',
   welcome_hint:'📅 Tip: add deadlines to your calendar (Google, iPhone, Outlook) to get reminders.',
   soon_t:'📆 Next 15 days', soon_none:'Nothing in the next 15 days.', soon_next:'Next deadline: <b>{t}</b> on {d} ({n}).',
@@ -423,7 +423,7 @@ function liRow(it,opts){
 }
 
 /* ---- Dashboard ---- */
-const DRIVE_URL='https://drive.google.com/drive/folders/15vdoUGWbXYJexZFDpUVsWcRoS7j3CDrW?usp=share_link';
+const DRIVE_URL='';
 function warnBox(full){
   return full?`<div class="warnbox" role="alert"><div class="wi">⚠️</div><div><b class="wt">${esc(t('warn_t'))}</b><div>${t('warn_p')}</div></div></div>`
     :`<div class="warnline" role="note">⚠️ ${t('warn_s')}</div>`;
@@ -627,7 +627,7 @@ function examCard(it){
         ${L(it,'examFormat')?`<span style="font-size:12px;color:var(--muted)">${esc(L(it,'examFormat'))}</span>`:''}
         ${it.room?`<span style="font-size:12px;color:var(--muted)">📍 ${esc(it.room)}</span>`:''}</div>
       <div class="hint" style="color:var(--muted)"><b style="font-weight:600">${esc(t('notation'))} :</b> ${ev?esc(ev):`<span style="color:var(--faint)">${esc(t('notation_tbd'))}</span>`}</div>
-      <div class="meta">${it.links.length?`<a href="${esc(safeUrl(it.links[0].url))}" target="_blank" rel="noopener" style="font-size:12.5px;font-weight:600">📁 ${esc(t('course_folder'))} ↗</a>${it.links.length>1?`<button class="btn ghost sm" data-open="${esc(it.id)}" style="font-size:12px">📄 ${esc(t('n_docs',{n:it.links.length-1}))}</button>`:''}`:`<span style="font-size:12px;color:var(--faint)">📁 ${esc(t('no_folder'))}</span>`}
+      <div class="meta">${it.links.length?`<a href="${esc(safeUrl(it.links[0].url))}" target="_blank" rel="noopener" style="font-size:12.5px;font-weight:600">📁 ${esc(it.links[0].label||t('course_folder'))} ↗</a>${it.links.length>1?`<button class="btn ghost sm" data-open="${esc(it.id)}" style="font-size:12px">📄 ${esc(t('n_docs',{n:it.links.length-1}))}</button>`:''}`:''}
       ${L(it,'dateNote')?`<span style="font-size:12px;color:#92400e">${esc(L(it,'dateNote'))}</span>`:''}</div>
     </div>
     <div class="ctrl"><div class="r"><span class="days" style="color:${u.color}">${esc(daysTxt(it))}</span></div>
