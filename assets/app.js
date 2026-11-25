@@ -530,10 +530,11 @@ function tlItem(it){
 }
 
 /* ---- Calendar ---- */
+let ALT_SRC=null, ALT_MAP={};
 function altDay(k){
-  const A=S.alt; if(!A||!A.days) return null;
-  if(!A._m){ A._m={}; A.days.forEach(x=>A._m[x.d]=x); }
-  if(A._m[k]) return A._m[k];
+  const A=S.alt; if(!A||!Array.isArray(A.days)) return null;
+  if(ALT_SRC!==A){ ALT_SRC=A; ALT_MAP={}; A.days.forEach(x=>{ if(x&&x.d) ALT_MAP[x.d]=x; }); }
+  if(ALT_MAP[k]) return ALT_MAP[k];
   if(k<A.from||k>A.to) return null; const wd=parseD(k).getDay(); if(wd===0||wd===6) return null;
   return {d:k,k:'ent'};
 }
@@ -557,7 +558,7 @@ function viewCalendar(){
   }
   const monthItems=items.filter(i=>{ const d=parseD(i.date); return d.getFullYear()===y&&d.getMonth()===mo; });
   let altHtml='';
-  if(S.alt&&S.alt.days){
+  if(S.alt&&Array.isArray(S.alt.days)){
     const key0=`${y}-${String(mo+1).padStart(2,'0')}`, md=S.alt.days.filter(x=>x.d.slice(0,7)===key0&&x.k!=='ferie');
     altHtml=`<div class="altbar"><button class="btn sm ${S.showAlt?'pri':''}" data-a="togalt">🎓 ${esc(t(S.showAlt?'alt_hide':'alt_show'))}</button>
       ${S.showAlt?`<span class="altleg"><span class="alt a-ecole">${esc(t('alt_ecole'))}</span><span class="alt a-eval">${esc(t('alt_eval'))}</span><span class="alt a-casfinal">${esc(t('alt_casfinal'))}</span><span class="alt a-mixte">${esc(t('alt_mixte'))}</span><span class="alt a-ent">${esc(t('alt_ent'))}</span><span class="alt a-ferie">${esc(t('alt_ferie'))}</span></span>
