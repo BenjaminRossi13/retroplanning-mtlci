@@ -313,9 +313,6 @@
    "order": 1,
    "title": "International Transport",
    "date": "2026-12-16",
-   "timeStart": "13:00",
-   "timeEnd": "16:00",
-   "room": "Amphithéâtre 8.113, Salle de classe 9.208",
    "examFormat": "Examen surveillé digital",
    "examType": "Écrit",
    "semester": "Semestre 1",
@@ -359,9 +356,6 @@
    "order": 2,
    "title": "Human & AI Collaboration",
    "date": "2026-12-17",
-   "timeStart": "08:30",
-   "timeEnd": "11:30",
-   "room": "Salles de classe 0.001, 0.002",
    "examFormat": "Examen surveillé",
    "examType": "Écrit",
    "semester": "Semestre 1",
@@ -399,9 +393,6 @@
    "order": 3,
    "title": "Customs Operations / Taxation — créneau 1",
    "date": "2026-12-17",
-   "timeStart": "13:30",
-   "timeEnd": "14:30",
-   "room": "Amphithéâtres 5.021, 9.209",
    "examFormat": "Examen surveillé",
    "examType": "Écrit",
    "semester": "Semestre 1",
@@ -434,9 +425,6 @@
    "order": 4,
    "title": "Customs Operations / Taxation — créneau 2",
    "date": "2026-12-17",
-   "timeStart": "15:30",
-   "timeEnd": "18:30",
-   "room": "Amphithéâtres 5.021, 9.209",
    "examFormat": "Examen surveillé",
    "examType": "Écrit",
    "semester": "Semestre 1",
@@ -469,9 +457,6 @@
    "order": 5,
    "title": "International Contracts & Risks Management",
    "date": "2026-12-18",
-   "timeStart": "08:30",
-   "timeEnd": "11:30",
-   "room": "Salles de classe 6.001, 6.002, 6.003",
    "examFormat": "Examen surveillé",
    "examType": "Écrit",
    "semester": "Semestre 1",
@@ -573,9 +558,6 @@
    "order": 6,
    "title": "Warehouse Management and Dry Ports",
    "date": "2026-12-18",
-   "timeStart": "13:30",
-   "timeEnd": "16:30",
-   "room": "Amphithéâtre 8.113, Salle de classe 9.208",
    "examFormat": "Examen surveillé digital",
    "examType": "Écrit",
    "semester": "Semestre 1",
@@ -631,12 +613,12 @@
    "id": "bloc-ecf1-rendu",
    "category": "blocs",
    "order": 1,
-   "title": "ECF1 · International Trade — Rendu Word + PPT (cas Kaiirous)",
-   "description": "Cas « La Fabbrique de Kaiirous » en groupe de 4. Documents Word et PPT en anglais, format professionnel, répondant précisément aux exigences du cas.",
+   "title": "MS1 · International Trade — Rendu Word + PPT (cas Kaiirous)",
+   "description": "Cas « La Fabbrique de Kaiirous » en groupe de 4, présenté lors de la soutenance MS1 (oral). Documents Word et PPT en anglais, format professionnel, répondant précisément aux exigences du cas.",
    "date": "2027-01-07",
    "yearInferred": true,
    "dateConfidence": "provisoire",
-   "dateNote": "Jeudi 7 janvier « before 12:00 AM » — heure ambiguë (minuit ou midi ?), à confirmer",
+   "dateNote": "Jeudi 7 janvier · heure limite à vérifier dans le mail officiel",
    "checklist": [
     {
      "t": "Document Word en anglais"
@@ -674,9 +656,9 @@
    ],
    "source": "Mails d'Elisabeth Jouannaux du 02/11/2026 et du 08/11/2026 (Drive > BLOC > ECF1 > « Mail : Elisabeth JOUANNAUX »)",
    "en": {
-    "title": "ECF1 · International Trade — Word + PPT submission (Kaiirous case)",
-    "description": "“La Fabbrique de Kaiirous” case in groups of 4. Word and PPT documents in English, professional format, answering the case requirements precisely.",
-    "dateNote": "Thursday 7 January “before 12:00 AM” — ambiguous time (midnight or noon?), to be confirmed",
+    "title": "MS1 · International Trade — Word + PPT submission (Kaiirous case)",
+    "description": "“La Fabbrique de Kaiirous” case in groups of 4, presented at the MS1 defence (oral). Word and PPT documents in English, professional format, answering the case requirements precisely.",
+    "dateNote": "Thursday 7 January · check the exact deadline in the official email",
     "checklist": [
      "Word document in English",
      "PPT presentation in English",
@@ -691,11 +673,11 @@
    "id": "bloc-ecf1-exam",
    "category": "blocs",
    "order": 2,
-   "title": "ECF1 · International Trade — Examen individuel (3h30)",
+   "title": "ECF1 · International Trade — Examen individuel écrit (3h30)",
    "description": "Examen individuel de 3h30 sur le cas « La Fabbrique de Kaiirous » (questions complémentaires, discussion…) pour valider le bloc de compétences. Ni documents ni ordinateur autorisés.",
    "date": "2027-01-08",
    "yearInferred": true,
-   "dateNote": "Vendredi 8 janvier · horaire et salle non communiqués",
+   "dateNote": "ECF = épreuve écrite",
    "links": [
     {
      "label": "Dossier ECF1 (Drive)",
@@ -710,23 +692,24 @@
      "url": "https://docs.google.com/document/d/1zfmTSlSI3pbMNoDSF7fPp__cPEZY-_tR62xi6Ahg3Zs/edit"
     }
    ],
-   "source": "Mails d'Elisabeth Jouannaux du 02/11/2026 et du 08/11/2026 (Drive > BLOC > ECF1 > « Mail : Elisabeth JOUANNAUX »)",
+   "source": "Mails d'Elisabeth Jouannaux du 02/11/2026 et du 08/11/2026 (Drive > BLOC > ECF1 > « Mail : Elisabeth JOUANNAUX ») ; Tableau des évaluations MTLCI — mise à jour de la directrice (photo IMG_1164, 25/11/2026)",
    "en": {
-    "title": "ECF1 · International Trade — Individual exam (3h30)",
+    "title": "ECF1 · International Trade — Individual written exam (3h30)",
     "description": "Individual 3h30 exam on the “La Fabbrique de Kaiirous” case (additional questions, discussion…) to validate the skill block. No documents or computers allowed.",
-    "dateNote": "Friday 8 January · time and room not yet announced"
+    "dateNote": "ECF = written exam"
    },
-   "official": true
+   "official": true,
+   "examType": "Écrit"
   },
   {
    "id": "bloc-ecf1-soutenance",
    "category": "blocs",
    "order": 3,
-   "title": "ECF1 · International Trade — Soutenance de groupe (cas Kaiirous)",
+   "title": "MS1 · International Trade — Soutenance de groupe orale (cas Kaiirous)",
    "description": "Présentation de 20 min + 30 min de questions/réponses, en groupe de 4. Critères du jury : contenu général et qualité de la présentation ; analyse de la situation ; cohérence et pertinence des informations ; qualité de l'argumentation ; pertinence des solutions et recommandations ; culture générale.",
    "date": "2027-01-11",
    "yearInferred": true,
-   "dateNote": "Lundi 11 janvier · horaire et salle à venir (envoyés par Cherifa)",
+   "dateNote": "MS = épreuve orale",
    "links": [
     {
      "label": "Dossier ECF1 (Drive)",
@@ -741,23 +724,24 @@
      "url": "https://docs.google.com/document/d/1zfmTSlSI3pbMNoDSF7fPp__cPEZY-_tR62xi6Ahg3Zs/edit"
     }
    ],
-   "source": "Mails d'Elisabeth Jouannaux du 02/11/2026 et du 08/11/2026 (Drive > BLOC > ECF1 > « Mail : Elisabeth JOUANNAUX »)",
+   "source": "Mails d'Elisabeth Jouannaux du 02/11/2026 et du 08/11/2026 (Drive > BLOC > ECF1 > « Mail : Elisabeth JOUANNAUX ») ; Tableau des évaluations MTLCI — mise à jour de la directrice (photo IMG_1164, 25/11/2026)",
    "en": {
-    "title": "ECF1 · International Trade — Group defence (Kaiirous case)",
+    "title": "MS1 · International Trade — Oral group defence (Kaiirous case)",
     "description": "20-minute presentation + 30 minutes of Q&A, in groups of 4. Jury criteria: overall content and quality of the presentation; analysis of the situation; coherence and relevance of information; quality of argument; relevance of solutions and recommendations; general knowledge.",
-    "dateNote": "Monday 11 January · time and room to come (sent by Cherifa)"
+    "dateNote": "MS = oral exam"
    },
-   "official": true
+   "official": true,
+   "examType": "Oral"
   },
   {
    "id": "bloc-ecf2",
    "category": "blocs",
    "order": 4,
    "title": "ECF2 · International Transport",
-   "description": "Évaluation ECF du bloc 2 (International Transport). Compte pour 10 % de la note finale du diplôme. Modalités détaillées à venir.",
-   "date": "2027-05-07",
+   "description": "Épreuve écrite (ECF) du bloc 2 (International Transport). Le bloc compte pour 10 % de la note finale du diplôme. Modalités détaillées à venir.",
+   "date": "2027-05-10",
    "yearInferred": true,
-   "dateNote": "Écrit ou oral : à confirmer",
+   "dateNote": "ECF = épreuve écrite",
    "links": [
     {
      "label": "Dossier ECF2 (Drive)",
@@ -768,22 +752,23 @@
      "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
     }
    ],
-   "source": "Tableau des évaluations MTLCI (capture IMG_1067, Drive > BLOC > ECF2 et ECF3)",
+   "source": "Tableau des évaluations MTLCI — mise à jour de la directrice (photo IMG_1164, 25/11/2026)",
    "en": {
-    "description": "ECF assessment of block 2 (International Transport). Counts for 10% of the final degree grade. Details to come.",
-    "dateNote": "Written or oral: to be confirmed"
+    "description": "Written exam (ECF) of block 2 (International Transport). The block counts for 10% of the final degree grade. Details to come.",
+    "dateNote": "ECF = written exam"
    },
-   "official": true
+   "official": true,
+   "examType": "Écrit"
   },
   {
    "id": "bloc-ms2",
    "category": "blocs",
    "order": 5,
    "title": "MS2 · International Transport",
-   "description": "Évaluation MS du bloc 2 (International Transport). Modalités détaillées à venir.",
-   "date": "2027-05-10",
+   "description": "Épreuve orale (MS) du bloc 2 (International Transport). Modalités détaillées à venir.",
+   "date": "2027-05-11",
    "yearInferred": true,
-   "dateNote": "Écrit ou oral : à confirmer",
+   "dateNote": "MS = épreuve orale",
    "links": [
     {
      "label": "Dossier ECF2 (Drive)",
@@ -794,22 +779,23 @@
      "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
     }
    ],
-   "source": "Tableau des évaluations MTLCI (capture IMG_1067, Drive > BLOC > ECF2 et ECF3)",
+   "source": "Tableau des évaluations MTLCI — mise à jour de la directrice (photo IMG_1164, 25/11/2026)",
    "en": {
-    "description": "MS assessment of block 2 (International Transport). Details to come.",
-    "dateNote": "Written or oral: to be confirmed"
+    "description": "Oral exam (MS) of block 2 (International Transport). Details to come.",
+    "dateNote": "MS = oral exam"
    },
-   "official": true
+   "official": true,
+   "examType": "Oral"
   },
   {
    "id": "bloc-ecf3",
    "category": "blocs",
    "order": 6,
    "title": "ECF3 · Global Logistics",
-   "description": "Évaluation ECF du bloc 3 (Global Logistics). Compte pour 10 % de la note finale du diplôme. Modalités détaillées à venir.",
+   "description": "Épreuve écrite (ECF) du bloc 3 (Global Logistics). Le bloc compte pour 10 % de la note finale du diplôme. Modalités détaillées à venir.",
    "date": "2027-06-25",
    "yearInferred": true,
-   "dateNote": "Écrit ou oral : à confirmer",
+   "dateNote": "ECF = épreuve écrite",
    "links": [
     {
      "label": "Dossier ECF3 (Drive)",
@@ -820,22 +806,23 @@
      "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
     }
    ],
-   "source": "Tableau des évaluations MTLCI (capture IMG_1067, Drive > BLOC > ECF2 et ECF3)",
+   "source": "Tableau des évaluations MTLCI — mise à jour de la directrice (photo IMG_1164, 25/11/2026)",
    "en": {
-    "description": "ECF assessment of block 3 (Global Logistics). Counts for 10% of the final degree grade. Details to come.",
-    "dateNote": "Written or oral: to be confirmed"
+    "description": "Written exam (ECF) of block 3 (Global Logistics). The block counts for 10% of the final degree grade. Details to come.",
+    "dateNote": "ECF = written exam"
    },
-   "official": true
+   "official": true,
+   "examType": "Écrit"
   },
   {
    "id": "bloc-ms3",
    "category": "blocs",
    "order": 7,
    "title": "MS3 · Global Logistics",
-   "description": "Évaluation MS du bloc 3 (Global Logistics). Modalités détaillées à venir.",
+   "description": "Épreuve orale (MS) du bloc 3 (Global Logistics). Modalités détaillées à venir.",
    "date": "2027-06-28",
    "yearInferred": true,
-   "dateNote": "Écrit ou oral : à confirmer",
+   "dateNote": "MS = épreuve orale",
    "links": [
     {
      "label": "Dossier ECF3 (Drive)",
@@ -846,12 +833,13 @@
      "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
     }
    ],
-   "source": "Tableau des évaluations MTLCI (capture IMG_1067, Drive > BLOC > ECF2 et ECF3)",
+   "source": "Tableau des évaluations MTLCI — mise à jour de la directrice (photo IMG_1164, 25/11/2026)",
    "en": {
-    "description": "MS assessment of block 3 (Global Logistics). Details to come.",
-    "dateNote": "Written or oral: to be confirmed"
+    "description": "Oral exam (MS) of block 3 (Global Logistics). Details to come.",
+    "dateNote": "MS = oral exam"
    },
-   "official": true
+   "official": true,
+   "examType": "Oral"
   },
   {
    "id": "cas-final",
@@ -895,8 +883,8 @@
  ],
  "categories": {
   "blocs": {
-   "intro": "Les blocs de compétences sont validés par des ECF (évaluations en cours de formation). Chaque ECF peut comprendre un rendu de groupe, un examen individuel et une soutenance.",
-   "notes": "Bloc 1 — International Trade : ECF1 (cas « La Fabbrique de Kaiirous »), voir les échéances de janvier\nBloc 2 — International Transport : ECF2 le vendredi 7 mai, MS2 le lundi 10 mai 2027\nBloc 3 — Global Logistics : ECF3 le vendredi 25 juin, MS3 le lundi 28 juin 2027\nBloc 5 — Performance : évalué par le cas final (7-8-9 septembre 2027)\nNote finale du diplôme : blocs 1 à 4 = 40 % (10 % chacun) · bloc 5 / cas final = 40 % · mémoire = 20 %",
+   "intro": "Les blocs de compétences sont validés par deux épreuves : l'ECF (épreuve écrite) et le MS (épreuve orale).",
+   "notes": "ECF = épreuve écrite · MS = épreuve orale\nBloc 1 — International Trade : ECF1 le vendredi 8 janvier, MS1 le lundi 11 janvier 2027 (cas « La Fabbrique de Kaiirous »)\nBloc 2 — International Transport : ECF2 le lundi 10 mai, MS2 le mardi 11 mai 2027\nBloc 3 — Global Logistics : ECF3 le vendredi 25 juin, MS3 le lundi 28 juin 2027\nBloc 5 — Performance : évalué par le cas final (7-8-9 septembre 2027)\nNote finale du diplôme : blocs 1 à 4 = 40 % (10 % chacun) · bloc 5 / cas final = 40 % · mémoire = 20 %",
    "links": [
     {
      "label": "Dossier BLOC (Drive)",
@@ -907,14 +895,14 @@
      "url": "https://drive.google.com/file/d/1J_bP8QPbfsDRB00UrDws9_XQqg76iUwl/view"
     }
    ],
-   "source": "Mails d'E. Jouannaux (02/11 et 08/11/2026) + Tableau des évaluations MTLCI (capture IMG_1067, Drive > BLOC > ECF2 et ECF3)",
+   "source": "Mails d'E. Jouannaux (02/11 et 08/11/2026) + Tableau des évaluations MTLCI, mise à jour de la directrice (IMG_1164, 25/11/2026)",
    "en": {
-    "intro": "Skill blocks are validated through ECF assessments (in-course evaluations). Each block can include a group submission, an individual exam and a defence.",
-    "notes": "Block 1 — International Trade: ECF1 (“La Fabbrique de Kaiirous” case), see the January deadlines\nBlock 2 — International Transport: ECF2 on Friday 7 May, MS2 on Monday 10 May 2027\nBlock 3 — Global Logistics: ECF3 on Friday 25 June, MS3 on Monday 28 June 2027\nBlock 5 — Performance: assessed through the final case (7-8-9 September 2027)\nFinal degree grade: blocks 1 to 4 = 40% (10% each) · block 5 / final case = 40% · thesis = 20%"
+    "intro": "Skill blocks are validated through two exams: the ECF (written exam) and the MS (oral exam).",
+    "notes": "ECF = written exam · MS = oral exam\nBlock 1 — International Trade: ECF1 on Friday 8 January, MS1 on Monday 11 January 2027 (“La Fabbrique de Kaiirous” case)\nBlock 2 — International Transport: ECF2 on Monday 10 May, MS2 on Tuesday 11 May 2027\nBlock 3 — Global Logistics: ECF3 on Friday 25 June, MS3 on Monday 28 June 2027\nBlock 5 — Performance: assessed through the final case (7-8-9 September 2027)\nFinal degree grade: blocks 1 to 4 = 40% (10% each) · block 5 / final case = 40% · thesis = 20%"
    }
   },
   "partiels": {
-   "intro": "Les examens écrits du semestre : date, horaire, salle, format, notation et dossier de cours de chaque matière. Cliquez sur « Marquer passé » après l'épreuve pour suivre votre avancement.",
+   "intro": "Les examens écrits du semestre : date, format, notation et dossier de cours de chaque matière. Cliquez sur « Marquer passé » après l'épreuve pour suivre votre avancement.",
    "notes": "Semestre 1 : session d'examens du mercredi 16 au vendredi 18 décembre 2026\n5 matières, 6 créneaux d'examen surveillé (dont 2 sur ordinateur : International Transport, Warehouse Management)",
    "links": [
     {
@@ -924,7 +912,7 @@
    ],
    "source": "Planning des examens semestre 1 (capture EDT KEDGE transmise le 20/11/2026)",
    "en": {
-    "intro": "The semester's written exams: date, time, room, format, grading and course folder for each course. Click “Mark taken” after the exam to track your progress.",
+    "intro": "The semester's written exams: date, format, grading and course folder for each course. Click “Mark taken” after the exam to track your progress.",
     "notes": "Semester 1: exam session from Wednesday 16 to Friday 18 December 2026\n5 courses, 6 supervised exam slots (2 on computer: International Transport, Warehouse Management)"
    }
   },

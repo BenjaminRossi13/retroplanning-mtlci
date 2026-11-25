@@ -16,11 +16,14 @@ fr:{
   u_done:'Terminé', u_done_exam:'Passé', u_tbd:'À définir', u_exam_past:'Épreuve passée', u_past:'Passé · fait ?', u_urgent:'Urgent', u_doing:'En cours', u_soon:'Proche', u_later:'À venir',
   d_today:"Aujourd'hui", d_past:'Passé', d_past_exam:'Passée', d_days:'J-{n}', tbd:'À définir',
   new_item:'Ajouter une échéance', new_title:'Mon échéance',
-  search_ph:'Rechercher (matière, salle, cas…)', search_items:'Échéances', search_groups:'Groupes', search_none:'Aucun résultat pour « {q} ».', search_cat:'Catégories',
+  search_ph:'Rechercher (matière, bloc, cas…)', search_items:'Échéances', search_groups:'Groupes', search_none:'Aucun résultat pour « {q} ».', search_cat:'Catégories',
   saved_local:'Vos modifications sont enregistrées sur cet appareil', saved_acct:'Vos modifications sont enregistrées', offline:"Hors ligne : l'affichage n'est peut-être pas à jour",
   unhide:'👁 Réafficher {n} échéance(s) retirée(s)', agenda_all:'📅 Tout ajouter à mon agenda', lang:'Langue',
   sub_tl:'Toutes les échéances, par ordre chronologique', sub_gantt:'Toutes les catégories', sub_cal:'Vue mensuelle', sub_cat:'Catégorie',
   loading:'Chargement…',
+  warn_t:'Vérifiez toujours vos mails officiels — ils sont prioritaires',
+  warn_p:"Les dates, deadlines et consignes peuvent être modifiées à tout moment. Les mails d’information et de mise à jour envoyés par <b>Mme Elisabeth Jouannaux</b> et <b>Mme Cherifa Meguenni</b> font foi et sont prioritaires sur cet outil : vérifiez-les systématiquement. Cet outil sert uniquement à aider au suivi ; il ne remplace pas les informations officielles et chacun reste responsable de vérifier ses dates et ses rendus.",
+  warn_s:"Les mails de <b>Mme Jouannaux</b> et <b>Mme Meguenni</b> sont prioritaires : vérifiez-les pour toute mise à jour de date ou de deadline. Cet outil aide au suivi mais ne remplace pas les informations officielles.",
   drive_t:'Drive de la promo', drive_s:'Cours, supports et consignes de chaque partiel, bloc et du mémoire', drive_btn:'Ouvrir le Drive',
   welcome_t:'👋 Bienvenue sur le rétroplanning de la promo MTLCI 2026-27', hide:'Masquer',
   welcome_p:"Retrouvez toutes les échéances de l'année : partiels, blocs, mémoire, rapport d'alternance et cas final, avec les dates, consignes et dossiers de cours. Validez vos étapes ✓, ajoutez vos notes, vos dates ou vos propres échéances : <b>vos modifications ne sont visibles que par vous</b> et n'affectent personne d'autre.",
@@ -69,11 +72,14 @@ en:{
   u_done:'Done', u_done_exam:'Taken', u_tbd:'TBD', u_exam_past:'Exam passed', u_past:'Past · done?', u_urgent:'Urgent', u_doing:'In progress', u_soon:'Soon', u_later:'Upcoming',
   d_today:'Today', d_past:'Past', d_past_exam:'Past', d_days:'D-{n}', tbd:'TBD',
   new_item:'Add a deadline', new_title:'My deadline',
-  search_ph:'Search (course, room, case…)', search_items:'Deadlines', search_groups:'Groups', search_none:'No results for “{q}”.', search_cat:'Categories',
+  search_ph:'Search (course, block, case…)', search_items:'Deadlines', search_groups:'Groups', search_none:'No results for “{q}”.', search_cat:'Categories',
   saved_local:'Your changes are saved on this device', saved_acct:'Your changes are saved', offline:'Offline: data may be out of date',
   unhide:'👁 Show {n} removed deadline(s)', agenda_all:'📅 Add all to my calendar', lang:'Language',
   sub_tl:'All deadlines in chronological order', sub_gantt:'All categories', sub_cal:'Monthly view', sub_cat:'Category',
   loading:'Loading…',
+  warn_t:'Always check your official emails — they take priority',
+  warn_p:"Dates, deadlines and instructions can change at any time. The information and update emails sent by <b>Ms Elisabeth Jouannaux</b> and <b>Ms Cherifa Meguenni</b> are authoritative and take priority over this tool: always check them. This tool is only a tracking aid; it does not replace official information and everyone remains responsible for checking their own dates and submissions.",
+  warn_s:"Emails from <b>Ms Jouannaux</b> and <b>Ms Meguenni</b> take priority: check them for any date or deadline update. This tool helps you keep track but does not replace official information.",
   drive_t:'Class Drive', drive_s:'Courses, slides and instructions for every exam, block and the thesis', drive_btn:'Open the Drive',
   welcome_t:'👋 Welcome to the MTLCI 2026-27 class planner', hide:'Hide',
   welcome_p:'Find every deadline of the year: exams, skill blocks, thesis, work-study report and final case, with dates, instructions and course folders. Tick off your steps ✓, add notes, dates or your own deadlines: <b>your changes are only visible to you</b> and never affect anyone else.',
@@ -205,8 +211,7 @@ function normalize(o){
     dateNote:String(o.dateNote||''), yearInferred:!!o.yearInferred,
     status:STATUS_KEYS.includes(o.status)?o.status:'todo', official:!!o.official, completedAt:parseD(o.completedAt)?o.completedAt:null,
     examType:o.examType||'', order:Number(o.order)||0,
-    timeStart:/^\d{2}:\d{2}$/.test(o.timeStart||'')?o.timeStart:'', timeEnd:/^\d{2}:\d{2}$/.test(o.timeEnd||'')?o.timeEnd:'',
-    room:String(o.room||''), examFormat:String(o.examFormat||''), evaluation:String(o.evaluation||''), semester:String(o.semester||''),
+    timeStart:'', timeEnd:'', room:'', // horaires et salles volontairement non gérés (à vérifier dans les mails officiels) examFormat:String(o.examFormat||''), evaluation:String(o.evaluation||''), semester:String(o.semester||''),
     checklist:Array.isArray(o.checklist)?o.checklist.map(c=>({t:String(c.t||''),d:!!c.d})):[],
     links:Array.isArray(o.links)?o.links.map(l=>({label:String(l.label||''),url:String(l.url||'')})):[],
     comments:String(o.comments||''), source:String(o.source||''), updatedAt:o.updatedAt||null,
@@ -370,6 +375,7 @@ function render(fromSnap){
   const q=document.getElementById('q'); if(q.placeholder!==t('search_ph')) q.placeholder=t('search_ph');
   let html='';
   if(S.stale) html+=`<div class="banner">${esc(t('offline'))}</div>`;
+  if(v!=='dashboard') html+=warnBox(false);
   if(v==='dashboard'){ ttl.textContent=t('nav_dash'); sub.textContent=fmt(iso(today0()),FULL); html+=viewDashboard(); }
   else if(v==='timeline'){ ttl.textContent=t('nav_tl'); sub.textContent=t('sub_tl'); html+=viewTimeline(); }
   else if(v==='gantt'){ ttl.textContent=t('nav_gantt'); sub.textContent=t('sub_gantt'); html+=viewGantt(); }
@@ -418,6 +424,10 @@ function liRow(it,opts){
 
 /* ---- Dashboard ---- */
 const DRIVE_URL='https://drive.google.com/drive/folders/15vdoUGWbXYJexZFDpUVsWcRoS7j3CDrW?usp=share_link';
+function warnBox(full){
+  return full?`<div class="warnbox" role="alert"><div class="wi">⚠️</div><div><b class="wt">${esc(t('warn_t'))}</b><div>${t('warn_p')}</div></div></div>`
+    :`<div class="warnline" role="note">⚠️ ${t('warn_s')}</div>`;
+}
 function viewDashboard(){
   if(!S.loaded) return `<div class="empty">${esc(t('loading'))}</div>`;
   const items=allItems();
@@ -455,7 +465,7 @@ function viewDashboard(){
       <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap"><span class="tag" style="background:${c.hex}1a;color:${c.hex}">${esc(cname(c.key))}</span><span class="pill ${u.cls}"><i></i>${esc(u.label)}</span>${next.dateConfidence==='provisoire'?`<span class="flag">${esc(t('provisional'))}</span>`:''}</div></div></div>`;
   } else nextHtml=`<div class="card next"><div class="d">${esc(t('next_none'))}</div></div>`;
   const driveHtml=DRIVE_URL?`<a class="card drivebar" href="${esc(DRIVE_URL)}" target="_blank" rel="noopener"><span class="di">📁</span><span style="flex:1;min-width:0"><b>${esc(t('drive_t'))}</b><span class="ds">${esc(t('drive_s'))}</span></span><span class="btn sm pri">${esc(t('drive_btn'))} ↗</span></a>`:'';
-  return `${welcome}${driveHtml}
+  return `${warnBox(true)}${welcome}${driveHtml}
   <div class="card panel" style="margin-bottom:14px"><h3>${esc(t('soon_t'))}<span class="sp"></span><a href="#timeline" class="btn ghost sm">${esc(t('see_all'))}</a></h3>${soonHtml}</div>
   ${updHtml||pastHtml?`<div class="grid row2" style="margin:0 0 14px">${updHtml||'<div></div>'}${pastHtml||'<div></div>'}</div>`:''}
   <div class="grid kpis">${kpi(t('k_total'),items.length)}${kpi(t('k_done'),done,'var(--green)')}${kpi(t('k_doing'),doing,'var(--blue)')}${kpi(t('k_up'),upcoming.length,'var(--orange)')}${kpi(t('k_past'),past.length,'#d97706')}</div>
@@ -609,7 +619,7 @@ function examList(items){
 function examCard(it){
   const c=CAT[it.category], u=urgency(it), isDone=it.status==='done', ev=L(it,'evaluation');
   return `<div class="card step ${isDone?'isdone':''}" style="grid-template-columns:86px 1fr auto">
-    <div style="text-align:center;line-height:1.15">${it.timeStart?`<div style="font-size:17px;font-weight:650">${esc(it.timeStart)}</div><div style="font-size:12px;color:var(--muted)">${it.timeEnd?'→ '+esc(it.timeEnd):''}</div>`:`<div style="color:var(--faint);font-size:12px;white-space:pre-line">${esc(t('time_tbd'))}</div>`}</div>
+    <div style="text-align:center;line-height:1.15">${it.date?`<div style="font-size:17px;font-weight:650">${esc(fmt(it.date,{day:'numeric',month:'short'}))}</div><div class="cap" style="font-size:12px;color:var(--muted)">${esc(fmt(it.date,{weekday:'long'}))}</div>`:`<div style="color:var(--faint);font-size:12px">${esc(t('tbd'))}</div>`}</div>
     <div style="min-width:0"><div class="tt" data-open="${esc(it.id)}">${esc(L(it,'title'))} ${badge(it)}</div>
       <div class="meta"><span class="pill ${u.cls}"><i></i>${esc(u.label)}</span>
         ${L(it,'examFormat')?`<span style="font-size:12px;color:var(--muted)">${esc(L(it,'examFormat'))}</span>`:''}
@@ -761,8 +771,6 @@ function drawerEdit(it){
     <div class="f"><label>${esc(t('e_title'))}</label><input class="inp" data-f="title" value="${esc(it.title)}"></div>
     <div class="f2"><div class="f"><label>${esc(t(isExam(it)?'e_date_exam':'e_date'))}</label><input class="inp" type="date" data-f="date" value="${esc(it.date||'')}"><div class="hint">${esc(t('e_empty_date'))}</div></div>
       <div class="f"><label>${esc(t('e_status'))}</label><select class="inp" data-f="status">${opt(Object.fromEntries(STATUS_KEYS.map(k=>[k,t('st_'+k)])),it.status)}</select></div></div>
-    <div class="f2"><div class="f"><label>${esc(t('e_tstart'))}</label><input class="inp" type="time" data-f="timeStart" value="${esc(it.timeStart)}"></div><div class="f"><label>${esc(t('e_tend'))}</label><input class="inp" type="time" data-f="timeEnd" value="${esc(it.timeEnd)}"></div></div>
-    <div class="f"><label>${esc(t('e_room'))}</label><input class="inp" data-f="room" value="${esc(it.room)}"></div>
     <div class="f"><label>${esc(t('e_desc'))}</label><textarea class="inp" data-f="description" rows="3">${esc(it.description)}</textarea></div>
     <div class="f"><label>${esc(t('e_checklist'))}</label><div>${it.checklist.map((x,i)=>`<div class="ck ${x.d?'done':''}"><input type="checkbox" data-ck="${i}" ${x.d?'checked':''}><input class="inp" data-ckt="${i}" value="${esc(x.t)}"><button class="btn ghost sm" data-a="ckdel" data-i="${i}" aria-label="✕">✕</button></div>`).join('')}</div><button class="btn sm" data-a="ckadd" style="margin-top:6px">${esc(t('e_add_ck'))}</button></div>
     <div class="f"><label>${esc(t('e_links'))}</label>${it.links.map((l,i)=>`<div class="lk"><input class="inp" data-lkl="${i}" value="${esc(l.label)}" placeholder="${esc(t('e_label'))}" style="max-width:150px"><input class="inp" data-lku="${i}" value="${esc(l.url)}" placeholder="https://…"><button class="btn ghost sm" data-a="lkdel" data-i="${i}" aria-label="✕">✕</button></div>`).join('')}<button class="btn sm" data-a="lkadd">${esc(t('e_add_link'))}</button></div>
@@ -784,7 +792,7 @@ function icsEsc(s){ return String(s||'').replace(/\\/g,'\\\\').replace(/;/g,'\\;
 function fold(line){ const out=[]; let s=line; while(s.length>73){ out.push(s.slice(0,73)); s=' '+s.slice(73); } out.push(s); return out.join('\r\n'); }
 function evDetails(it){ const parts=[]; const d=L(it,'description'), dn=L(it,'dateNote'), ev=L(it,'evaluation');
   if(d) parts.push(d); if(dn) parts.push(t('ics_note')+' : '+dn); if(ev) parts.push(t('notation')+' : '+ev); if(it.room) parts.push(t('ics_room')+' : '+it.room);
-  if(it.links.length) parts.push(t('ics_links')+' :\n'+it.links.slice(0,8).map(l=>'- '+(l.label||'')+' '+l.url).join('\n')); return parts.join('\n\n'); }
+  if(it.links.length) parts.push(t('ics_links')+' :\n'+it.links.slice(0,8).map(l=>'- '+(l.label||'')+' '+l.url).join('\n')); parts.push('⚠ '+t('warn_s').replace(/<[^>]+>/g,'')); return parts.join('\n\n'); }
 function icsEvent(it){
   const stamp=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');
   const L1=['BEGIN:VEVENT','UID:'+it.id+'@mtlci-retroplanning','DTSTAMP:'+stamp,'SUMMARY:'+icsEsc(t('ics_prefix')+' '+L(it,'title'))];

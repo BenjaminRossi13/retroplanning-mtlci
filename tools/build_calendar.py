@@ -63,7 +63,6 @@ for it in base.get("items", []):
     if it.get("description"): parts.append(it["description"])
     if it.get("dateNote"): parts.append("Note : " + it["dateNote"])
     if it.get("evaluation"): parts.append("Notation : " + it["evaluation"])
-    if it.get("room"): parts.append("Salle : " + it["room"])
     en = it.get("en") or {}
     if en.get("title"): parts.append("EN: " + en["title"])
     links = it.get("links") or []
@@ -83,6 +82,7 @@ for it in base.get("items", []):
         ev += [f"DTSTART;VALUE=DATE:{ymd(it.get('startDate') or d)}", f"DTEND;VALUE=DATE:{ymd(next_day(d))}", "TRANSP:TRANSPARENT"]
     if it.get("room"):
         ev.append("LOCATION:" + esc(it["room"]))
+    parts.append("⚠ Les mails de Mme Elisabeth Jouannaux et Mme Cherifa Meguenni sont prioritaires : vérifiez-les pour toute mise à jour. Ce calendrier aide au suivi mais ne remplace pas les informations officielles.")
     ev.append("DESCRIPTION:" + esc("\n\n".join(parts)))
     if it.get("dateConfidence") == "provisoire":
         ev.append("STATUS:TENTATIVE")
