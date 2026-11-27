@@ -351,3 +351,8 @@ details.more>summary{cursor:pointer;font-size:13px;color:var(--muted);margin:14p
 .warnbox{display:flex;gap:12px;align-items:flex-start;background:#fef2f2;border:1.5px solid #dc2626;color:#7f1d1d;border-radius:var(--r);padding:14px 18px;margin-bottom:14px;font-size:13px;line-height:1.5}
 .warnbox .wi{font-size:20px;line-height:1.2}.warnbox .wt{display:block;color:#b91c1c;font-size:14px;margin-bottom:2px}.warnbox b{color:#991b1b}
 .warnline{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b;border-radius:8px;padding:7px 12px;margin-bottom:12px;font-size:12.5px;line-height:1.4}
+.updbar{margin:0 0 14px;background:var(--panel);border:1px solid var(--line);border-radius:10px;font-size:12.5px}
+.updbar summary{display:flex;align-items:center;gap:10px;padding:8px 12px;cursor:pointer;list-style:none;color:var(--muted)}
+.updbar summary::-webkit-details-marker{display:none}
+.updbar .ub{font-weight:600;color:var(--text);white-space:nowrap}.updbar .up{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.updbar .uv{color:var(--blue);font-weight:500;white-space:nowrap}.updbar[open] .uv{visibility:hidden}.updbar .list{padding:0 8px 8px}

@@ -30,7 +30,7 @@ fr:{
   welcome_fav:"💡 <b>Pour garder vos modifications :</b> ajoutez cette page à vos <b>favoris</b> et revenez-y toujours depuis le <b>même navigateur, sur le même appareil</b>. Vos validations et notes sont enregistrées dans ce navigateur : elles ne suivent pas sur un autre appareil, ne sont pas conservées en navigation privée et disparaissent si vous effacez les données du site.",
   welcome_hint:'📅 Astuce : ajoutez les échéances à votre agenda (Google, iPhone, Outlook) pour recevoir des rappels.',
   soon_t:'📆 Les 15 prochains jours', soon_none:'Rien dans les 15 prochains jours.', soon_next:'Prochaine échéance : <b>{t}</b> le {d} ({n}).',
-  upd_t:'🔔 Dernières mises à jour', upd_new:'Nouveau', upd_mod:'Modifié', upd_date:'Date : {a} → {b}', upd_time:'Horaire : {a} → {b}', upd_room:'Salle : {a} → {b}', upd_other:'Informations mises à jour', upd_on:'le {d}',
+  upd_n:'{n} mise(s) à jour récente(s)', upd_see:'Voir', upd_t:'🔔 Dernières mises à jour', upd_new:'Nouveau', upd_mod:'Modifié', upd_date:'Date : {a} → {b}', upd_time:'Horaire : {a} → {b}', upd_room:'Salle : {a} → {b}', upd_other:'Informations mises à jour', upd_on:'le {d}',
   past_t:'⏳ Passées — les avez-vous faites ?', past_hint:'Cochez ✓ ce que vous avez rendu ou passé.',
   k_total:'Échéances', k_done:'Terminées', k_doing:'En cours', k_up:'À venir', k_past:'À valider',
   next_t:'Prochaine échéance', next_none:'Aucune échéance datée à venir.', days_word:'jour(s)',
@@ -86,7 +86,7 @@ en:{
   welcome_fav:'💡 <b>To keep your changes:</b> bookmark this page and always come back from the <b>same browser on the same device</b>. Your ticks and notes are stored in this browser: they don’t follow you to another device, aren’t kept in private browsing, and are lost if you clear the site’s data.',
   welcome_hint:'📅 Tip: add deadlines to your calendar (Google, iPhone, Outlook) to get reminders.',
   soon_t:'📆 Next 15 days', soon_none:'Nothing in the next 15 days.', soon_next:'Next deadline: <b>{t}</b> on {d} ({n}).',
-  upd_t:'🔔 Latest updates', upd_new:'New', upd_mod:'Updated', upd_date:'Date: {a} → {b}', upd_time:'Time: {a} → {b}', upd_room:'Room: {a} → {b}', upd_other:'Information updated', upd_on:'on {d}',
+  upd_n:'{n} recent update(s)', upd_see:'View', upd_t:'🔔 Latest updates', upd_new:'New', upd_mod:'Updated', upd_date:'Date: {a} → {b}', upd_time:'Time: {a} → {b}', upd_room:'Room: {a} → {b}', upd_other:'Information updated', upd_on:'on {d}',
   past_t:'⏳ Past — did you do them?', past_hint:'Tick ✓ what you have submitted or taken.',
   k_total:'Deadlines', k_done:'Done', k_doing:'In progress', k_up:'Upcoming', k_past:'To confirm',
   next_t:'Next deadline', next_none:'No upcoming dated deadline.', days_word:'day(s)',
@@ -454,7 +454,7 @@ function viewDashboard(){
   }
   // updates
   const upd=items.filter(i=>chInfo(i.id)).sort((a,b)=>chInfo(b.id).at.localeCompare(chInfo(a.id).at)).slice(0,6);
-  const updHtml=upd.length?`<div class="card panel upd"><h3>${esc(t('upd_t'))}</h3><div class="list">${upd.map(i=>{ const s=chInfo(i.id); const w=changeText(i,s); return `<div class="li" data-open="${esc(i.id)}"><span class="nbadge ${s.ch==='mod'?'mod':''}">${esc(t(s.ch==='mod'?'upd_mod':'upd_new'))}</span><div class="main2"><div class="tt">${esc(L(i,'title'))}</div><div class="what">${esc(cshort(i.category))}${w?' · '+esc(w):''} · ${esc(t('upd_on',{d:fmt(s.at.slice(0,10),DM)}))}</div></div></div>`; }).join('')}</div></div>`:'';
+  const updHtml=upd.length?`<details class="updbar"><summary><span class="ub">🔔 ${esc(t('upd_n',{n:upd.length}))}</span><span class="up">${upd.slice(0,2).map(i=>esc(L(i,'title'))).join(' · ')}${upd.length>2?' …':''}</span><span class="uv">${esc(t('upd_see'))}</span></summary><div class="list">${upd.map(i=>{ const s=chInfo(i.id); const w=changeText(i,s); return `<div class="li" data-open="${esc(i.id)}"><span class="nbadge ${s.ch==='mod'?'mod':''}">${esc(t(s.ch==='mod'?'upd_mod':'upd_new'))}</span><div class="main2"><div class="tt">${esc(L(i,'title'))}</div><div class="what">${esc(cshort(i.category))}${w?' · '+esc(w):''} · ${esc(t('upd_on',{d:fmt(s.at.slice(0,10),DM)}))}</div></div></div>`; }).join('')}</div></details>`:'';
   const pastHtml=past.length?`<div class="card panel"><h3>${esc(t('past_t'))} <span class="pill u-past">${past.length}</span></h3><div class="hint" style="margin:-6px 0 6px">${esc(t('past_hint'))}</div><div class="list">${past.slice(-6).reverse().map(i=>liRow(i)).join('')}</div></div>`:'';
   const kpi=(l,v,col)=>`<div class="card kpi"><div class="l">${col?`<i style="background:${col}"></i>`:''}${esc(l)}</div><div class="v">${v}</div></div>`;
   let nextHtml='';
@@ -465,9 +465,9 @@ function viewDashboard(){
       <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap"><span class="tag" style="background:${c.hex}1a;color:${c.hex}">${esc(cname(c.key))}</span><span class="pill ${u.cls}"><i></i>${esc(u.label)}</span>${next.dateConfidence==='provisoire'?`<span class="flag">${esc(t('provisional'))}</span>`:''}</div></div></div>`;
   } else nextHtml=`<div class="card next"><div class="d">${esc(t('next_none'))}</div></div>`;
   const driveHtml=DRIVE_URL?`<a class="card drivebar" href="${esc(DRIVE_URL)}" target="_blank" rel="noopener"><span class="di">📁</span><span style="flex:1;min-width:0"><b>${esc(t('drive_t'))}</b><span class="ds">${esc(t('drive_s'))}</span></span><span class="btn sm pri">${esc(t('drive_btn'))} ↗</span></a>`:'';
-  return `${warnBox(true)}${welcome}${driveHtml}
+  return `${warnBox(true)}${welcome}${driveHtml}${updHtml}
   <div class="card panel" style="margin-bottom:14px"><h3>${esc(t('soon_t'))}<span class="sp"></span><a href="#timeline" class="btn ghost sm">${esc(t('see_all'))}</a></h3>${soonHtml}</div>
-  ${updHtml||pastHtml?`<div class="grid row2" style="margin:0 0 14px">${updHtml||'<div></div>'}${pastHtml||'<div></div>'}</div>`:''}
+  ${pastHtml?`<div style="margin:0 0 14px">${pastHtml}</div>`:''}
   <div class="grid kpis">${kpi(t('k_total'),items.length)}${kpi(t('k_done'),done,'var(--green)')}${kpi(t('k_doing'),doing,'var(--blue)')}${kpi(t('k_up'),upcoming.length,'var(--orange)')}${kpi(t('k_past'),past.length,'#d97706')}</div>
   <div class="grid row2">
     <div style="display:flex;flex-direction:column;gap:14px">${nextHtml}
