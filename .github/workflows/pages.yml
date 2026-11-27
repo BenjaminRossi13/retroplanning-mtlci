@@ -33,6 +33,8 @@ jobs:
         run: |
           mkdir -p _site
           cp -r index.html assets data calendar .nojekyll _site/
+          # Version unique par publication : force les navigateurs à recharger le code
+          sed -i "s#assets/app.css#assets/app.css?v=${GITHUB_SHA::8}#; s#assets/app.js#assets/app.js?v=${GITHUB_SHA::8}#" _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
