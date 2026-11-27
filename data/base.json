@@ -8,10 +8,10 @@
    "order": 1,
    "title": "Jalon 1 — Trouver un tuteur et un sujet",
    "description": "1ère formulation de la problématique (ou a minima une thématique) et choix du tuteur mémoire sur la plateforme.",
-   "date": "2026-11-27",
-   "startDate": "2026-10-05",
+   "date": "2026-11-07",
+   "startDate": "2026-10-01",
    "yearInferred": false,
-   "dateNote": "Au plus tard le 27 novembre 2026 · ouverture le 5 octobre 2026",
+   "dateNote": "Au plus tard le 7 novembre 2026 · ouverture le 1er octobre 2026",
    "checklist": [
     {
      "t": "Formuler une 1ère problématique (question managériale liée aux missions)"
@@ -29,11 +29,11 @@
      "url": "https://memoires.kedgebs.com"
     }
    ],
-   "source": "Tableau des exigences du mémoire (photo IMG_1170, mise à jour transmise le 27/11/2026)",
+   "source": "Cahier des charges du mémoire de recherche professionnel M2 MSc-MTLCI 2026-27 (KEDGE, oct. 2026), p. 9, 16-19 — dates conservées à la demande de Benji",
    "en": {
     "title": "Milestone 1 — Find a supervisor and a topic",
     "description": "First formulation of the research problem (or at least a theme) and choice of a thesis supervisor on the platform.",
-    "dateNote": "By 27 November 2026 at the latest · opens 5 October 2026",
+    "dateNote": "By 7 November 2026 at the latest · opens 1 October 2026",
     "checklist": [
      "Formulate a first research problem (managerial question linked to your assignments)",
      "Choose a thesis supervisor on memoires.kedgebs.com",
