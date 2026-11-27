@@ -66,4 +66,4 @@ calendar/                  calendrier généré (recréé par GitHub Actions)
 
 ## Données personnelles
 
-Le dépôt et le site sont **publics** : n'y mettez ni document confidentiel ni données personnelles. Les listes de groupes nominatives ne sont pas publiées. Les liens Drive ne s'ouvrent que pour les personnes qui ont accès au dossier.
+Le dépôt et le site sont **publics** : n'y mettez ni document confidentiel ni données personnelles. Aucune liste de groupes ni aucun lien Drive n'est publié.
