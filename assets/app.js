@@ -21,6 +21,11 @@ fr:{
   unhide:'👁 Réafficher {n} échéance(s) retirée(s)', agenda_all:'📅 Tout ajouter à mon agenda', lang:'Langue',
   sub_tl:'Toutes les échéances, par ordre chronologique', sub_gantt:'Toutes les catégories', sub_cal:'Vue mensuelle', sub_cat:'Catégorie',
   loading:'Chargement…',
+  welcome_short:"Toutes les échéances de la promo au même endroit. Cochez ce que vous avez fait ✓ : <b>vos modifications ne sont visibles que par vous</b>. Pour les garder, mettez cette page en <b>favori</b> et revenez toujours depuis le même navigateur.", w_ok:"J'ai compris",
+  sc_t:'Cours à l’école', sc_cal:'Calendrier', sc_today_school:'Aujourd’hui : à l’école', sc_this_week:'Semaine d’école en cours', sc_next:'Prochaine période à l’école', sc_in:'dans {n} jours', sc_tomorrow:'demain', sc_none:'Plus de cours prévus', sc_after:'Ensuite :', sc_range:'du {a} au {b}',
+  same_day:'+{n} le même jour', h_done:'Marquer fait', h_taken:'Marquer passé', h_details:'Détails',
+  g_week:'Cette semaine', g_month:'Dans les 30 jours', g_later:'Ensuite', upcoming_t2:'À venir', past_t2:'Passées — les avez-vous faites ?', ql_t:'Accès rapides',
+  st_done_n:'{n} terminée(s)', st_up_n:'{n} à venir', st_past_n:'{n} à valider', st_tbd_n:'{n} à définir',
   warn_t:'Vérifiez toujours vos mails officiels — ils sont prioritaires',
   warn_p:"Les dates, deadlines et consignes peuvent être modifiées à tout moment. Les mails d’information et de mise à jour envoyés par <b>Mme Elisabeth Jouannaux</b> et <b>Mme Cherifa Meguenni</b> font foi et sont prioritaires sur cet outil : vérifiez-les systématiquement. Cet outil sert uniquement à aider au suivi ; il ne remplace pas les informations officielles et chacun reste responsable de vérifier ses dates et ses rendus.",
   warn_s:"Les mails de <b>Mme Jouannaux</b> et <b>Mme Meguenni</b> sont prioritaires : vérifiez-les pour toute mise à jour de date ou de deadline. Cet outil aide au suivi mais ne remplace pas les informations officielles.",
@@ -77,6 +82,11 @@ en:{
   unhide:'👁 Show {n} removed deadline(s)', agenda_all:'📅 Add all to my calendar', lang:'Language',
   sub_tl:'All deadlines in chronological order', sub_gantt:'All categories', sub_cal:'Monthly view', sub_cat:'Category',
   loading:'Loading…',
+  welcome_short:"All the class deadlines in one place. Tick off what you've done ✓: <b>your changes are only visible to you</b>. To keep them, <b>bookmark</b> this page and always come back from the same browser.", w_ok:'Got it',
+  sc_t:'School days', sc_cal:'Calendar', sc_today_school:'Today: at school', sc_this_week:'School week in progress', sc_next:'Next school period', sc_in:'in {n} days', sc_tomorrow:'tomorrow', sc_none:'No more classes scheduled', sc_after:'Then:', sc_range:'{a} to {b}',
+  same_day:'+{n} on the same day', h_done:'Mark done', h_taken:'Mark taken', h_details:'Details',
+  g_week:'This week', g_month:'Within 30 days', g_later:'Later', upcoming_t2:'Coming up', past_t2:'Past — did you do them?', ql_t:'Quick access',
+  st_done_n:'{n} done', st_up_n:'{n} upcoming', st_past_n:'{n} to confirm', st_tbd_n:'{n} TBD',
   warn_t:'Always check your official emails — they take priority',
   warn_p:"Dates, deadlines and instructions can change at any time. The information and update emails sent by <b>Ms Elisabeth Jouannaux</b> and <b>Ms Cherifa Meguenni</b> are authoritative and take priority over this tool: always check them. This tool is only a tracking aid; it does not replace official information and everyone remains responsible for checking their own dates and submissions.",
   warn_s:"Emails from <b>Ms Jouannaux</b> and <b>Ms Meguenni</b> take priority: check them for any date or deadline update. This tool helps you keep track but does not replace official information.",
@@ -425,64 +435,82 @@ function liRow(it,opts){
 /* ---- Dashboard ---- */
 const DRIVE_URL='';
 function warnBox(full){
-  return full?`<div class="warnbox" role="alert"><div class="wi">⚠️</div><div><b class="wt">${esc(t('warn_t'))}</b><div>${t('warn_p')}</div></div></div>`
+  return full?`<div class="warnbox" role="alert"><div class="wi">⚠️</div><div><b class="wt">${esc(t('warn_t'))}</b><div class="wl">${t('warn_p')}</div><div class="ws">${t('warn_s')}</div></div></div>`
     :`<div class="warnline" role="note">⚠️ ${t('warn_s')}</div>`;
+}
+function schoolPeriods(){
+  const A=S.alt; if(!A||!Array.isArray(A.days)) return [];
+  const ds=A.days.filter(x=>x&&['ecole','eval','casfinal'].includes(x.k)).map(x=>x.d).sort();
+  const out=[]; ds.forEach(d=>{ const last=out[out.length-1];
+    if(last){ const gap=(parseD(d)-parseD(last.to))/864e5; if(gap<=3){ last.to=d; last.n++; return; } }
+    out.push({from:d,to:d,n:1}); });
+  return out;
+}
+function schoolCard(){
+  const P=schoolPeriods(); if(!P.length) return '';
+  const tIso=iso(today0()), cur=P.find(p=>p.from<=tIso&&p.to>=tIso), nx=P.find(p=>p.from>tIso);
+  const rng=p=>p.from===p.to?fmt(p.from,{weekday:'short',day:'numeric',month:'short'}):t('sc_range',{a:fmt(p.from,{weekday:'short',day:'numeric'}),b:fmt(p.to,{weekday:'short',day:'numeric',month:'short'})});
+  const today=altDay(tIso);
+  let main='';
+  if(cur) main=`<div class="sc-now ${today&&today.k==='ecole'?'on':''}">${esc(today&&today.k==='ecole'?t('sc_today_school'):t('sc_this_week'))}</div><div class="sc-r cap">${esc(rng(cur))}</div>`;
+  else if(nx){ const n=daysLeft(nx.from); main=`<div class="sc-now">${esc(t('sc_next'))}</div><div class="sc-r cap">${esc(rng(nx))}</div><div class="sc-in">${esc(n===1?t('sc_tomorrow'):t('sc_in',{n}))}</div>`; }
+  else main=`<div class="sc-now">${esc(t('sc_none'))}</div>`;
+  const after=cur?nx:P.find(p=>nx&&p.from>nx.from);
+  return `<div class="card panel school"><h3>🎓 ${esc(t('sc_t'))}<span class="sp"></span><a href="#calendar" class="btn ghost sm">${esc(t('sc_cal'))} →</a></h3>${main}
+    ${after?`<div class="sc-after">${esc(t('sc_after'))} <span class="cap">${esc(rng(after))}</span></div>`:''}</div>`;
 }
 function viewDashboard(){
   if(!S.loaded) return `<div class="empty">${esc(t('loading'))}</div>`;
   const items=allItems();
   if(!items.length) return `<div class="card empty"><b>${esc(t('empty_t'))}</b>${esc(t('empty_p'))}</div>`;
   const notDone=items.filter(i=>i.status!=='done');
-  const done=items.length-notDone.length, doing=items.filter(i=>i.status==='doing').length;
+  const done=items.length-notDone.length;
   const past=notDone.filter(i=>i.date&&daysLeft(i.date)<0&&!isExam(i));
   const upcoming=notDone.filter(i=>i.date&&daysLeft(i.date)>=0);
-  const soon=upcoming.filter(i=>daysLeft(i.date)<=14);
   const undated=notDone.filter(i=>!i.date);
   const next=upcoming[0], pct=items.length?Math.round(done/items.length*100):0;
-  // welcome
-  let welcome=''; if(!lsGet('rp-welcome-v2',false)) welcome=`<div class="card panel" style="margin-bottom:14px;border-color:#c7d2fe;background:#f8faff"><h3>${esc(t('welcome_t'))}<span class="sp"></span><button class="btn ghost sm" data-a="welcome">${esc(t('hide'))}</button></h3>
-    <div style="font-size:13px;color:#374151">${t('welcome_p')}</div>
-    <div class="box info" style="background:#fff;border-color:#e0e7ff">${t('welcome_fav')}</div>
-    <div class="hint" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span>${esc(t('welcome_hint'))}</span>${calUrl()?`<button class="btn sm pri" data-a="subscribe">${esc(t('sub_btn'))}</button>`:''}</div></div>`;
-  // soon
-  let soonHtml='';
-  if(soon.length){
-    const byDay=new Map(); soon.forEach(i=>{ if(!byDay.has(i.date)) byDay.set(i.date,[]); byDay.get(i.date).push(i); });
-    byDay.forEach((arr,d)=>{ const n=daysLeft(d); soonHtml+=`<div class="soonday"><span class="d">${esc(fmt(d,{weekday:'long',day:'numeric',month:'long'}))}</span><span class="pill ${n<=7?'u-red':'u-orange'}">${esc(n===0?t('d_today'):t('d_days',{n}))}</span></div><div class="list">${arr.map(i=>liRow(i,{noDate:true})).join('')}</div>`; });
-  } else {
-    soonHtml=`<div class="mm" style="font-size:13px;color:var(--muted)">${esc(t('soon_none'))} ${next?t('soon_next',{t:esc(L(next,'title')),d:esc(fmt(next.date,SHORT)),n:esc(daysTxt(next))}):''}</div>`;
-  }
-  // updates
+  // welcome (short)
+  let welcome=''; if(!lsGet('rp-welcome-v2',false)) welcome=`<div class="card welcome2"><div style="flex:1;min-width:0"><b class="wt2">${esc(t('welcome_t'))}</b><div>${t('welcome_short')}</div></div><button class="btn sm" data-a="welcome">${esc(t('w_ok'))}</button></div>`;
+  // updates bar
   const upd=items.filter(i=>chInfo(i.id)).sort((a,b)=>chInfo(b.id).at.localeCompare(chInfo(a.id).at)).slice(0,6);
   const updHtml=upd.length?`<details class="updbar"><summary><span class="ub">🔔 ${esc(t('upd_n',{n:upd.length}))}</span><span class="up">${upd.slice(0,2).map(i=>esc(L(i,'title'))).join(' · ')}${upd.length>2?' …':''}</span><span class="uv">${esc(t('upd_see'))}</span></summary><div class="list">${upd.map(i=>{ const s=chInfo(i.id); const w=changeText(i,s); return `<div class="li" data-open="${esc(i.id)}"><span class="nbadge ${s.ch==='mod'?'mod':''}">${esc(t(s.ch==='mod'?'upd_mod':'upd_new'))}</span><div class="main2"><div class="tt">${esc(L(i,'title'))}</div><div class="what">${esc(cshort(i.category))}${w?' · '+esc(w):''} · ${esc(t('upd_on',{d:fmt(s.at.slice(0,10),DM)}))}</div></div></div>`; }).join('')}</div></details>`:'';
-  const pastHtml=past.length?`<div class="card panel"><h3>${esc(t('past_t'))} <span class="pill u-past">${past.length}</span></h3><div class="hint" style="margin:-6px 0 6px">${esc(t('past_hint'))}</div><div class="list">${past.slice(-6).reverse().map(i=>liRow(i)).join('')}</div></div>`:'';
-  const kpi=(l,v,col)=>`<div class="card kpi"><div class="l">${col?`<i style="background:${col}"></i>`:''}${esc(l)}</div><div class="v">${v}</div></div>`;
-  let nextHtml='';
-  if(next){ const u=urgency(next), c=CAT[next.category], n=daysLeft(next.date);
-    nextHtml=`<div class="card next" data-open="${esc(next.id)}"><div class="big ${u.cls}"><b>${n}</b><span>${esc(t('days_word'))}</span></div>
-      <div style="min-width:0"><div class="sec" style="margin:0 0 4px">${esc(t('next_t'))}</div><div class="t">${esc(L(next,'title'))}</div>
-      <div class="d">${esc(fmt(next.date,FULL))}${timeTxt(next)?' · '+esc(timeTxt(next)):''}</div>
-      <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap"><span class="tag" style="background:${c.hex}1a;color:${c.hex}">${esc(cname(c.key))}</span><span class="pill ${u.cls}"><i></i>${esc(u.label)}</span>${next.dateConfidence==='provisoire'?`<span class="flag">${esc(t('provisional'))}</span>`:''}</div></div></div>`;
-  } else nextHtml=`<div class="card next"><div class="d">${esc(t('next_none'))}</div></div>`;
-  const driveHtml=DRIVE_URL?`<a class="card drivebar" href="${esc(DRIVE_URL)}" target="_blank" rel="noopener"><span class="di">📁</span><span style="flex:1;min-width:0"><b>${esc(t('drive_t'))}</b><span class="ds">${esc(t('drive_s'))}</span></span><span class="btn sm pri">${esc(t('drive_btn'))} ↗</span></a>`:'';
-  return `${warnBox(true)}${welcome}${driveHtml}${updHtml}
-  <div class="card panel" style="margin-bottom:14px"><h3>${esc(t('soon_t'))}<span class="sp"></span><a href="#timeline" class="btn ghost sm">${esc(t('see_all'))}</a></h3>${soonHtml}</div>
-  ${pastHtml?`<div style="margin:0 0 14px">${pastHtml}</div>`:''}
-  <div class="grid kpis">${kpi(t('k_total'),items.length)}${kpi(t('k_done'),done,'var(--green)')}${kpi(t('k_doing'),doing,'var(--blue)')}${kpi(t('k_up'),upcoming.length,'var(--orange)')}${kpi(t('k_past'),past.length,'#d97706')}</div>
-  <div class="grid row2">
-    <div style="display:flex;flex-direction:column;gap:14px">${nextHtml}
-      <div class="card panel"><h3>${esc(t('upcoming_t'))}<span class="sp"></span><a href="#timeline" class="btn ghost sm">${esc(t('see_all'))}</a></h3><div class="list">${upcoming.slice(0,7).map(i=>liRow(i)).join('')||`<div class="mm">${esc(t('nothing'))}</div>`}</div></div>
+  // hero: next deadline
+  let hero='';
+  if(next){ const u=urgency(next), c=CAT[next.category], n=daysLeft(next.date), same=upcoming.filter(i=>i.date===next.date).length-1;
+    hero=`<div class="card hero"><div class="big ${u.cls}"><b>${n===0?'!':n}</b><span>${esc(n===0?t('d_today'):t('days_word'))}</span></div>
+      <div style="min-width:0;flex:1"><div class="sec" style="margin:0 0 4px">${esc(t('next_t'))}</div><div class="t" data-open="${esc(next.id)}">${esc(L(next,'title'))}</div>
+      <div class="d cap">${esc(fmt(next.date,FULL))}${same>0?' · '+esc(t('same_day',{n:same})):''}</div>
+      <div class="hb"><span class="tag" style="background:${c.hex}1a;color:${c.hex}">${esc(cname(c.key))}</span><span class="pill ${u.cls}"><i></i>${esc(u.label)}</span>${next.dateConfidence==='provisoire'?`<span class="flag">${esc(t('provisional'))}</span>`:''}</div>
+      <div class="hb" style="margin-top:12px"><button class="btn sm pri" data-a="valid" data-id="${esc(next.id)}">✓ ${esc(t(isExam(next)?'h_taken':'h_done'))}</button><button class="btn sm" data-open="${esc(next.id)}">${esc(t('h_details'))}</button></div></div></div>`;
+  } else hero=`<div class="card hero"><div class="d">${esc(t('next_none'))}</div></div>`;
+  // upcoming grouped
+  const grp=[[t('g_week'),upcoming.filter(i=>daysLeft(i.date)<=7)],[t('g_month'),upcoming.filter(i=>{const n=daysLeft(i.date);return n>7&&n<=30;})],[t('g_later'),upcoming.filter(i=>daysLeft(i.date)>30)]];
+  let shown=0, upHtml='';
+  grp.forEach(([lab,arr])=>{ if(shown>=8) return; const take=lab===t('g_later')?arr.slice(0,Math.max(3,8-shown)):arr; if(!take.length) return; shown+=take.length;
+    upHtml+=`<div class="gl2">${esc(lab)} <span>${arr.length}</span></div><div class="list">${take.map(i=>liRow(i)).join('')}</div>`; });
+  if(!upHtml) upHtml=`<div class="mm" style="color:var(--muted)">${esc(t('nothing'))}</div>`;
+  const pastHtml=past.length?`<div class="card panel pastp"><h3>⏳ ${esc(t('past_t2'))} <span class="pill u-past">${past.length}</span></h3><div class="hint" style="margin:-6px 0 6px">${esc(t('past_hint'))}</div><div class="list">${past.slice(-4).reverse().map(i=>liRow(i)).join('')}</div></div>`:'';
+  // quick links
+  const ql=[]; if(calUrl()) ql.push(`<button class="qlk" data-a="subscribe">${esc(t('sub_btn'))}</button>`);
+  ['memoire','rapport'].forEach(k=>{ const l=((S.cats[k]||{}).links||[])[0]; if(l&&l.url) ql.push(`<a class="qlk" href="${esc(safeUrl(l.url))}" target="_blank" rel="noopener">↗ ${esc(l.label||cname(k))}</a>`); });
+  ql.push(`<a class="qlk" href="#gantt">▤ ${esc(t('nav_gantt'))}</a>`,`<a class="qlk" href="#calendar">▦ ${esc(t('nav_cal'))}</a>`);
+  const prog=`<div class="card panel"><h3>${esc(t('prog_t'))}<span class="sp"></span><span style="font-size:20px;font-weight:650">${pct}%</span></h3>
+    <div class="bar"><i style="width:${pct}%"></i></div>
+    <div class="stats"><span><i style="background:var(--green)"></i>${esc(t('st_done_n',{n:done}))}</span><span><i style="background:var(--orange)"></i>${esc(t('st_up_n',{n:upcoming.length}))}</span>${past.length?`<span><i style="background:#d97706"></i>${esc(t('st_past_n',{n:past.length}))}</span>`:''}${undated.length?`<span><i style="background:var(--gray)"></i>${esc(t('st_tbd_n',{n:undated.length}))}</span>`:''}</div>
+    <div class="catprog">${CATEGORIES.map(c=>{ const a=byCat(c.key), d=a.filter(i=>i.status==='done').length, p=a.length?Math.round(d/a.length*100):0;
+      return `<a href="#cat-${c.key}" style="color:inherit;text-decoration:none"><div class="h"><b style="font-weight:500">${esc(cname(c.key))}</b><span>${a.length?`${d}/${a.length}`:esc(t('waiting'))}</span></div><div class="bar"><i style="width:${p}%;background:${c.color}"></i></div></a>`; }).join('')}</div></div>`;
+  return `${warnBox(true)}${welcome}${updHtml}
+  <div class="grid dtop">${hero}${schoolCard()}</div>
+  <div class="grid row2" style="margin-top:14px">
+    <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+      <div class="card panel"><h3>📌 ${esc(t('upcoming_t2'))}<span class="sp"></span><a href="#timeline" class="btn ghost sm">${esc(t('see_all'))} →</a></h3>${upHtml}</div>
+      ${pastHtml}
     </div>
-    <div style="display:flex;flex-direction:column;gap:14px">
-      <div class="card panel"><h3>${esc(t('prog_t'))}<span class="sp"></span><span style="font-size:20px;font-weight:650">${pct}%</span></h3>
-        <div class="bar"><i style="width:${pct}%"></i></div><div class="mm" style="margin-top:6px;color:var(--muted);font-size:12px">${esc(t('prog_sub',{a:done,b:items.length}))}</div>
-        <div class="sec">${esc(t('by_cat'))}</div>
-        <div class="catprog">${CATEGORIES.map(c=>{ const a=byCat(c.key), d=a.filter(i=>i.status==='done').length, p=a.length?Math.round(d/a.length*100):0;
-          return `<a href="#cat-${c.key}" style="color:inherit;text-decoration:none"><div class="h"><b style="font-weight:500">${esc(cname(c.key))}</b><span>${a.length?`${d}/${a.length}`:esc(t('waiting'))}</span></div><div class="bar"><i style="width:${p}%;background:${c.color}"></i></div></a>`; }).join('')}</div></div>
-      ${undated.length?`<div class="card panel"><h3>${esc(t('undated_t'))} <span class="pill u-gray">${undated.length}</span></h3><div class="list">${undated.slice(0,6).map(i=>liRow(i)).join('')}</div></div>`:''}
+    <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+      <div class="card panel"><h3>⚡ ${esc(t('ql_t'))}</h3><div class="qls">${ql.join('')}</div></div>
+      ${prog}
     </div>
-  </div>
-  <div class="legend"><span><i style="background:var(--red)"></i>${esc(t('leg_urgent'))}</span><span><i style="background:var(--orange)"></i>${esc(t('leg_soon'))}</span><span><i style="background:#d97706"></i>${esc(t('leg_past'))}</span><span><i style="background:var(--blue)"></i>${esc(t('leg_doing'))}</span><span><i style="background:var(--green)"></i>${esc(t('leg_done'))}</span><span><i style="background:var(--gray)"></i>${esc(t('leg_tbd'))}</span></div>`;
+  </div>`;
 }
 
 /* ---- Timeline ---- */
