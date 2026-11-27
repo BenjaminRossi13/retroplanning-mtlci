@@ -26,6 +26,10 @@ fr:{
   same_day:'+{n} le même jour', h_done:'Marquer fait', h_taken:'Marquer passé', h_details:'Détails',
   g_week:'Cette semaine', g_month:'Dans les 30 jours', g_later:'Ensuite', upcoming_t2:'À venir', past_t2:'Passées — les avez-vous faites ?', ql_t:'Accès rapides',
   st_done_n:'{n} terminée(s)', st_up_n:'{n} à venir', st_past_n:'{n} à valider', st_tbd_n:'{n} à définir',
+  nav_home:'Accueil', sub_home:'Bienvenue', bn_dash:'Tableau', home_h1:'Rétroplanning de la promo', home_p:'Toutes les échéances de l’année au même endroit : partiels, blocs, mémoire, rapport d’alternance et cas final.', home_cta:'Ouvrir mon tableau de bord', home_views:'Les vues de l’outil', home_links:'Liens utiles', n_items:'{n} échéance(s)', past_none:'Rien à valider pour le moment.',
+  hd_dash:'Votre progression, vos tâches à valider, ce qui est passé et à venir', hd_tl:'Toutes les échéances dans l’ordre chronologique', hd_gantt:'Les périodes de travail sur une frise', hd_cal:'Vue par mois, avec les jours de cours à l’école',
+  hd_blocs:'ECF (écrit) et MS (oral) de chaque bloc', hd_partiels:'Examens du semestre, format et notation', hd_memoire:'Les 5 jalons et la soutenance', hd_rapport:'Étapes et remise du rapport', hd_casfinal:'Le cas final de septembre 2027',
+  how_t:'Comment ça marche', how1_t:'Une base commune', how1_p:'Les dates officielles sont les mêmes pour toute la promo et sont mises à jour au fil des informations reçues.', how2_t:'Votre suivi reste privé', how2_p:'Ce que vous cochez, notez ou ajoutez <b>n’est visible que par vous</b> et ne change rien pour les autres.', how3_t:'Gardez le lien en favori', how3_p:'Votre suivi est enregistré dans ce navigateur : revenez toujours depuis le <b>même navigateur, sur le même appareil</b> (pas en navigation privée).', how4_t:'Recevez des rappels', how4_p:'Abonnez votre agenda (Google, iPhone, Outlook) : les échéances s’y ajoutent et se mettent à jour toutes seules.',
   warn_t:'Vérifiez toujours vos mails officiels — ils sont prioritaires',
   warn_p:"Les dates, deadlines et consignes peuvent être modifiées à tout moment. Les mails d’information et de mise à jour envoyés par <b>Mme Elisabeth Jouannaux</b> et <b>Mme Cherifa Meguenni</b> font foi et sont prioritaires sur cet outil : vérifiez-les systématiquement. Cet outil sert uniquement à aider au suivi ; il ne remplace pas les informations officielles et chacun reste responsable de vérifier ses dates et ses rendus.",
   warn_s:"Les mails de <b>Mme Jouannaux</b> et <b>Mme Meguenni</b> sont prioritaires : vérifiez-les pour toute mise à jour de date ou de deadline. Cet outil aide au suivi mais ne remplace pas les informations officielles.",
@@ -87,6 +91,10 @@ en:{
   same_day:'+{n} on the same day', h_done:'Mark done', h_taken:'Mark taken', h_details:'Details',
   g_week:'This week', g_month:'Within 30 days', g_later:'Later', upcoming_t2:'Coming up', past_t2:'Past — did you do them?', ql_t:'Quick access',
   st_done_n:'{n} done', st_up_n:'{n} upcoming', st_past_n:'{n} to confirm', st_tbd_n:'{n} TBD',
+  nav_home:'Home', sub_home:'Welcome', bn_dash:'Dashboard', home_h1:'Class planner', home_p:'Every deadline of the year in one place: exams, skill blocks, thesis, work-study report and final case.', home_cta:'Open my dashboard', home_views:'Views', home_links:'Useful links', n_items:'{n} deadline(s)', past_none:'Nothing to confirm for now.',
+  hd_dash:'Your progress, tasks to tick off, past and upcoming deadlines', hd_tl:'All deadlines in chronological order', hd_gantt:'Work periods on a timeline', hd_cal:'Monthly view with school days',
+  hd_blocs:'ECF (written) and MS (oral) for each block', hd_partiels:'Semester exams, format and grading', hd_memoire:'The 5 milestones and the defence', hd_rapport:'Steps and report submission', hd_casfinal:'The final case in September 2027',
+  how_t:'How it works', how1_t:'One shared base', how1_p:'Official dates are the same for the whole class and are updated as information comes in.', how2_t:'Your tracking stays private', how2_p:'What you tick, note or add <b>is only visible to you</b> and changes nothing for others.', how3_t:'Bookmark this link', how3_p:'Your tracking is saved in this browser: always come back from the <b>same browser on the same device</b> (not in private browsing).', how4_t:'Get reminders', how4_p:'Subscribe your calendar (Google, iPhone, Outlook): deadlines are added and update automatically.',
   warn_t:'Always check your official emails — they take priority',
   warn_p:"Dates, deadlines and instructions can change at any time. The information and update emails sent by <b>Ms Elisabeth Jouannaux</b> and <b>Ms Cherifa Meguenni</b> are authoritative and take priority over this tool: always check them. This tool is only a tracking aid; it does not replace official information and everyone remains responsible for checking their own dates and submissions.",
   warn_s:"Emails from <b>Ms Jouannaux</b> and <b>Ms Meguenni</b> take priority: check them for any date or deadline update. This tool helps you keep track but does not replace official information.",
@@ -367,10 +375,10 @@ async function initData(){
 }
 
 /* ---------------- Router ---------------- */
-const VIEWS=['dashboard','timeline','gantt','calendar'];
+const VIEWS=['home','dashboard','timeline','gantt','calendar'];
 function route(){
   const h=(location.hash||'').replace('#','');
-  if(VIEWS.includes(h)) S.view=h; else if(h.startsWith('cat-')&&CAT[h.slice(4)]) S.view=h; else S.view='dashboard';
+  if(VIEWS.includes(h)) S.view=h; else if(h.startsWith('cat-')&&CAT[h.slice(4)]) S.view=h; else S.view='home';
   document.getElementById('side').classList.remove('on');
   render(); window.scrollTo(0,0);
 }
@@ -385,8 +393,9 @@ function render(fromSnap){
   const q=document.getElementById('q'); if(q.placeholder!==t('search_ph')) q.placeholder=t('search_ph');
   let html='';
   if(S.stale) html+=`<div class="banner">${esc(t('offline'))}</div>`;
-  if(v!=='dashboard') html+=warnBox(false);
-  if(v==='dashboard'){ ttl.textContent=t('nav_dash'); sub.textContent=fmt(iso(today0()),FULL); html+=viewDashboard(); }
+  if(v!=='dashboard'&&v!=='home') html+=warnBox(false);
+  if(v==='home'){ ttl.textContent=t('nav_home'); sub.textContent=t('sub_home'); html+=viewHome(); }
+  else if(v==='dashboard'){ ttl.textContent=t('nav_dash'); sub.textContent=fmt(iso(today0()),FULL); html+=viewDashboard(); }
   else if(v==='timeline'){ ttl.textContent=t('nav_tl'); sub.textContent=t('sub_tl'); html+=viewTimeline(); }
   else if(v==='gantt'){ ttl.textContent=t('nav_gantt'); sub.textContent=t('sub_gantt'); html+=viewGantt(); }
   else if(v==='calendar'){ ttl.textContent=t('nav_cal'); sub.textContent=t('sub_cal'); html+=viewCalendar(); }
@@ -402,7 +411,7 @@ function renderSide(){
   const nh=(S.ov.hidden||[]).filter(id=>S.shared.has(id)).length;
   document.getElementById('side').innerHTML=`
     <div class="brand"><div class="logo">M2</div><div><b>Rétroplanning</b><span>${esc(t('app_sub'))}</span></div></div>
-    ${navBtn('dashboard','◧',t('nav_dash'))}${navBtn('timeline','≡',t('nav_tl'))}${navBtn('gantt','▤',t('nav_gantt'))}${navBtn('calendar','▦',t('nav_cal'))}
+    ${navBtn('home','⌂',t('nav_home'))}${navBtn('dashboard','◧',t('nav_dash'))}${navBtn('timeline','≡',t('nav_tl'))}${navBtn('gantt','▤',t('nav_gantt'))}${navBtn('calendar','▦',t('nav_cal'))}
     <div class="navlabel">${esc(t('nav_cats'))}</div>
     ${CATEGORIES.map(c=>`<a class="nav ${S.view==='cat-'+c.key?'on':''}" href="#cat-${c.key}"><span class="dot" style="background:${c.color}"></span>${esc(cname(c.key))}<span class="count">${byCat(c.key).length||''}</span></a>`).join('')}
     <div class="sidefoot">
@@ -415,7 +424,7 @@ function renderSide(){
 }
 function renderBnav(){
   const b=(v,i,l)=>`<a href="#${v}" class="${S.view===v?'on':''}"><span class="i">${i}</span>${esc(l)}</a>`;
-  document.getElementById('bnav').innerHTML=b('dashboard','◧',t('bn_home'))+b('timeline','≡',t('bn_tl'))+b('gantt','▤',t('bn_gantt'))+b('calendar','▦',t('bn_cal'))+`<button data-a="burger" class="${S.view.startsWith('cat-')?'on':''}"><span class="i">☰</span>${esc(t('bn_cats'))}</button>`;
+  document.getElementById('bnav').innerHTML=b('home','⌂',t('bn_home'))+b('dashboard','◧',t('bn_dash'))+b('timeline','≡',t('bn_tl'))+b('calendar','▦',t('bn_cal'))+`<button data-a="burger" class="${S.view.startsWith('cat-')?'on':''}"><span class="i">☰</span>${esc(t('bn_cats'))}</button>`;
 }
 
 /* ---- Rows / cards ---- */
@@ -430,6 +439,72 @@ function liRow(it,opts){
   return `<div class="li" data-open="${esc(it.id)}">${chkBtn(it)}<span class="cbar" style="background:${c.color}"></span>
     <div class="main2"><div class="tt">${esc(L(it,'title'))} ${badge(it)}</div><div class="mm">${esc(cshort(it.category))}${meta?' · '+esc(meta):''} ${grpTag(it)}</div></div>
     <span class="pill ${u.cls} hide-m"><i></i>${esc(u.label)}</span><span class="days" style="color:${u.color}">${esc(daysTxt(it))}</span></div>`;
+}
+
+/* ---- Accueil ---- */
+function heroScene(){
+  const ctn=['#e85d3f','#2f6fb3','#f2b134','#3a9a6b','#8e5bb5','#d9473b','#1f5f8f','#e7863a'];
+  let boxes=''; let k=0;
+  for(let row=0;row<3;row++) for(let col=0;col<7;col++){ if(row===2&&col>4) continue; const x=70+col*31, y=-26-row*15;
+    boxes+=`<rect x="${x}" y="${y}" width="29" height="13" rx="1.5" fill="${ctn[(k++*5+row)%ctn.length]}"/><path d="M${x+4} ${y+2}v9M${x+9} ${y+2}v9M${x+14} ${y+2}v9M${x+19} ${y+2}v9M${x+24} ${y+2}v9" stroke="#0002" stroke-width="1"/>`; }
+  const wave=(y,amp,len,col,op,cls)=>{ let d=`M0 ${y}`; for(let x=0;x<=2400;x+=len) d+=` q${len/4} ${-amp} ${len/2} 0 t${len/2} 0`; d+=` V160 H0 Z`; return `<path class="${cls}" d="${d}" fill="${col}" opacity="${op}"/>`; };
+  const sea=(inner,cls)=>`<svg class="sea ${cls}" viewBox="0 0 1200 160" preserveAspectRatio="xMinYMax slice" aria-hidden="true"><defs><linearGradient id="hsea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b8fd0"/><stop offset="1" stop-color="#1c5d96"/></linearGradient></defs>${inner}</svg>`;
+  return `<div class="scene" aria-hidden="true">
+  <div class="sun"></div>
+  <svg class="clouds" viewBox="0 0 1200 160" preserveAspectRatio="xMidYMin slice">
+    <g class="cl c1" fill="#fff" opacity=".92"><ellipse cx="200" cy="70" rx="60" ry="20"/><ellipse cx="240" cy="58" rx="42" ry="22"/><ellipse cx="165" cy="62" rx="30" ry="16"/></g>
+    <g class="cl c2" fill="#fff" opacity=".8"><ellipse cx="760" cy="48" rx="50" ry="15"/><ellipse cx="795" cy="38" rx="34" ry="17"/></g>
+    <g class="cl c3" fill="#fff" opacity=".7"><ellipse cx="520" cy="120" rx="44" ry="13"/><ellipse cx="552" cy="111" rx="28" ry="14"/></g>
+  </svg>
+  <div class="planew"><svg class="planes" viewBox="-170 -30 280 60">
+    <path d="M-160 6 H-6" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+    <path d="M0 0 C10 -6 70 -7 92 -4 C100 -3 104 1 100 4 C96 7 80 8 60 8 L8 8 C2 8 -3 4 0 0Z" fill="#fff" stroke="#9fb3c8" stroke-width="1"/>
+    <path d="M6 -1 L-6 -22 L6 -22 L22 -2Z" fill="#2f6fb3"/>
+    <path d="M38 3 L56 26 L66 26 L58 3Z" fill="#d4dee8"/><path d="M42 -1 L52 -12 L58 -12 L54 -1Z" fill="#c3cfdb"/>
+    <g fill="#5d7a96">${[28,36,44,52,60,68,76].map(x=>`<circle cx="${x}" cy="0.5" r="1.6"/>`).join('')}</g>
+  </svg></div>
+  ${sea(wave(40,7,120,'#8cc9ef',.55,'wv w1'),'back')}
+  <svg class="shipsvg" viewBox="0 -92 310 120"><g class="ship">
+    <path d="M0 -10 H300 L284 22 H22 Z" fill="#1d3557"/><path d="M4 -4 H296 L293 2 H7Z" fill="#c1121f"/>
+    ${boxes}
+    <rect x="16" y="-62" width="42" height="52" rx="2" fill="#f1f5f9"/><rect x="12" y="-70" width="50" height="10" rx="2" fill="#e2e8f0"/>
+    <g fill="#1d3557">${[20,30,40,50].map(x=>`<rect x="${x}" y="-56" width="6" height="5" rx="1"/>`).join('')}${[20,30,40,50].map(x=>`<rect x="${x}" y="-44" width="6" height="5" rx="1"/>`).join('')}</g>
+    <rect x="28" y="-86" width="12" height="17" fill="#c1121f"/><rect x="28" y="-86" width="12" height="4" fill="#1d3557"/>
+    <path d="M276 -10 L300 -10 L296 -24 L282 -24Z" fill="#e2e8f0"/>
+  </g></svg>
+  ${sea(wave(66,9,150,'url(#hsea)',.95,'wv w2')+wave(92,8,100,'#2a74b5',.9,'wv w3')+wave(122,6,120,'#1c5d96',1,'wv w4'),'front')}
+</div>`;
+}
+function viewHome(){
+  if(!S.loaded) return `<div class="empty">${esc(t('loading'))}</div>`;
+  const items=allItems(), notDone=items.filter(i=>i.status!=='done'), upcoming=notDone.filter(i=>i.date&&daysLeft(i.date)>=0), next=upcoming[0];
+  const done=items.length-notDone.length, pct=items.length?Math.round(done/items.length*100):0;
+  const card=(href,ico,title,desc,extra,col)=>`<a class="hcard" href="${href}"><span class="hi" style="${col?`background:${col}1a;color:${col}`:''}">${ico}</span><span class="hb2"><b>${esc(title)}</b><span>${esc(desc)}</span>${extra?`<em class="hx">${esc(extra)}</em>`:''}</span><span class="ha">→</span></a>`;
+  const upd=items.filter(i=>chInfo(i.id)).sort((a,b)=>chInfo(b.id).at.localeCompare(chInfo(a.id).at)).slice(0,6);
+  const updHtml=upd.length?`<details class="updbar"><summary><span class="ub">🔔 ${esc(t('upd_n',{n:upd.length}))}</span><span class="up">${upd.slice(0,2).map(i=>esc(L(i,'title'))).join(' · ')}${upd.length>2?' …':''}</span><span class="uv">${esc(t('upd_see'))}</span></summary><div class="list">${upd.map(i=>{ const s=chInfo(i.id); const w=changeText(i,s); return `<div class="li" data-open="${esc(i.id)}"><span class="nbadge ${s.ch==='mod'?'mod':''}">${esc(t(s.ch==='mod'?'upd_mod':'upd_new'))}</span><div class="main2"><div class="tt">${esc(L(i,'title'))}</div><div class="what">${esc(cshort(i.category))}${w?' · '+esc(w):''} · ${esc(t('upd_on',{d:fmt(s.at.slice(0,10),DM)}))}</div></div></div>`; }).join('')}</div></details>`:'';
+  const links=[]; ['memoire','rapport'].forEach(k=>{ const l=((S.cats[k]||{}).links||[])[0]; if(l&&l.url) links.push(`<a class="qlk" href="${esc(safeUrl(l.url))}" target="_blank" rel="noopener">↗ ${esc(l.label||cname(k))}</a>`); });
+  const how=[['🏫',t('how1_t'),t('how1_p')],['🔒',t('how2_t'),t('how2_p')],['⭐',t('how3_t'),t('how3_p')],['🔔',t('how4_t'),t('how4_p')]];
+  return `<div class="hhero">${heroScene()}
+    <div class="hov"><div class="hk">MSc MTLCI · KEDGE · 2026-27</div><h1>${esc(t('home_h1'))}</h1><p>${esc(t('home_p'))}</p>
+      ${next?`<div class="hnext" data-open="${esc(next.id)}"><span class="hn">${esc(daysLeft(next.date)===0?t('d_today'):t('d_days',{n:daysLeft(next.date)}))}</span><span><small>${esc(t('next_t'))}</small><b>${esc(L(next,'title'))}</b></span></div>`:''}
+      <div class="hbtns"><a class="btn pri" href="#dashboard">${esc(t('home_cta'))} →</a>${calUrl()?`<button class="btn glass" data-a="subscribe">${esc(t('sub_btn'))}</button>`:''}</div>
+    </div></div>
+  ${warnBox(true)}
+  ${updHtml}
+  <div class="hsec">${esc(t('home_views'))}</div>
+  <div class="hgrid">
+    ${card('#dashboard','◧',t('nav_dash'),t('hd_dash'),pct+' %')}
+    ${card('#timeline','≡',t('nav_tl'),t('hd_tl'),'')}
+    ${card('#gantt','▤',t('nav_gantt'),t('hd_gantt'),'')}
+    ${card('#calendar','▦',t('nav_cal'),t('hd_cal'),'')}
+  </div>
+  <div class="hsec">${esc(t('nav_cats'))}</div>
+  <div class="hgrid">${CATEGORIES.map(c=>{ const a=byCat(c.key); return card('#cat-'+c.key,esc(cname(c.key)).charAt(0),cname(c.key),t('hd_'+c.key),a.length?t('n_items',{n:a.length}):t('waiting'),c.hex); }).join('')}</div>
+  <div class="grid row2" style="margin-top:22px">
+    <div class="card panel"><h3>💡 ${esc(t('how_t'))}</h3><div class="how">${how.map(([i,a,b])=>`<div><span>${i}</span><div><b>${esc(a)}</b><p>${b}</p></div></div>`).join('')}</div></div>
+    <div style="display:flex;flex-direction:column;gap:14px;min-width:0">${schoolCard()}
+      ${links.length?`<div class="card panel"><h3>🔗 ${esc(t('home_links'))}</h3><div class="qls">${links.join('')}</div></div>`:''}</div>
+  </div>`;
 }
 
 /* ---- Dashboard ---- */
@@ -469,11 +544,6 @@ function viewDashboard(){
   const upcoming=notDone.filter(i=>i.date&&daysLeft(i.date)>=0);
   const undated=notDone.filter(i=>!i.date);
   const next=upcoming[0], pct=items.length?Math.round(done/items.length*100):0;
-  // welcome (short)
-  let welcome=''; if(!lsGet('rp-welcome-v2',false)) welcome=`<div class="card welcome2"><div style="flex:1;min-width:0"><b class="wt2">${esc(t('welcome_t'))}</b><div>${t('welcome_short')}</div></div><button class="btn sm" data-a="welcome">${esc(t('w_ok'))}</button></div>`;
-  // updates bar
-  const upd=items.filter(i=>chInfo(i.id)).sort((a,b)=>chInfo(b.id).at.localeCompare(chInfo(a.id).at)).slice(0,6);
-  const updHtml=upd.length?`<details class="updbar"><summary><span class="ub">🔔 ${esc(t('upd_n',{n:upd.length}))}</span><span class="up">${upd.slice(0,2).map(i=>esc(L(i,'title'))).join(' · ')}${upd.length>2?' …':''}</span><span class="uv">${esc(t('upd_see'))}</span></summary><div class="list">${upd.map(i=>{ const s=chInfo(i.id); const w=changeText(i,s); return `<div class="li" data-open="${esc(i.id)}"><span class="nbadge ${s.ch==='mod'?'mod':''}">${esc(t(s.ch==='mod'?'upd_mod':'upd_new'))}</span><div class="main2"><div class="tt">${esc(L(i,'title'))}</div><div class="what">${esc(cshort(i.category))}${w?' · '+esc(w):''} · ${esc(t('upd_on',{d:fmt(s.at.slice(0,10),DM)}))}</div></div></div>`; }).join('')}</div></details>`:'';
   // hero: next deadline
   let hero='';
   if(next){ const u=urgency(next), c=CAT[next.category], n=daysLeft(next.date), same=upcoming.filter(i=>i.date===next.date).length-1;
@@ -490,26 +560,17 @@ function viewDashboard(){
     upHtml+=`<div class="gl2">${esc(lab)} <span>${arr.length}</span></div><div class="list">${take.map(i=>liRow(i)).join('')}</div>`; });
   if(!upHtml) upHtml=`<div class="mm" style="color:var(--muted)">${esc(t('nothing'))}</div>`;
   const pastHtml=past.length?`<div class="card panel pastp"><h3>⏳ ${esc(t('past_t2'))} <span class="pill u-past">${past.length}</span></h3><div class="hint" style="margin:-6px 0 6px">${esc(t('past_hint'))}</div><div class="list">${past.slice(-4).reverse().map(i=>liRow(i)).join('')}</div></div>`:'';
-  // quick links
-  const ql=[]; if(calUrl()) ql.push(`<button class="qlk" data-a="subscribe">${esc(t('sub_btn'))}</button>`);
-  ['memoire','rapport'].forEach(k=>{ const l=((S.cats[k]||{}).links||[])[0]; if(l&&l.url) ql.push(`<a class="qlk" href="${esc(safeUrl(l.url))}" target="_blank" rel="noopener">↗ ${esc(l.label||cname(k))}</a>`); });
-  ql.push(`<a class="qlk" href="#gantt">▤ ${esc(t('nav_gantt'))}</a>`,`<a class="qlk" href="#calendar">▦ ${esc(t('nav_cal'))}</a>`);
   const prog=`<div class="card panel"><h3>${esc(t('prog_t'))}<span class="sp"></span><span style="font-size:20px;font-weight:650">${pct}%</span></h3>
     <div class="bar"><i style="width:${pct}%"></i></div>
     <div class="stats"><span><i style="background:var(--green)"></i>${esc(t('st_done_n',{n:done}))}</span><span><i style="background:var(--orange)"></i>${esc(t('st_up_n',{n:upcoming.length}))}</span>${past.length?`<span><i style="background:#d97706"></i>${esc(t('st_past_n',{n:past.length}))}</span>`:''}${undated.length?`<span><i style="background:var(--gray)"></i>${esc(t('st_tbd_n',{n:undated.length}))}</span>`:''}</div>
     <div class="catprog">${CATEGORIES.map(c=>{ const a=byCat(c.key), d=a.filter(i=>i.status==='done').length, p=a.length?Math.round(d/a.length*100):0;
       return `<a href="#cat-${c.key}" style="color:inherit;text-decoration:none"><div class="h"><b style="font-weight:500">${esc(cname(c.key))}</b><span>${a.length?`${d}/${a.length}`:esc(t('waiting'))}</span></div><div class="bar"><i style="width:${p}%;background:${c.color}"></i></div></a>`; }).join('')}</div></div>`;
-  return `${warnBox(true)}${welcome}${updHtml}
-  <div class="grid dtop">${hero}${schoolCard()}</div>
-  <div class="grid row2" style="margin-top:14px">
-    <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
-      <div class="card panel"><h3>📌 ${esc(t('upcoming_t2'))}<span class="sp"></span><a href="#timeline" class="btn ghost sm">${esc(t('see_all'))} →</a></h3>${upHtml}</div>
-      ${pastHtml}
-    </div>
-    <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
-      <div class="card panel"><h3>⚡ ${esc(t('ql_t'))}</h3><div class="qls">${ql.join('')}</div></div>
-      ${prog}
-    </div>
+  return `${warnBox(true)}
+  <div class="grid row2" style="margin-top:0">
+    <div style="display:flex;flex-direction:column;gap:14px;min-width:0">${hero}
+      <div class="card panel"><h3>📌 ${esc(t('upcoming_t2'))}<span class="sp"></span><a href="#timeline" class="btn ghost sm">${esc(t('see_all'))}</a></h3>${upHtml}</div></div>
+    <div style="display:flex;flex-direction:column;gap:14px;min-width:0">${prog}
+      ${pastHtml||`<div class="card panel"><h3>⏳ ${esc(t('past_t2'))}</h3><div class="mm" style="color:var(--muted);font-size:13px">${esc(t('past_none'))}</div></div>`}</div>
   </div>`;
 }
 
